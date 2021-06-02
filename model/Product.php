@@ -7,6 +7,7 @@ class Product extends Model
     private $id_user;
     private $name;
     private $description;
+    private $category;
     private $price;
     protected static $table = "dz2_products";
     protected static $columns = [];
@@ -56,6 +57,16 @@ class Product extends Model
     public function setDescription($description)
     {
         $this->description = $description;
+    }
+
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category)
+    {
+        $this->category = $category;
     }
 
     public function getPrice()

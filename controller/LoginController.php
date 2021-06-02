@@ -11,7 +11,7 @@ class loginController extends BaseController
             $this->registry->template->loginError = false;
             $this->registry->template->show("login");
         } else {
-            header('Location: ' . __SITE_URL . '/index.php?rt=products');
+            header('Location: ' . __SITE_URL . '/index.php?rt=products/index');
         }
     }
 
@@ -40,7 +40,7 @@ class loginController extends BaseController
             $this->registry->template->show("login");
         } else {
             $_SESSION["user"] = $user;
-            header('Location: ' . __SITE_URL . '/index.php?rt=products');
+            header('Location: ' . __SITE_URL . '/index.php?rt=products/index');
         }
     }
 

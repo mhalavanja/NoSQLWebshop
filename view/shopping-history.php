@@ -1,11 +1,12 @@
 <?php require_once __SITE_PATH . '/view/_header.php';
 require_once __SITE_PATH . '/util/drawStarsUtil.php';
-if (!isset($starProducts) || sizeof($starProducts) == 0) echo "<h2>You have not yes bought any product. Let's change that :)</h2>";
+if (!isset($starProducts) || sizeof($starProducts) == 0)
+echo "<h2>You have not yes bought any product. Let's change that :)</h2>";
 else { ?>
-<h2>Products you have bought already:</h2>
 <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=products/product' ?>">
-    <table>
-        <tr>
+    <br>
+    <table class="table table-sm table-bordered">
+        <tr class="table-primary">
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
@@ -19,7 +20,7 @@ else { ?>
                 '<td>' . $product->getDescription() . '</td>' .
                 '<td>' . $product->getPrice() . '</td>' .
                 '<td>' . getStars($starProduct->getAvgRating(), true) . '</td>' .
-                '<td><button type="submit" name="product_id" value="product_' . $product->getId() . '">Review</button></td>' .
+                '<td><button class="btn btn-outline-primary" type="submit" name="product_id" value="product_' . $product->getId() . '">Review</button></td>' .
                 '</tr>';
         }
         echo '</table>' . '</form>';

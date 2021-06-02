@@ -1,19 +1,21 @@
 <?php require_once __SITE_PATH . '/view/_header.php';
 require_once __SITE_PATH . '/util/drawStarsUtil.php'; ?>
+    <br>
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=search/processSearch' ?>">
-        <div>
+        <div class="form-group">
             <label for="search">Search product: </label>
-            <input type="text" id="search" name="search">
+            <input class="form-control" type="text" id="search" name="search">
         </div>
-        <button type="submit">Search!</button>
+        <br>
+        <button class="btn btn-primary" type="submit">Search!</button>
     </form>
 
 <?php if (isset($starProducts)) { ?>
     <br>
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=search/searchDetails' ?>">
 
-    <table>
-    <tr>
+    <table class="table table-sm table-bordered">
+    <tr class="table-primary">
         <th>Name</th>
         <th>Description</th>
         <th>Price</th>
@@ -28,7 +30,7 @@ require_once __SITE_PATH . '/util/drawStarsUtil.php'; ?>
             '<td>' . $starProduct->getProduct()->getDescription() . '</td>' .
             '<td>' . $starProduct->getProduct()->getPrice() . '</td>' .
             '<td>' . getStars($avgRating, true) . '</td>' .
-            '<td><button type="submit" name="product_id" value="product_' .
+            '<td><button class="btn btn-outline-primary" type="submit" name="product_id" value="product_' .
             $starProduct->getProduct()->getId() . '">Details</button></td>' .
             '</tr>';
     }

@@ -1,21 +1,27 @@
 <?php require_once __SITE_PATH . '/view/_header.php';
 if(isset($error) && $error === true) echo "<p>All the fields are required!</p>" ?>
 <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=products/processNewProduct' ?>">
-    <div>
+    <br>
+    <div class="form-group">
         <label for="name">Name: </label>
-        <input type="text" id="name" name="name">
+        <input class="form-control" type="text" id="name" name="name">
     </div>
     <br>
-    <div>
+    <div class="form-group">
         <label for="name">Description: </label>
-        <input type="text" id="description" name="description">
+        <input class="form-control" type="text" id="description" name="description">
     </div>
     <br>
-    <div>
+    <div class="form-group">
+        <label for="category">Category: </label>
+        <input class="form-control" type="text" id="category" name="category">
+    </div>
+    <br>
+    <div class="form-group">
         <label for="name">Price: </label>
-        <input type="number" id="price" name="price">
+        <input class="form-control" type="number" id="price" name="price">
     </div>
     <br>
-    <button type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit">Submit!</button>
 </form>
 <?php require_once __SITE_PATH . '/view/_footer.php'; ?>

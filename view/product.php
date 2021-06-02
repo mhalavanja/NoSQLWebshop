@@ -1,16 +1,17 @@
 <?php require_once __SITE_PATH . '/view/_header.php';
 require_once __SITE_PATH . '/util/drawStarsUtil.php';
 
-if(isset($starProduct)){
+if (isset($starProduct)) {
     $product = $starProduct->getProduct();
-    if ($product) echo "<h3>Product: " . $product->getName() . "</h3>";
+    if ($product) echo "<h3>" . $product->getName() . "</h3>";
     echo getStars($starProduct->getAvgRating(), false);
 }
 if (isset($numOfSoldProducts)) echo "<p>This product has been sold " . $numOfSoldProducts . " times.";
 if (!isset($reviews) || sizeof($reviews) === 0) echo "<p>This product has no reviews.</p>";
 else { ?>
-    <table>
-    <tr>
+    <br>
+    <table class="table table-sm table-bordered">
+    <tr class="table-primary">
         <th>User</th>
         <th>Rating</th>
         <th>Comment</th>

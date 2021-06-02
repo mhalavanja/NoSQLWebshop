@@ -18,6 +18,6 @@
         <input type="hidden" name="product_id" value="<?php if(isset($product)) echo $product->getId(); ?>">
         <input type="hidden" name="saleId" value="<?php if(isset($saleId)) echo $saleId; ?>">
         <br>
-        <button type="submit">Submit!</button>
+        <button class="btn btn-primary" type="submit">Submit!</button>
     </form>
 <?php } ?>

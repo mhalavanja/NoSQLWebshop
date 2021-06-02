@@ -60,7 +60,7 @@ class productsController extends BaseController
         $product->setPrice($_POST['price']);
         $product->setId_user($_SESSION["user"]->getId());
         Product::save($product);
-        header('Location: ' . __SITE_URL . '/index.php?rt=products');
+        header('Location: ' . __SITE_URL . '/index.php?rt=products/index');
     }
 
     function shoppingHistory()

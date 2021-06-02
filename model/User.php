@@ -9,6 +9,11 @@ class User extends Model
     private $email;
     private $registration_sequence;
     private $has_registered;
+    private $isAdmin;
+    private $name;
+    private $lastname;
+    private $recommendations;
+    private $favoriteCategories;
     protected static $table = "dz2_users";
     protected static $columns = [];
 
@@ -77,6 +82,56 @@ class User extends Model
     public function setHas_registered($has_registered)
     {
         $this->has_registered = $has_registered;
+    }
+
+    public function getIsAdmin()
+    {
+        return $this->isAdmin;
+    }
+
+    public function setIsAdmin($isAdmin)
+    {
+        $this->isAdmin = $isAdmin;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    public function getRecommendations()
+    {
+        return $this->recommendations;
+    }
+
+    public function setRecommendations($recommendations)
+    {
+        $this->recommendations = $recommendations;
+    }
+
+    public function getFavoriteCategories()
+    {
+        return $this->favoriteCategories;
+    }
+
+    public function setFavoriteCategories($favoriteCategories)
+    {
+        $this->favoriteCategories = $favoriteCategories;
     }
 }
 

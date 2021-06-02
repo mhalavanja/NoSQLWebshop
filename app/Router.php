@@ -74,13 +74,13 @@ class Router
         {
             // Ako $_GET['rt'] nije prazan, podijeli ga na controller i akciju.
             $parts = explode('/', $route);
-            $this->controller = $parts[0];
+            $this->controller = ucfirst($parts[0]);
             if (isset($parts[1]))
                 $this->action = $parts[1];
         }
 
         if (empty($this->controller))
-            $this->controller = 'index';
+            $this->controller = 'Index';
 
         if (empty($this->action))
             $this->action = 'index';
