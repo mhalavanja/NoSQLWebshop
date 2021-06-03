@@ -1,3 +1,5 @@
+## Upute za instalaciju mongoDB na Ubuntu Bionic (mongoDB ver. 3.6.3)
+
 Updateaj sve pakete:
 $ sudo apt update && sudo apt upgrade -y
 
@@ -7,6 +9,8 @@ $ sudo apt install mongodb
 Provjeri instalaciju:
 $ sudo systemctl status mongodb
 
+
+## Upute za instalaciju PHP drivera za mongoDB
 Instaliraj ekstenziju za PHP (potrebno za instalaciju PHP drivera za mongoDB):
 $ sudo apt-get install php-pear
 $ sudo apt install php-dev
@@ -27,3 +31,10 @@ libmongocrypt bundled version => 1.0.4
 
 Restartaj apache2:
 $ sudo systemctl restart apache2
+
+
+##Upute za inicijalno punjenje lokalne mongoDB baze
+
+Pokrenite skriptu load_mongodb.php. Skripta ce napuniti bazu sa hardcodiranim vrijednostima iz documents.php.
+Ukpuno je 10 usera.
+Sifre u plain textu za usere se mogu vidjeti u documents.php fileu.
