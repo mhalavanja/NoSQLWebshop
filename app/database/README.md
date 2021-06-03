@@ -2,7 +2,7 @@ Updateaj sve pakete:
 $ sudo apt update && sudo apt upgrade -y
 
 Instaliraj mongoDB:
-$ sudo apt update && sudo apt upgrade -y
+$ sudo apt install mongodb
 
 Provjeri instalaciju:
 $ sudo systemctl status mongodb
