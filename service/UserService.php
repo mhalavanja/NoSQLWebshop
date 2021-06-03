@@ -27,19 +27,4 @@ class UserService
     {
 
     }
-
-    static function getReview($reviewId)
-    {
-
-    }
-
-    static function getReviewsForProduct($productId)
-    {
-
-    }
-
-    static function getShoppingHistoryForUser($userId)
-    {
-
-    }
 }

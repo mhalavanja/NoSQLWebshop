@@ -5,7 +5,7 @@ echo "<h2>You are not selling any product.</h2>";
 else { ?>
 <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=products/product' ?>">
     <br>
-    <table class="table table-sm table-bordered">
+    <table class="table table-sm table-bordered table-hover">
         <tr class="table-primary">
             <th>Name</th>
             <th>Description</th>

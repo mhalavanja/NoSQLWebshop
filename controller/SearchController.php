@@ -36,7 +36,7 @@ class searchController extends BaseController
         $sales = Sale::where("id_product", $productId);
 
         $this->registry->template->reviews = getReviewsForProduct($sales);
-        $this->registry->template->canBuy = !($product->getId_user() === $userId || alreadyBought($userId, $sales));
+        $this->registry->template->canBuy = !($product->getId_user() === $userId);
         $this->registry->template->starProduct = getStarProduct($product);
         $this->registry->template->numOfSoldProducts = sizeof($sales);
         $this->registry->template->show("product");

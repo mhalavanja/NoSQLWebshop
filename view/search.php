@@ -15,6 +15,7 @@ require_once __SITE_PATH . '/util/drawStarsUtil.php'; ?>
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=search/searchDetails' ?>">
 
     <table class="table table-sm table-bordered">
+    <thead>
     <tr class="table-primary">
         <th>Name</th>
         <th>Description</th>
@@ -22,6 +23,8 @@ require_once __SITE_PATH . '/util/drawStarsUtil.php'; ?>
         <th>Stars</th>
         <th></th>
     </tr>
+    </thead>
+    <tbody>
     <?php
     foreach ($starProducts as $starProduct) {
         $avgRating = $starProduct->getAvgRating();
@@ -32,7 +35,7 @@ require_once __SITE_PATH . '/util/drawStarsUtil.php'; ?>
             '<td>' . getStars($avgRating, true) . '</td>' .
             '<td><button class="btn btn-outline-primary" type="submit" name="product_id" value="product_' .
             $starProduct->getProduct()->getId() . '">Details</button></td>' .
-            '</tr>';
+            '</tr></tbody>';
     }
 }
 ?>

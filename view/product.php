@@ -11,11 +11,14 @@ if (!isset($reviews) || sizeof($reviews) === 0) echo "<p>This product has no rev
 else { ?>
     <br>
     <table class="table table-sm table-bordered">
+    <thead>
     <tr class="table-primary">
         <th>User</th>
         <th>Rating</th>
         <th>Comment</th>
     </tr>
+    </thead>
+    <tbody>
     <?php
     foreach ($reviews as $review) {
         echo '<tr>' .
@@ -26,6 +29,7 @@ else { ?>
     }
 }
 ?>
+    </tbody>
     </table>
     <br>
 

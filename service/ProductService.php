@@ -3,7 +3,7 @@
 
 class ProductService
 {
-    static function saveProduct($product)
+    static function saveProduct($userId, $product)
     {
 
     }
@@ -23,4 +23,8 @@ class ProductService
 
     }
 
+    static function getShoppingHistoryForUser($userId)
+    {
+
+    }
 }
