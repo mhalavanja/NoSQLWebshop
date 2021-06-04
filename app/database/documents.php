@@ -355,14 +355,14 @@ $documents = [
                 "name" => "Svinjski vrat",
                 "description" => "PIK Svinjski vrat s kostima odrezak 640 g",
                 "category" => "Hrana",
-                "price" => "19,99"
+                "price" => "19.99"
             ],
             [
                 "product_id" => $product_id_2_2,
                 "name" => "Luk mladi",
                 "description" => "Luk mladi vezica",
                 "category" => "Hrana",
-                "price" => "5,99"
+                "price" => "5.99"
             ],
             [
                 "product_id" => $product_id_2_3,
@@ -832,7 +832,7 @@ $documents = [
                 "name" => "Svinjski vrat",
                 "description" => "PIK Svinjski vrat s kostima odrezak 640 g",
                 "category" => "Hrana",
-                "price" => "19,99",
+                "price" => "19.99",
                 "comment" => "Solidno...",
                 "rating" => 3,
                 "quantity" => 3
