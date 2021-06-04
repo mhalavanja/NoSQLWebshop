@@ -1,5 +1,5 @@
 <?php
-function mongoToClass($document, $obj)
+function mongoToClass($document, $obj, $skip=false)
 {
 //    echo '<pre>';
 //    print_r($document);
@@ -23,9 +23,12 @@ function mongoToClass($document, $obj)
         } elseif (strpos($key, "Array")) {
             $innerObjectArray = [];
             $innerClass = ucfirst(preg_replace("/Array/", "", $key));
-            $innerObj = new $innerClass;
             foreach ($val as $inner) {
-                $innerObjectArray[] = mongoToClass($inner, $innerObj);
+                $innerObj = new $innerClass;
+                if ($skip === false)
+                    $innerObjectArray[] = mongoToClass($inner, $innerObj);
+                else // Problem je kod upita za salesForProduct. Vraca se array sa jednim clanom, i onda se trazi Sales::setSaleArray metoda
+                    return mongoToClass($inner, $innerObj);
             }
 //            echo '<pre>';
 //            print_r($val);

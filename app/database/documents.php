@@ -307,7 +307,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Mirko",
-        "lastname" => "Mirkovic",
+        "lastname" => "Mirković",
         "favoriteCategory" => [
             "_id" => $category_id_1,
             "category" => "Elektronika"
@@ -340,9 +340,9 @@ $documents = [
                 "_id" => $sale_id_1_1,
                 "userId" => $user_id_3,                         // user 3 mora imati ovaj prduct
                 "productId" => $product_id_3_2,
-                "name" => "Posip vino",
-                "description" => "Vrhunsko bijelo vino Posip",
-                "category" => "Pice",
+                "name" => "Pošip vino",
+                "description" => "Vrhunsko bijelo vino Pošip",
+                "category" => "Pića",
                 "price" => "14.99",
                 "rating" => 4,
                 "comment" => "Awesome. I would recommend this wine to anyone.",
@@ -360,7 +360,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 0,
         "name" => "Ana",
-        "lastname" => "Anic",
+        "lastname" => "Anić",
         "favoriteCategory" => [
             "_id" => $category_id_2,
             "category" => "Hrana"
@@ -405,8 +405,8 @@ $documents = [
                 "_id" => $sale_id_2_2,
                 "userId" => $user_id_3,
                 "productId" => $product_id_3_1,
-                "name" => "Istarski prsut",
-                "description" => "Istarski suseni prsut u komadu",
+                "name" => "Istarski pršut",
+                "description" => "Istarski sušeni pršut u komadu",
                 "category" => "Hrana",
                 "price" => "170",
                 "comment" => "Topla preporuka.",
@@ -425,7 +425,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 0,
         "name" => "Toni",
-        "lastname" => "Tomic",
+        "lastname" => "Tomić",
         "favoriteCategory" => [
             "_id" => $category_id_3,
             "category" => "Automobili"
@@ -433,8 +433,8 @@ $documents = [
         "productArray" => [
             [
                 "_id" => $product_id_3_1,
-                "name" => "Istarski prsut",
-                "description" => "Istarski suseni prsut u komadu",
+                "name" => "Istarski pršut",
+                "description" => "Istarski sušeni pršut u komadu",
                 "category" => "Hrana",
                 "price" => "170"
             ],
@@ -447,9 +447,9 @@ $documents = [
             ],
             [
                 "_id" => $product_id_3_3,
-                "name" => "Posip vino",
-                "description" => "Vrhunsko bijelo vino Posip",
-                "category" => "Pice",
+                "name" => "Pošip vino",
+                "description" => "Vrhunsko bijelo vino Pošip",
+                "category" => "Pića",
                 "price" => "14.99"
             ]
         ],
@@ -478,10 +478,10 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Maja",
-        "lastname" => "Majic",
+        "lastname" => "Majić",
         "favoriteCategory" => [
             "_id" => $category_id_4,
-            "category" => "Pice"
+            "category" => "Pića"
         ],
         "productArray" => [
             [
@@ -500,9 +500,9 @@ $documents = [
             ],
             [
                 "_id" => $product_id_4_3,
-                "name" => "Posip vino",
-                "description" => "Vrhunsko bijelo vino Posip - Peljesac",
-                "category" => "Pice",
+                "name" => "Pošip vino",
+                "description" => "Vrhunsko bijelo vino Pošip - Pelješac",
+                "category" => "Pića",
                 "price" => "17.99",
             ]
         ],
@@ -511,9 +511,9 @@ $documents = [
                 "_id" => $sale_id_4_1,
                 "userId" => $user_id_3,
                 "productId" => $product_id_3_2,
-                "name" => "Posip vino",
-                "description" => "Vrhunsko bijelo vino Posip",
-                "category" => "Pice",
+                "name" => "Pošip vino",
+                "description" => "Vrhunsko bijelo vino Pošip",
+                "category" => "Pića",
                 "price" => "14.99",
                 "comment" => "Super.",
                 "rating" => 5,
@@ -543,7 +543,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Pero",
-        "lastname" => "Peric",
+        "lastname" => "Perić",
         "favoriteCategory" => [
             "_id" => $category_id_2,
             "category" => "Hrana"
@@ -569,8 +569,8 @@ $documents = [
                 "_id" => $sale_id_5_1,
                 "userId" => $user_id_3,
                 "productId" => $product_id_3_1,
-                "name" => "Istarski prsut",
-                "description" => "Istarski suseni prsut u komadu",
+                "name" => "Istarski pršut",
+                "description" => "Istarski suseni pršut u komadu",
                 "category" => "Hrana",
                 "price" => "170",
                 "comment" => "Najbolji pršut koji sam ikad probao!!",
@@ -581,8 +581,8 @@ $documents = [
                 "_id" => $sale_id_5_2,
                 "userId" => $user_id_8,
                 "productId" => $product_id_8_1,
-                "name" => "Paski sir",
-                "description" => "Paski sir okrugli 1kg od 100% ovcijeg mlijeka.",
+                "name" => "Paški sir",
+                "description" => "Paški sir okrugli 1kg od 100% ovčijeg mlijeka.",
                 "category" => "Hrana",
                 "price" => "240",
                 "comment" => "Izvrstan sir.",
@@ -601,7 +601,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Alexandara",
-        "lastname" => "Aleksic",
+        "lastname" => "Aleksić",
         "favoriteCategory" => [
             "_id" => $category_id_3,
             "category" => "Automobili"
@@ -666,7 +666,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 0,
         "name" => "Ivona",
-        "lastname" => "Ivosevic",
+        "lastname" => "Ivosević",
         "favoriteCategory" => [
             "_id" => $category_id_1,
             "category" => "Elektronika"
@@ -702,14 +702,14 @@ $documents = [
     // USER 8
     [
         "_id" => $user_id_8,
-        "username" => "mico",
+        "username" => "mićo",
         "passwordHash" => password_hash("micinasifra", PASSWORD_DEFAULT),
         "email" => "mico23zg@net.hr",
         "registrationSequence" => generateRandomString(10),
         "hasRegistered" => 1,
         "isAdmin" => 0,
         "name" => "Miljenko",
-        "lastname" => "Milic",
+        "lastname" => "Milić",
         "favoriteCategory" => [
             "_id" => $category_id_2,
             "category" => "Hrana"
@@ -717,15 +717,15 @@ $documents = [
         "productArray" => [
             [
                 "_id" => $product_id_8_1,
-                "name" => "Paski sir",
-                "description" => "Paski sir okrugli 1kg od 100% ovcijeg mlijeka.",
+                "name" => "Paški sir",
+                "description" => "Paški sir okrugli 1kg od 100% ovčijeg mlijeka.",
                 "category" => "Hrana",
                 "price" => "240"
             ],
             [
                 "_id" => $product_id_8_2,
-                "name" => "Kukuruzno brasno",
-                "description" => "Grubo mljeveno kukuruzno brasno bez dodataka 1kg",
+                "name" => "Kukuruzno brašno",
+                "description" => "Grubo mljeveno kukuruzno brašno bez dodataka 1kg",
                 "category" => "Hrana",
                 "price" => "34.90"
             ],
@@ -749,7 +749,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Tihomir",
-        "lastname" => "Monkovic",
+        "lastname" => "Monković",
         "favoriteCategory" => [
             "_id" => $category_id_3,
             "category" => "Automobili"
@@ -807,7 +807,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Marta",
-        "lastname" => "Martic",
+        "lastname" => "Martić",
         "favoriteCategory" => [
             "_id" => $category_id_2,
             "category" => "Hrana"
@@ -833,8 +833,8 @@ $documents = [
                 "_id" => $sale_id_10_1,
                 "userId" => $user_id_8,
                 "productId" => $product_id_8_2,
-                "name" => "Kukuruzno brasno",
-                "description" => "Grubo mljeveno kukuruzno brasno bez dodataka 1kg",
+                "name" => "Kukuruzno brašno",
+                "description" => "Grubo mljeveno kukuruzno brašno bez dodataka 1kg",
                 "category" => "Hrana",
                 "price" => "34.90",
                 "comment" => "Super. Odličan je kruh od ovog brašna.",
@@ -865,7 +865,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Vinko",
-        "lastname" => "Vinkovic",
+        "lastname" => "Vinković",
         "favoriteCategory" => [
             "_id" => $category_id_1,
             "category" => "Elektronika"
@@ -1034,7 +1034,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Ivan",
-        "lastname" => "Ivankovic",
+        "lastname" => "Ivanković",
         "favoriteCategory" => [
             "_id" => $category_id_1,
             "category" => "Elektronika"
@@ -1119,24 +1119,24 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Martin",
-        "lastname" => "Martinovic",
+        "lastname" => "Martinović",
         "favoriteCategory" => [
             "_id" => $category_id_4,
-            "category" => "Pica"
+            "category" => "Pića"
         ],
         "productArray" => [
             [
                 "_id" => $product_id_16_1,
-                "name" => "Domaca medica",
-                "description" => "Domaca medica 35%vol 1L",
-                "category" => "Pica",
+                "name" => "Domaća medica",
+                "description" => "Domaća medica 35%vol 1L",
+                "category" => "Pića",
                 "price" => "69.90"
             ],
             [
                 "_id" => $product_id_16_2,
-                "name" => "Domaca travarica",
-                "description" => "Domaca travarica 42%vol 1L",
-                "category" => "Pica",
+                "name" => "Domaća travarica",
+                "description" => "Domaća travarica 42%vol 1L",
+                "category" => "Pića",
                 "price" => "89.90"
             ]
         ],
@@ -1177,10 +1177,10 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Mia",
-        "lastname" => "Mijic",
+        "lastname" => "Mijić",
         "favoriteCategory" => [
             "_id" => $category_id_4,
-            "category" => "Pica"
+            "category" => "Pića"
         ],
         "productArray" => [
             []
@@ -1222,7 +1222,7 @@ $documents = [
         "hasRegistered" => 1,
         "isAdmin" => 1,
         "name" => "Marko",
-        "lastname" => "Markovic",
+        "lastname" => "Marković",
         "favoriteCategory" => [
             "_id" => $category_id_3,
             "category" => "Automobili"
@@ -1275,30 +1275,30 @@ $documents = [
         "name" => "Lana",
         "lastname" => "Šimunović",
         "favoriteCategory" => [
-            "category_id" => $category_id_1,
+            "_id" => $category_id_1,
             "category" => "Elektronika"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_19_1,
+                "_id" => $product_id_19_1,
                 "name" => "Galaxy Buds slušalice",
                 "description" => "Galaxy Buds+ slušalice. Prve bežične slušalice s dvosmjernim zvučnicima koji pružaju zvuk koji Vam donosi AKG s izraženim visokim tonovima i dubokim basom",
                 "category" => "Elektronika",
                 "price" => "699.00"
             ],
             [
-                "product_id" => $product_id_19_2,
+                "_id" => $product_id_19_2,
                 "name" => "DENVER BEŽIČNE BLUETOOTH slušalice TWE-3",
                 "description" => "Bežične Bluetooth slušalice TWE-3 - bijele",
                 "category" => "Elektronika",
                 "price" => "159.00"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_19_1,
                 "userId" => $user_id_12,
-                "product_id" => $product_id_12_3,
+                "productId" => $product_id_12_3,
                 "name" => "Dell Laptop e7240",
                 "description" => "Dell Laptop e7240 SSD 512GB 16GB RAM",
                 "category" => "Elektronika",
@@ -1310,7 +1310,7 @@ $documents = [
             [
                 "_id" => $sale_id_19_2,
                 "userId" => $user_id_16,
-                "product_id" => $product_id_16_1,
+                "productId" => $product_id_16_1,
                 "name" => "Domaća medica",
                 "description" => "Domaća medica 35%vol 1L",
                 "category" => "Pića",
@@ -1333,37 +1333,37 @@ $documents = [
         "name" => "Karolina",
         "lastname" => "Karlović",
         "favoriteCategory" => [
-            "category_id" => $category_id_2,
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_20_1,
+                "_id" => $product_id_20_1,
                 "name" => "Dulcinea Vita Rezanci",
                 "description" => "Dulcinea Vita Rezanci uski s narančastim batatom 200 g",
                 "category" => "Hrana",
                 "price" => "12.99"
             ],
             [
-                "product_id" => $product_id_20_2,
+                "_id" => $product_id_20_2,
                 "name" => "Pirovo integralno brašno",
                 "description" => "Farina Pirovo integralno brašno 1000 g",
                 "category" => "Hrana",
                 "price" => "14.99"
             ],
             [
-                "product_id" => $product_id_20_2,
+                "_id" => $product_id_20_2,
                 "name" => "Integralni dvopek",
                 "description" => "Mulino Bianco Integralni dvopek 315 g",
                 "category" => "Hrana",
                 "price" => "16.99"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_20_1,
                 "userId" => $user_id_10,
-                "product_id" => $product_id_10_1,
+                "productId" => $product_id_10_1,
                 "name" => "Batat",
                 "description" => "Ekozona batat ljubičasti 500g",
                 "category" => "Hrana",
@@ -1375,7 +1375,7 @@ $documents = [
             [
                 "_id" => $sale_id_20_2,
                 "userId" => $user_id_16,
-                "product_id" => $product_id_16_1,
+                "productId" => $product_id_16_1,
                 "name" => "Domaća medica",
                 "description" => "Domaća medica 35%vol 1L",
                 "category" => "Pića",
@@ -1398,30 +1398,30 @@ $documents = [
         "name" => "Mišo",
         "lastname" => "Mišković",
         "favoriteCategory" => [
-            "category_id" => $category_id_2,
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_21_1,
+                "_id" => $product_id_21_1,
                 "name" => "Pršut narezak",
                 "description" => "Voštane Dalmatiko Pršut narezak 80 g",
                 "category" => "Hrana",
                 "price" => "17.99"
             ],
             [
-                "product_id" => $product_id_21_2,
+                "_id" => $product_id_21_2,
                 "name" => "Tilzit sir",
                 "description" => "Tilzit polutvrdi sir narezani 1kg",
                 "category" => "Hrana",
                 "price" => "69.99"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_21_1,
                 "userId" => $user_id_20,
-                "product_id" => $product_id_20_1,
+                "productId" => $product_id_20_1,
                 "name" => "Dulcinea Vita Rezanci",
                 "description" => "Dulcinea Vita Rezanci uski s narančastim batatom 200 g",
                 "category" => "Hrana",
@@ -1444,30 +1444,30 @@ $documents = [
         "name" => "Denis",
         "lastname" => "Desinec",
         "favoriteCategory" => [
-            "category_id" => $category_id_3,
+            "_id" => $category_id_3,
             "category" => "Automobili"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_22_1,
+                "_id" => $product_id_22_1,
                 "name" => "Citroën C5",
                 "description" => "Citroën C5 Aircross FEEL 1.5BlueHDI 130KS EAT8",
                 "category" => "Automobili",
                 "price" => "227000"
             ],
             [
-                "product_id" => $product_id_22_2,
+                "_id" => $product_id_22_2,
                 "name" => "Masažna fotelja",
                 "description" => "Masažna fotelja Paradiso",
                 "category" => "Elektronika",
                 "price" => "800.00"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_22_1,
                 "userId" => $user_id_2,
-                "product_id" => $product_id_2_3,
+                "productId" => $product_id_2_3,
                 "name" => "Smart fortwo cdi",
                 "description" => "SMART FOR TWO, DIESEL, PASSION OPREMA, SERVISNA KNJIGA",
                 "category" => "Automobili",
@@ -1479,7 +1479,7 @@ $documents = [
             [
                 "_id" => $sale_id_22_2,
                 "userId" => $user_id_28,
-                "product_id" => $product_id_28_1,
+                "productId" => $product_id_28_1,
                 "name" => "Miris za auto",
                 "description" => "Miris za auto - vanillia",
                 "category" => "Automobili",
@@ -1502,37 +1502,37 @@ $documents = [
         "name" => "Miroslav",
         "lastname" => "Miroslavić",
         "favoriteCategory" => [
-            "category_id" => $category_id_4,
+            "_id" => $category_id_4,
             "category" => "Pića"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_23_1,
+                "_id" => $product_id_23_1,
                 "name" => "Red Label Whiskey",
                 "description" => "Johnnie Walker Red Label Whiskey 0,7L",
                 "category" => "Pića",
                 "price" => "102.00"
             ],
             [
-                "product_id" => $product_id_23_2,
+                "_id" => $product_id_23_2,
                 "name" => "Samsung Galaxy S20",
                 "description" => "Samsung galaxy S20 mobitel crni",
                 "category" => "Elektronika",
                 "price" => "4800.00"
             ],
             [
-                "product_id" => $product_id_23_3,
+                "_id" => $product_id_23_3,
                 "name" => "Domaće crno vino",
                 "description" => "Domaći crni Merlot 1L - Baranja",
                 "category" => "Pića",
                 "price" => "45.00"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_23_1,
                 "userId" => $user_id_25,
-                "product_id" => $product_id_25_3,
+                "productId" => $product_id_25_3,
                 "name" => "Domaći sok od jabuke",
                 "description" => "Domaći sok od hladno prešane jabuke 1L",
                 "category" => "Pića",
@@ -1544,7 +1544,7 @@ $documents = [
             [
                 "_id" => $sale_id_23_1,
                 "userId" => $user_id_30,
-                "product_id" => $product_id_30_1,
+                "productId" => $product_id_30_1,
                 "name" => "Sok od kadulje",
                 "description" => "Domaći sok od cvijeta kadulje 1L.",
                 "category" => "Pića",
@@ -1567,30 +1567,30 @@ $documents = [
         "name" => "Ozana",
         "lastname" => "Ozanić",
         "favoriteCategory" => [
-            "category_id" => $category_id_1,
+            "_id" => $category_id_1,
             "category" => "Elektronika"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_24_1,
+                "_id" => $product_id_24_1,
                 "name" => "Kurzweil PC3K8 Synthesizer",
                 "description" => "Kurzweil PC3K8 sa 88 klavirskih tipki.  Revolucionarni novi PC3K, Kompatibilan s legendarnom K serijom",
                 "category" => "Elektronika",
                 "price" => "16985.60"
             ],
             [
-                "product_id" => $product_id_24_2,
+                "_id" => $product_id_24_2,
                 "name" => "PreSonus mikseta",
                 "description" => "PreSonus StudioLive AR16 USB digitalni mikser",
                 "category" => "Elektronika",
                 "price" => "4168.80"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_24_1,
                 "userId" => $user_id_26,
-                "product_id" => $product_id_26_1,
+                "productId" => $product_id_26_1,
                 "name" => "Laserworld CS-2000RGB",
                 "description" => "Laserworld CS-2000RGB RGB laserski sistem sa potpunom izlaznom snagom do 2,000mW",
                 "category" => "Elektronika",
@@ -1602,7 +1602,7 @@ $documents = [
             [
                 "_id" => $sale_id_24_2,
                 "userId" => $user_id_14,
-                "product_id" => $product_id_14_2,
+                "productId" => $product_id_14_2,
                 "name" => "USB Kabel",
                 "description" => "USB kabel 2m crni",
                 "category" => "Elektronika",
@@ -1625,37 +1625,37 @@ $documents = [
         "name" => "Ante",
         "lastname" => "Antić",
         "favoriteCategory" => [
-            "category_id" => $category_id_4,
+            "_id" => $category_id_4,
             "category" => "Pića"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_25_1,
+                "_id" => $product_id_25_1,
                 "name" => "Chivas Regal Whiskey",
                 "description" => "WHISKY CHIVAS REGAL ULTIS0.7L KUTIJA ",
                 "category" => "Pića",
                 "price" => "1698.60"
             ],
             [
-                "product_id" => $product_id_25_2,
+                "_id" => $product_id_25_2,
                 "name" => "Domaća loza",
                 "description" => "Domaća loza 43%vol 1L",
                 "category" => "Pića",
                 "price" => "65.00"
             ],
             [
-                "product_id" => $product_id_25_3,
+                "_id" => $product_id_25_3,
                 "name" => "Domaći sok od jabuke",
                 "description" => "Domaći sok od hladno prešane jabuke 1L",
                 "category" => "Pića",
                 "price" => "12.50"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_25_1,
                 "userId" => $user_id_13,
-                "product_id" => $product_id_13_2,
+                "productId" => $product_id_13_2,
                 "name" => "Zobene pahuljice",
                 "description" => "Miješane zobene pahuljice.",
                 "category" => "Hrana",
@@ -1667,7 +1667,7 @@ $documents = [
             [
                 "_id" => $sale_id_25_2,
                 "userId" => $user_id_23,
-                "product_id" => $product_id_23_3,
+                "productId" => $product_id_23_3,
                 "name" => "Domaće crno vino",
                 "description" => "Domaći crni Merlot 1L - Baranja",
                 "category" => "Pića",
@@ -1679,7 +1679,7 @@ $documents = [
             [
                 "_id" => $sale_id_25_3,
                 "userId" => $user_id_1,
-                "product_id" => $product_id_1_1,
+                "productId" => $product_id_1_1,
                 "name" => "iPhone 11 Pro",
                 "description" => "iPhone 11 Pro 64GB Space Grey",
                 "category" => "Elektronika",
@@ -1702,30 +1702,30 @@ $documents = [
         "name" => "Matko",
         "lastname" => "Matković",
         "favoriteCategory" => [
-            "category_id" => $category_id_1,
+            "_id" => $category_id_1,
             "category" => "Elektronika"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_26_1,
+                "_id" => $product_id_26_1,
                 "name" => "Laserworld CS-2000RGB",
                 "description" => "Laserworld CS-2000RGB RGB laserski sistem sa potpunom izlaznom snagom do 2,000mW",
                 "category" => "Elektronika",
                 "price" => "8800.00"
             ],
             [
-                "product_id" => $product_id_26_2,
+                "_id" => $product_id_26_2,
                 "name" => "Električna gitara",
                 "description" => "Ibanez GRX40 BKN električna gitara. Solid body sa javorovim vratom i 22-fret rosewood fingerboardom s umetnutim točkama",
                 "category" => "Elektronika",
                 "price" => "1320.00"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_26_1,
                 "userId" => $user_id_24,
-                "product_id" => $product_id_24_1,
+                "productId" => $product_id_24_1,
                 "name" => "Kurzweil PC3K8 Synthesizer",
                 "description" => "Kurzweil PC3K8 sa 88 klavirskih tipki.  Revolucionarni novi PC3K, Kompatibilan s legendarnom K serijom",
                 "category" => "Elektronika",
@@ -1737,7 +1737,7 @@ $documents = [
             [
                 "_id" => $sale_id_25_2,
                 "userId" => $user_id_1,
-                "product_id" => $product_id_1_2,
+                "productId" => $product_id_1_2,
                 "name" => "Apple Watch 6",
                 "description" => "Apple Watch Series 6 Nikey",
                 "category" => "Elektronika",
@@ -1760,30 +1760,30 @@ $documents = [
         "name" => "Ivica",
         "lastname" => "Vicković",
         "favoriteCategory" => [
-            "category_id" => $category_id_2,
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_27_1,
+                "_id" => $product_id_27_1,
                 "name" => "Proteinski kruh",
                 "description" => "Mestemacher Proteinski kruh 250 g",
                 "category" => "Hrana",
                 "price" => "19.99"
             ],
             [
-                "product_id" => $product_id_27_2,
+                "_id" => $product_id_27_2,
                 "name" => "Burger",
                 "description" => "PIK Američki burger 600 g",
                 "category" => "Hrana",
                 "price" => "24.99"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_26_1,
                 "userId" => $user_id_21,
-                "product_id" => $product_id_21_1,
+                "productId" => $product_id_21_1,
                 "name" => "Pršut narezak",
                 "description" => "Voštane Dalmatiko Pršut narezak 80 g",
                 "category" => "Hrana",
@@ -1795,7 +1795,7 @@ $documents = [
             [
                 "_id" => $sale_id_26_2,
                 "userId" => $user_id_21,
-                "product_id" => $product_id_21_2,
+                "productId" => $product_id_21_2,
                 "name" => "Tilzit sir",
                 "description" => "Tilzit polutvrdi sir narezani 1kg",
                 "category" => "Hrana",
@@ -1807,12 +1807,12 @@ $documents = [
             [
                 "_id" => $sale_id_26_3,
                 "userId" => $user_id_30,
-                "product_id" => $product_id_30_3,
+                "productId" => $product_id_30_3,
                 "name" => "Bagremov med",
                 "description" => "Bagremov med 900g",
                 "category" => "Hrana",
                 "price" => "70.00",
-                "comment" => "Ovaj med je odlican. Preporučujem svima.",
+                "comment" => "Ovaj med je odličan. Preporučujem svima.",
                 "rating" => 5,
                 "quantity" => 6
             ]
@@ -1830,23 +1830,23 @@ $documents = [
         "name" => "Lara",
         "lastname" => "Kokot",
         "favoriteCategory" => [
-            "category_id" => $category_id_3,
+            "_id" => $category_id_3,
             "category" => "Automobili"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_28_1,
+                "_id" => $product_id_28_1,
                 "name" => "Miris za auto",
                 "description" => "Miris za auto - vanillia",
                 "category" => "Automobili",
                 "price" => "5.99"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_28_1,
                 "userId" => $user_id_18,
-                "product_id" => $product_id_18_1,
+                "productId" => $product_id_18_1,
                 "name" => "VW Golf 7",
                 "description" => "Volkswagen Golf MK 7 2.0 TDI",
                 "category" => "Automobili",
@@ -1869,17 +1869,17 @@ $documents = [
         "name" => "Maksimilijan",
         "lastname" => "Maksimović",
         "favoriteCategory" => [
-            "category_id" => $category_id_3,
+            "_id" => $category_id_3,
             "category" => "Automobili"
         ],
-        "products" => [
+        "productArray" => [
             []
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_29_1,
                 "userId" => $user_id_9,
-                "product_id" => $product_id_9_1,
+                "productId" => $product_id_9_1,
                 "name" => "Michelin Primacy 4 XL",
                 "description" => "Gume Michelin Primacy 4 XL, 2020 NOVO 205/55/17",
                 "category" => "Automobili",
@@ -1891,7 +1891,7 @@ $documents = [
             [
                 "_id" => $sale_id_29_2,
                 "userId" => $user_id_22,
-                "product_id" => $product_id_22_1,
+                "productId" => $product_id_22_1,
                 "name" => "Citroën C5",
                 "description" => "Citroën C5 Aircross FEEL 1.5BlueHDI 130KS EAT8",
                 "category" => "Automobili",
@@ -1914,37 +1914,37 @@ $documents = [
         "name" => "Erina",
         "lastname" => "Ernić",
         "favoriteCategory" => [
-            "category_id" => $category_id_4,
+            "_id" => $category_id_4,
             "category" => "Pića"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_30_1,
+                "_id" => $product_id_30_1,
                 "name" => "Sok od kadulje",
                 "description" => "Domaći sok od cvijeta kadulje 1L.",
                 "category" => "Pića",
                 "price" => "20.99"
             ],
             [
-                "product_id" => $product_id_30_2,
+                "_id" => $product_id_30_2,
                 "name" => "Liker od višnje",
                 "description" => "Domaći liker od višnje maraske 1L.",
                 "category" => "Pića",
                 "price" => "45.00"
             ],
             [
-                "product_id" => $product_id_30_3,
+                "_id" => $product_id_30_3,
                 "name" => "Bagremov med",
                 "description" => "Bagremov med 900g",
                 "category" => "Hrana",
                 "price" => "70.00"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
                 "_id" => $sale_id_30_1,
                 "userId" => $user_id_20,
-                "product_id" => $product_id_20_2,
+                "productId" => $product_id_20_2,
                 "name" => "Pirovo integralno brašno",
                 "description" => "Farina Pirovo integralno brašno 1000 g",
                 "category" => "Hrana",
@@ -1956,7 +1956,7 @@ $documents = [
             [
                 "_id" => $sale_id_30_2,
                 "userId" => $user_id_25,
-                "product_id" => $product_id_25_3,
+                "productId" => $product_id_25_3,
                 "name" => "Domaći sok od jabuke",
                 "description" => "Domaći sok od hladno prešane jabuke 1L",
                 "category" => "Pića",
