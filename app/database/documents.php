@@ -15,151 +15,269 @@ $user_id_1 = new MongoDB\BSON\ObjectId;
 $product_id_1_1 = new MongoDB\BSON\ObjectId;
 $product_id_1_2 = new MongoDB\BSON\ObjectId;
 $product_id_1_3 = new MongoDB\BSON\ObjectId;
+$sale_id_1_1 = new MongoDB\BSON\ObjectId;
+$sale_id_1_2 = new MongoDB\BSON\ObjectId;
+$sale_id_1_3 = new MongoDB\BSON\ObjectId;
 
 $user_id_2 = new MongoDB\BSON\ObjectId;
 $product_id_2_1 = new MongoDB\BSON\ObjectId;
 $product_id_2_2 = new MongoDB\BSON\ObjectId;
 $product_id_2_3 = new MongoDB\BSON\ObjectId;
+$sale_id_2_1 = new MongoDB\BSON\ObjectId;
+$sale_id_2_2 = new MongoDB\BSON\ObjectId;
+$sale_id_2_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_3 = new MongoDB\BSON\ObjectId;
 $product_id_3_1 = new MongoDB\BSON\ObjectId;
 $product_id_3_2 = new MongoDB\BSON\ObjectId;
 $product_id_3_3 = new MongoDB\BSON\ObjectId;
+$sale_id_3_1 = new MongoDB\BSON\ObjectId;
+$sale_id_3_2 = new MongoDB\BSON\ObjectId;
+$sale_id_3_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_4 = new MongoDB\BSON\ObjectId;
 $product_id_4_1 = new MongoDB\BSON\ObjectId;
 $product_id_4_2 = new MongoDB\BSON\ObjectId;
 $product_id_4_3 = new MongoDB\BSON\ObjectId;
+$sale_id_4_1 = new MongoDB\BSON\ObjectId;
+$sale_id_4_2 = new MongoDB\BSON\ObjectId;
+$sale_id_4_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_5 = new MongoDB\BSON\ObjectId;
 $product_id_5_1 = new MongoDB\BSON\ObjectId;
 $product_id_5_2 = new MongoDB\BSON\ObjectId;
 $product_id_5_3 = new MongoDB\BSON\ObjectId;
+$sale_id_5_1 = new MongoDB\BSON\ObjectId;
+$sale_id_5_2 = new MongoDB\BSON\ObjectId;
+$sale_id_5_3 = new MongoDB\BSON\ObjectId;
 
 $user_id_6 = new MongoDB\BSON\ObjectId;
 $product_id_6_1 = new MongoDB\BSON\ObjectId;
 $product_id_6_2 = new MongoDB\BSON\ObjectId;
 $product_id_6_3 = new MongoDB\BSON\ObjectId;
+$sale_id_6_1 = new MongoDB\BSON\ObjectId;
+$sale_id_6_2 = new MongoDB\BSON\ObjectId;
+$sale_id_6_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_7 = new MongoDB\BSON\ObjectId;
 $product_id_7_1 = new MongoDB\BSON\ObjectId;
 $product_id_7_2 = new MongoDB\BSON\ObjectId;
 $product_id_7_3 = new MongoDB\BSON\ObjectId;
+$sale_id_7_1 = new MongoDB\BSON\ObjectId;
+$sale_id_7_2 = new MongoDB\BSON\ObjectId;
+$sale_id_7_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_8 = new MongoDB\BSON\ObjectId;
 $product_id_8_1 = new MongoDB\BSON\ObjectId;
 $product_id_8_2 = new MongoDB\BSON\ObjectId;
 $product_id_8_3 = new MongoDB\BSON\ObjectId;
+$sale_id_8_1 = new MongoDB\BSON\ObjectId;
+$sale_id_8_2 = new MongoDB\BSON\ObjectId;
+$sale_id_8_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_9 = new MongoDB\BSON\ObjectId;
 $product_id_9_1 = new MongoDB\BSON\ObjectId;
 $product_id_9_2 = new MongoDB\BSON\ObjectId;
 $product_id_9_3 = new MongoDB\BSON\ObjectId;
+$sale_id_9_1 = new MongoDB\BSON\ObjectId;
+$sale_id_9_2 = new MongoDB\BSON\ObjectId;
+$sale_id_9_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_10 = new MongoDB\BSON\ObjectId;
 $product_id_10_1 = new MongoDB\BSON\ObjectId;
 $product_id_10_2 = new MongoDB\BSON\ObjectId;
 $product_id_10_3 = new MongoDB\BSON\ObjectId;
+$sale_id_10_1 = new MongoDB\BSON\ObjectId;
+$sale_id_10_2 = new MongoDB\BSON\ObjectId;
+$sale_id_10_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_11 = new MongoDB\BSON\ObjectId;
 $product_id_11_1 = new MongoDB\BSON\ObjectId;
 $product_id_11_2 = new MongoDB\BSON\ObjectId;
 $product_id_11_3 = new MongoDB\BSON\ObjectId;
+$sale_id_11_1 = new MongoDB\BSON\ObjectId;
+$sale_id_11_2 = new MongoDB\BSON\ObjectId;
+$sale_id_11_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_12 = new MongoDB\BSON\ObjectId;
 $product_id_12_1 = new MongoDB\BSON\ObjectId;
 $product_id_12_2 = new MongoDB\BSON\ObjectId;
 $product_id_12_3 = new MongoDB\BSON\ObjectId;
+$sale_id_12_1 = new MongoDB\BSON\ObjectId;
+$sale_id_12_2 = new MongoDB\BSON\ObjectId;
+$sale_id_12_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_13 = new MongoDB\BSON\ObjectId;
 $product_id_13_1 = new MongoDB\BSON\ObjectId;
 $product_id_13_2 = new MongoDB\BSON\ObjectId;
 $product_id_13_3 = new MongoDB\BSON\ObjectId;
+$sale_id_13_1 = new MongoDB\BSON\ObjectId;
+$sale_id_13_2 = new MongoDB\BSON\ObjectId;
+$sale_id_13_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_14 = new MongoDB\BSON\ObjectId;
 $product_id_14_1 = new MongoDB\BSON\ObjectId;
 $product_id_14_2 = new MongoDB\BSON\ObjectId;
 $product_id_14_3 = new MongoDB\BSON\ObjectId;
+$sale_id_14_1 = new MongoDB\BSON\ObjectId;
+$sale_id_14_2 = new MongoDB\BSON\ObjectId;
+$sale_id_14_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_15 = new MongoDB\BSON\ObjectId;
 $product_id_15_1 = new MongoDB\BSON\ObjectId;
 $product_id_15_2 = new MongoDB\BSON\ObjectId;
 $product_id_15_3 = new MongoDB\BSON\ObjectId;
+$sale_id_15_1 = new MongoDB\BSON\ObjectId;
+$sale_id_15_2 = new MongoDB\BSON\ObjectId;
+$sale_id_15_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_16 = new MongoDB\BSON\ObjectId;
 $product_id_16_1 = new MongoDB\BSON\ObjectId;
 $product_id_16_2 = new MongoDB\BSON\ObjectId;
 $product_id_16_3 = new MongoDB\BSON\ObjectId;
+$sale_id_16_1 = new MongoDB\BSON\ObjectId;
+$sale_id_16_2 = new MongoDB\BSON\ObjectId;
+$sale_id_16_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_17 = new MongoDB\BSON\ObjectId;
 $product_id_17_1 = new MongoDB\BSON\ObjectId;
 $product_id_17_2 = new MongoDB\BSON\ObjectId;
 $product_id_17_3 = new MongoDB\BSON\ObjectId;
+$sale_id_17_1 = new MongoDB\BSON\ObjectId;
+$sale_id_17_2 = new MongoDB\BSON\ObjectId;
+$sale_id_17_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_18 = new MongoDB\BSON\ObjectId;
 $product_id_18_1 = new MongoDB\BSON\ObjectId;
 $product_id_18_2 = new MongoDB\BSON\ObjectId;
 $product_id_18_3 = new MongoDB\BSON\ObjectId;
+$sale_id_18_1 = new MongoDB\BSON\ObjectId;
+$sale_id_18_2 = new MongoDB\BSON\ObjectId;
+$sale_id_18_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_19 = new MongoDB\BSON\ObjectId;
 $product_id_19_1 = new MongoDB\BSON\ObjectId;
 $product_id_19_2 = new MongoDB\BSON\ObjectId;
 $product_id_19_3 = new MongoDB\BSON\ObjectId;
+$sale_id_19_1 = new MongoDB\BSON\ObjectId;
+$sale_id_19_2 = new MongoDB\BSON\ObjectId;
+$sale_id_19_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_20 = new MongoDB\BSON\ObjectId;
 $product_id_20_1 = new MongoDB\BSON\ObjectId;
 $product_id_20_2 = new MongoDB\BSON\ObjectId;
 $product_id_20_3 = new MongoDB\BSON\ObjectId;
+$sale_id_20_1 = new MongoDB\BSON\ObjectId;
+$sale_id_20_2 = new MongoDB\BSON\ObjectId;
+$sale_id_20_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_21 = new MongoDB\BSON\ObjectId;
 $product_id_21_1 = new MongoDB\BSON\ObjectId;
 $product_id_21_2 = new MongoDB\BSON\ObjectId;
 $product_id_21_3 = new MongoDB\BSON\ObjectId;
+$sale_id_21_1 = new MongoDB\BSON\ObjectId;
+$sale_id_21_2 = new MongoDB\BSON\ObjectId;
+$sale_id_21_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_22 = new MongoDB\BSON\ObjectId;
 $product_id_22_1 = new MongoDB\BSON\ObjectId;
 $product_id_22_2 = new MongoDB\BSON\ObjectId;
 $product_id_22_3 = new MongoDB\BSON\ObjectId;
+$sale_id_22_1 = new MongoDB\BSON\ObjectId;
+$sale_id_22_2 = new MongoDB\BSON\ObjectId;
+$sale_id_22_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_23 = new MongoDB\BSON\ObjectId;
 $product_id_23_1 = new MongoDB\BSON\ObjectId;
 $product_id_23_2 = new MongoDB\BSON\ObjectId;
 $product_id_23_3 = new MongoDB\BSON\ObjectId;
+$sale_id_23_1 = new MongoDB\BSON\ObjectId;
+$sale_id_23_2 = new MongoDB\BSON\ObjectId;
+$sale_id_23_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_24 = new MongoDB\BSON\ObjectId;
 $product_id_24_1 = new MongoDB\BSON\ObjectId;
 $product_id_24_2 = new MongoDB\BSON\ObjectId;
 $product_id_24_3 = new MongoDB\BSON\ObjectId;
+$sale_id_24_1 = new MongoDB\BSON\ObjectId;
+$sale_id_24_2 = new MongoDB\BSON\ObjectId;
+$sale_id_24_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_25 = new MongoDB\BSON\ObjectId;
 $product_id_25_1 = new MongoDB\BSON\ObjectId;
 $product_id_25_2 = new MongoDB\BSON\ObjectId;
 $product_id_25_3 = new MongoDB\BSON\ObjectId;
+$sale_id_25_1 = new MongoDB\BSON\ObjectId;
+$sale_id_25_2 = new MongoDB\BSON\ObjectId;
+$sale_id_25_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_26 = new MongoDB\BSON\ObjectId;
 $product_id_26_1 = new MongoDB\BSON\ObjectId;
 $product_id_26_2 = new MongoDB\BSON\ObjectId;
 $product_id_26_3 = new MongoDB\BSON\ObjectId;
+$sale_id_26_1 = new MongoDB\BSON\ObjectId;
+$sale_id_26_2 = new MongoDB\BSON\ObjectId;
+$sale_id_26_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_27 = new MongoDB\BSON\ObjectId;
 $product_id_27_1 = new MongoDB\BSON\ObjectId;
 $product_id_27_2 = new MongoDB\BSON\ObjectId;
 $product_id_27_3 = new MongoDB\BSON\ObjectId;
+$sale_id_27_1 = new MongoDB\BSON\ObjectId;
+$sale_id_27_2 = new MongoDB\BSON\ObjectId;
+$sale_id_27_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_28 = new MongoDB\BSON\ObjectId;
 $product_id_28_1 = new MongoDB\BSON\ObjectId;
 $product_id_28_2 = new MongoDB\BSON\ObjectId;
 $product_id_28_3 = new MongoDB\BSON\ObjectId;
+$sale_id_28_1 = new MongoDB\BSON\ObjectId;
+$sale_id_28_2 = new MongoDB\BSON\ObjectId;
+$sale_id_28_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_29 = new MongoDB\BSON\ObjectId;
 $product_id_29_1 = new MongoDB\BSON\ObjectId;
 $product_id_29_2 = new MongoDB\BSON\ObjectId;
 $product_id_29_3 = new MongoDB\BSON\ObjectId;
+$sale_id_29_1 = new MongoDB\BSON\ObjectId;
+$sale_id_29_2 = new MongoDB\BSON\ObjectId;
+$sale_id_29_3 = new MongoDB\BSON\ObjectId;
+
 
 $user_id_30 = new MongoDB\BSON\ObjectId;
 $product_id_30_1 = new MongoDB\BSON\ObjectId;
 $product_id_30_2 = new MongoDB\BSON\ObjectId;
 $product_id_30_3 = new MongoDB\BSON\ObjectId;
+$sale_id_30_1 = new MongoDB\BSON\ObjectId;
+$sale_id_30_2 = new MongoDB\BSON\ObjectId;
+$sale_id_30_3 = new MongoDB\BSON\ObjectId;
+
 
 
 $documents = [
@@ -203,7 +321,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_1_1,
                 "user_id" => $user_id_3,                         // user 3 mora imati ovaj prduct
                 "product_id" => $product_id_3_2,
                 "name" => "Posip vino",
@@ -256,7 +374,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_2_1,
                 "user_id" => $user_id_1,
                 "product_id" => $product_id_1_1,
                 "name" => "iPhone 11 Pro",
@@ -268,7 +386,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_2_2,
                 "user_id" => $user_id_3,
                 "product_id" => $product_id_3_1,
                 "name" => "Istarski prsut",
@@ -321,7 +439,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_3_1,
                 "user_id" => $user_id_4,
                 "product_id" => $product_id_4_2,
                 "name" => "Ford Mondeo",
@@ -374,7 +492,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_4_1,
                 "user_id" => $user_id_3,
                 "product_id" => $product_id_3_2,
                 "name" => "Posip vino",
@@ -386,7 +504,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_4_2,
                 "user_id" => $user_id_5,
                 "product_id" => $product_id_5_1,
                 "name" => "Jack Daniels",
@@ -432,7 +550,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_5_1,
                 "user_id" => $user_id_3,
                 "product_id" => $product_id_3_1,
                 "name" => "Istarski prsut",
@@ -444,7 +562,7 @@ $documents = [
                 "quantity" => 5
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_5_2,
                 "user_id" => $user_id_8,
                 "product_id" => $product_id_8_1,
                 "name" => "Paski sir",
@@ -497,7 +615,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_6_1,
                 "user_id" => $user_id_3,
                 "product_id" => $product_id_3_2,
                 "name" => "BMW 4 Gran Coupe",
@@ -509,7 +627,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_6_2,
                 "user_id" => $user_id_1,
                 "product_id" => $product_id_1_2,
                 "name" => "Apple Watch 6",
@@ -540,7 +658,7 @@ $documents = [
         "products" => [[]],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_7_1,
                 "user_id" => $user_id_6,
                 "product_id" => $product_id_6_1,
                 "name" => "Apple Adapter",
@@ -552,7 +670,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_7_2,
                 "user_id" => $user_id_1,
                 "product_id" => $product_id_1_2,
                 "name" => "Apple Watch 6",
@@ -638,7 +756,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_9_1,
                 "user_id" => $user_id_6,
                 "product_id" => $product_id_6_3,
                 "name" => "Dunlop gume",
@@ -650,7 +768,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_9_2,
                 "user_id" => $user_id_4,
                 "product_id" => $product_id_4_2,
                 "name" => "Ford Mondeo",
@@ -696,7 +814,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_10_1,
                 "user_id" => $user_id_8,
                 "product_id" => $product_id_8_2,
                 "name" => "Kukuruzno brasno",
@@ -708,7 +826,7 @@ $documents = [
                 "quantity" => 7
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_10_2,
                 "user_id" => $user_id_2,
                 "product_id" => $product_id_2_1,
                 "name" => "Svinjski vrat",
@@ -754,7 +872,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_11_1,
                 "user_id" => $user_id_14,
                 "product_id" => $product_id_14_2,
                 "name" => "USB Kabel",
@@ -766,7 +884,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_11_2,
                 "user_id" => $user_id_1,
                 "product_id" => $product_id_1_2,
                 "name" => "Apple Watch 6",
@@ -819,7 +937,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_12_1,
                 "user_id" => $user_id_6,
                 "product_id" => $product_id_6_3,
                 "name" => "Dunlop gume",
@@ -865,7 +983,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_13_1,
                 "user_id" => $user_id_14,
                 "product_id" => $product_id_14_1,
                 "name" => "Mobitel Samsung A52",
@@ -877,7 +995,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_13_2,
                 "user_id" => $user_id_10,
                 "product_id" => $product_id_10_1,
                 "name" => "Batat",
@@ -923,7 +1041,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_14_1,
                 "user_id" => $user_id_9,
                 "product_id" => $product_id_9_2,
                 "name" => "Beko perilica",
@@ -962,7 +1080,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_15_1,
                 "user_id" => $user_id_13,
                 "product_id" => $product_id_13_1,
                 "name" => "Rotkvice",
@@ -1008,7 +1126,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_16_1,
                 "user_id" => $user_id_4,
                 "product_id" => $product_id_4_1,
                 "name" => "ABSINTHE BOHEME",
@@ -1020,7 +1138,7 @@ $documents = [
                 "quantity" => 2
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_16_2,
                 "user_id" => $user_id_11,
                 "product_id" => $product_id_11_1,
                 "name" => "Laptop HP 430",
@@ -1053,7 +1171,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_17_1,
                 "user_id" => $user_id_4,
                 "product_id" => $product_id_4_1,
                 "name" => "ABSINTHE BOHEME",
@@ -1065,7 +1183,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_17_2,
                 "user_id" => $user_id_15,
                 "product_id" => $product_id_15_1,
                 "name" => "Avokado",
@@ -1104,7 +1222,7 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => 1,
+                "sale_id" => $sale_id_18_1,
                 "user_id" => $user_id_12,
                 "product_id" => $product_id_12_1,
                 "name" => "Ford Mustang Shellby",
@@ -1116,7 +1234,7 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => 2,
+                "sale_id" => $sale_id_18_2,
                 "user_id" => $user_id_12,
                 "product_id" => $product_id_12_3,
                 "name" => "Dell Laptop e7240",
