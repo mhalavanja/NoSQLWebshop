@@ -25,7 +25,11 @@ class loginController extends BaseController
     {
         $username = $_POST["username"];
         $password = $_POST["password"];
-        $user = UserService::getUserByUsername ( $username);
+        $user = UserService::getUserByUsername($username);
+//        echo '<pre>';
+//        var_dump($user);
+//        echo '</pre>';
+//        echo '<br>';
         if (!$user) {
             $this->registry->template->loginError = true;
             $this->registry->template->show("login");
@@ -71,8 +75,8 @@ class loginController extends BaseController
             $user->setregistrationSequence($sequence);
             User::save($user);
             $subject = "Registration for ebuy";
-            $body = "Click on the followinng" . $link . " to finish your registration for ebuy!" ;
-            $header = "Reply-To: ". $email . "\r\n";
+            $body = "Click on the followinng" . $link . " to finish your registration for ebuy!";
+            $header = "Reply-To: " . $email . "\r\n";
             if (mail($email, $subject, $body, $header)) {
                 echo "Check your mail to finish a registration :)";
                 return;

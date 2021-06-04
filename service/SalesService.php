@@ -1,13 +1,12 @@
 <?php
 
+use MongoDB\Driver\Query;
+
+require_once __SITE_PATH . '/app/database/mongodb.class.php';
+
 
 class SalesService
 {
-    //    static function getSales($reviewId)
-    //    {
-    //
-    //    }
-
     static function getSalesForProduct($productId)
     {
         $m = mongoDB::getConnection();
@@ -23,14 +22,18 @@ class SalesService
                 ]
             ]
         ];
-        $query = new \MongoDB\Driver\Query($filter, $options);
-        $rows   = $m->executeQuery('projekt.users', $query);
+        $query = new Query($filter, $options);
+        $rows = $m->executeQuery('projekt.users', $query);
+        $sales = [];
         foreach ($rows as $document) {
             $document = json_decode(json_encode($document), true);
-            echo '<pre>';
-            print_r($document);
-            echo '</pre>';
-            echo '<br>';
+//            echo '<pre>';
+//            print_r($document);
+//            echo '</pre>';
+//            echo '<br>';
+            $sale = mongoToClass($document, new Sale());
+            $sales[] = $sale;
         }
+        return $sales;
     }
 }

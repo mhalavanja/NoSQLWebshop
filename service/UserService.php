@@ -27,10 +27,10 @@ class UserService
         foreach ($rows as $row) {
             $document = json_decode(json_encode($row), true);
             $user = mongoToClass($document, new User());
-            echo '<pre>';
-            print_r($document);
-            echo '</pre>';
-            echo '<br>';
+//            echo '<pre>';
+//            print_r($document);
+//            echo '</pre>';
+//            echo '<br>';
         }
         return $user;
     }
