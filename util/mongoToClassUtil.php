@@ -27,12 +27,12 @@ function mongoToClass($document, $obj)
             foreach ($val as $inner) {
                 $innerObjectArray[] = mongoToClass($inner, $innerObj);
             }
-            echo '<pre>';
-            print_r($val);
-            print_r($innerObjectArray);
-            echo '</pre>';
-            echo '<br>';
-            return;
+//            echo '<pre>';
+//            print_r($val);
+//            print_r($innerObjectArray);
+//            echo '</pre>';
+//            echo '<br>';
+//            return;
             $obj->$setProperty($innerObjectArray);
         }
         else {
