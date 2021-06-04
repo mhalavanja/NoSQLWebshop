@@ -33,7 +33,7 @@ require_once __SITE_PATH . '/util/drawStarsUtil.php'; ?>
             '<td>' . $starProduct->getProduct()->getDescription() . '</td>' .
             '<td>' . $starProduct->getProduct()->getPrice() . '</td>' .
             '<td>' . getStars($avgRating, true) . '</td>' .
-            '<td><button class="btn btn-outline-primary" type="submit" name="product_id" value="product_' .
+            '<td><button class="btn btn-outline-primary" type="submit" name="productId" value="product_' .
             $starProduct->getProduct()->getId() . '">Details</button></td>' .
             '</tr></tbody>';
     }

@@ -44,10 +44,10 @@ function create_table_users()
             'CREATE TABLE IF NOT EXISTS dz2_users (' .
             'id int NOT NULL PRIMARY KEY AUTO_INCREMENT,' .
             'username varchar(50) NOT NULL,' .
-            'password_hash varchar(255) NOT NULL,'.
+            'passwordHash varchar(255) NOT NULL,'.
             'email varchar(50) NOT NULL,' .
-            'registration_sequence varchar(20) NOT NULL,' .
-            'has_registered int)'
+            'registrationSequence varchar(20) NOT NULL,' .
+            'hasRegistered int)'
         );
 
         $st->execute();

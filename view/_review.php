@@ -15,7 +15,7 @@
         <div>
             <input type="text" id="comment" name="comment" placeholder="Enter your comment here">
         </div>
-        <input type="hidden" name="product_id" value="<?php if(isset($product)) echo $product->getId(); ?>">
+        <input type="hidden" name="productId" value="<?php if(isset($product)) echo $product->getId(); ?>">
         <input type="hidden" name="saleId" value="<?php if(isset($saleId)) echo $saleId; ?>">
         <br>
         <button class="btn btn-primary" type="submit">Submit!</button>

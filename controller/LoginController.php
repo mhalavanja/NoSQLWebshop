@@ -1,6 +1,6 @@
 <?php
 
-//require_once(__SITE_PATH . "/model/User.php");
+require_once(__SITE_PATH . "/service/UserService.php");
 
 class loginController extends BaseController
 {
@@ -25,17 +25,16 @@ class loginController extends BaseController
     {
         $username = $_POST["username"];
         $password = $_POST["password"];
-        $user = User::where("username", $username);
-        if ($user) $user = $user[0];
-        else {
+        $user = UserService::getUserByUsername ( $username);
+        if (!$user) {
             $this->registry->template->loginError = true;
             $this->registry->template->show("login");
             return;
         }
-        if (!password_verify($password, $user->getPassword_hash())) {
+        if (!password_verify($password, $user->getpasswordHash())) {
             $this->registry->template->loginError = true;
             $this->registry->template->show("login");
-        } elseif (!$user->getHas_registered()) {
+        } elseif (!$user->gethasRegistered()) {
             $this->registry->template->hasRegistered = false;
             $this->registry->template->show("login");
         } else {
@@ -63,13 +62,13 @@ class loginController extends BaseController
             $user = new User();
             $user->setUsername($username);
             $user->setEmail($email);
-            $user->setPassword_hash(password_hash($password, PASSWORD_DEFAULT));
+            $user->setpasswordHash(passwordHash($password, PASSWORD_DEFAULT));
             $link = '<a href = "' . $_SERVER["HTTP_HOST"] . __SITE_URL . "/index.php?rt=login/finishRegistration&sequence=";
             $sequence = "";
 
             for ($i = 0; $i < random_int(10, 20); $i++) $sequence .= chr(random_int(97, 122));
             $link .= $sequence . '">link</a>';
-            $user->setRegistration_sequence($sequence);
+            $user->setregistrationSequence($sequence);
             User::save($user);
             $subject = "Registration for ebuy";
             $body = "Click on the followinng" . $link . " to finish your registration for ebuy!" ;
@@ -85,9 +84,9 @@ class loginController extends BaseController
     {
         $sequence = $_GET["sequence"] ?? null;
         echo $sequence;
-        $user = User::where("registration_sequence", $sequence);
+        $user = User::where("registrationSequence", $sequence);
         if ($user) $user = $user[0];
-        $user->setHas_registered(true);
+        $user->sethasRegistered(true);
         User::save($user);
         $_SESSION["user"] = $user;
         header('Location: ' . __SITE_URL . '/index.php');

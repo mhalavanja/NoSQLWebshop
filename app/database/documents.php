@@ -279,54 +279,70 @@ $sale_id_30_2 = new MongoDB\BSON\ObjectId;
 $sale_id_30_3 = new MongoDB\BSON\ObjectId;
 
 
+$category_id_1 = new MongoDB\BSON\ObjectId;
+$category_id_2 = new MongoDB\BSON\ObjectId;
+$category_id_3 = new MongoDB\BSON\ObjectId;
+$category_id_4 = new MongoDB\BSON\ObjectId;
+$category_id_5 = new MongoDB\BSON\ObjectId;
+$category_id_6 = new MongoDB\BSON\ObjectId;
+$category_id_7 = new MongoDB\BSON\ObjectId;
+$category_id_8 = new MongoDB\BSON\ObjectId;
+$category_id_9 = new MongoDB\BSON\ObjectId;
+$category_id_10 = new MongoDB\BSON\ObjectId;
+$category_id_11 = new MongoDB\BSON\ObjectId;
+$category_id_12 = new MongoDB\BSON\ObjectId;
+$category_id_13 = new MongoDB\BSON\ObjectId;
+$category_id_14 = new MongoDB\BSON\ObjectId;
+
+
 
 $documents = [
     // USER 1
     [
         "_id" => $user_id_1,
         "username" => "mirko123",
-        "password_hash" => password_hash("mirkovasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("mirkovasifra", PASSWORD_DEFAULT),
         "email" => "mirko123@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Mirko",
-        "lastname" => "Mirković",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Mirkovic",
+        "favoriteCategory" => [
+            "_id" => $category_id_1,
             "category" => "Elektronika"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_1_1,
+                "_id" => $product_id_1_1,
                 "name" => "iPhone 11 Pro",
                 "description" => "iPhone 11 Pro 64GB Space Grey",
                 "category" => "Elektronika",
                 "price" => "7399"
             ],
             [
-                "product_id" => $product_id_1_2,
+                "_id" => $product_id_1_2,
                 "name" => "Apple Watch 6",
                 "description" => "Apple Watch Series 6 Nikey",
                 "category" => "Elektronika",
                 "price" => "3499"
             ],
             [
-                "product_id" => $product_id_1_3,
+                "_id" => $product_id_1_3,
                 "name" => "NeoFrost hladnjak",
                 "description" => "Kombinirani hladnjak NeoFrost Dual Cooling",
                 "category" => "Elektronika",
                 "price" => "3199"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_1_1,
-                "user_id" => $user_id_3,                         // user 3 mora imati ovaj prduct
-                "product_id" => $product_id_3_2,
-                "name" => "Pošip vino",
-                "description" => "Vrhunsko bijelo vino Pošip",
-                "category" => "Pića",
+                "_id" => $sale_id_1_1,
+                "userId" => $user_id_3,                         // user 3 mora imati ovaj prduct
+                "productId" => $product_id_3_2,
+                "name" => "Posip vino",
+                "description" => "Vrhunsko bijelo vino Posip",
+                "category" => "Pice",
                 "price" => "14.99",
                 "rating" => 4,
                 "comment" => "Awesome. I would recommend this wine to anyone.",
@@ -338,45 +354,45 @@ $documents = [
     [
         "_id" => $user_id_2,
         "username" => "ana",
-        "password_hash" => password_hash("aninasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("aninasifra", PASSWORD_DEFAULT),
         "email" => "ana@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Ana",
-        "lastname" => "Anić",
-        "favorite_categories" => [
-            "category_id" => 3,
+        "lastname" => "Anic",
+        "favoriteCategory" => [
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_2_1,
+                "_id" => $product_id_2_1,
                 "name" => "Svinjski vrat",
                 "description" => "PIK Svinjski vrat s kostima odrezak 640 g",
                 "category" => "Hrana",
                 "price" => "19.99"
             ],
             [
-                "product_id" => $product_id_2_2,
+                "_id" => $product_id_2_2,
                 "name" => "Luk mladi",
                 "description" => "Luk mladi vezica",
                 "category" => "Hrana",
                 "price" => "5.99"
             ],
             [
-                "product_id" => $product_id_2_3,
+                "_id" => $product_id_2_3,
                 "name" => "Smart fortwo cdi",
                 "description" => "SMART FOR TWO, DIESEL, PASSION OPREMA, SERVISNA KNJIGA",
                 "category" => "Automobili",
                 "price" => "36354"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_2_1,
-                "user_id" => $user_id_1,
-                "product_id" => $product_id_1_1,
+                "_id" => $sale_id_2_1,
+                "userId" => $user_id_1,
+                "productId" => $product_id_1_1,
                 "name" => "iPhone 11 Pro",
                 "description" => "iPhone 11 Pro 64GB Space Grey",
                 "category" => "Elektronika",
@@ -386,11 +402,11 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_2_2,
-                "user_id" => $user_id_3,
-                "product_id" => $product_id_3_1,
-                "name" => "Istarski pršut",
-                "description" => "Istarski sušeni pršut u komadu",
+                "_id" => $sale_id_2_2,
+                "userId" => $user_id_3,
+                "productId" => $product_id_3_1,
+                "name" => "Istarski prsut",
+                "description" => "Istarski suseni prsut u komadu",
                 "category" => "Hrana",
                 "price" => "170",
                 "comment" => "Topla preporuka.",
@@ -403,45 +419,45 @@ $documents = [
     [
         "_id" => $user_id_3,
         "username" => "toni",
-        "password_hash" => password_hash("tonijevasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("tonijevasifra", PASSWORD_DEFAULT),
         "email" => "toni@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Toni",
-        "lastname" => "Tomić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Tomic",
+        "favoriteCategory" => [
+            "_id" => $category_id_3,
             "category" => "Automobili"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_3_1,
-                "name" => "Istarski pršut",
-                "description" => "Istarski sušeni pršut u komadu",
+                "_id" => $product_id_3_1,
+                "name" => "Istarski prsut",
+                "description" => "Istarski suseni prsut u komadu",
                 "category" => "Hrana",
                 "price" => "170"
             ],
             [
-                "product_id" => $product_id_3_2,
+                "_id" => $product_id_3_2,
                 "name" => "BMW 4 Gran Coupe",
                 "description" => "BMW serija 4 Gran Coupe 418d Sport automatik,FULL,JAMSTVO 12MJESECI..",
                 "category" => "Automobili",
                 "price" => "170407"
             ],
             [
-                "product_id" => $product_id_3_3,
-                "name" => "Pošip vino",
-                "description" => "Vrhunsko bijelo vino Pošip",
-                "category" => "Pića",
+                "_id" => $product_id_3_3,
+                "name" => "Posip vino",
+                "description" => "Vrhunsko bijelo vino Posip",
+                "category" => "Pice",
                 "price" => "14.99"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_3_1,
-                "user_id" => $user_id_4,
-                "product_id" => $product_id_4_2,
+                "_id" => $sale_id_3_1,
+                "userId" => $user_id_4,
+                "productId" => $product_id_4_2,
                 "name" => "Ford Mondeo",
                 "description" => "Ford Mondeo 1.5 TDCi Econetic Trend 2015",
                 "category" => "Automobili",
@@ -456,57 +472,57 @@ $documents = [
     [
         "_id" => $user_id_4,
         "username" => "maja",
-        "password_hash" => password_hash("majinasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("majinasifra", PASSWORD_DEFAULT),
         "email" => "maja@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Maja",
-        "lastname" => "Majić",
-        "favorite_categories" => [
-            "category_id" => 1,
-            "category" => "Pića"
+        "lastname" => "Majic",
+        "favoriteCategory" => [
+            "_id" => $category_id_4,
+            "category" => "Pice"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_4_1,
+                "_id" => $product_id_4_1,
                 "name" => "ABSINTHE BOHEME",
                 "description" => "ABSINTHE BOHEME BLUE RODNIK`S 0,7L -6/1- 70% ",
                 "category" => "Pića",
                 "price" => "99.90"
             ],
             [
-                "product_id" => $product_id_4_2,
+                "_id" => $product_id_4_2,
                 "name" => "Ford Mondeo",
                 "description" => "Ford Mondeo 1.5 TDCi Econetic Trend 2015",
                 "category" => "Automobili",
                 "price" => "92000"
             ],
             [
-                "product_id" => $product_id_4_3,
-                "name" => "Pošip vino",
-                "description" => "Vrhunsko bijelo vino Pošip - Pelješac",
-                "category" => "Pića",
+                "_id" => $product_id_4_3,
+                "name" => "Posip vino",
+                "description" => "Vrhunsko bijelo vino Posip - Peljesac",
+                "category" => "Pice",
                 "price" => "17.99",
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_4_1,
-                "user_id" => $user_id_3,
-                "product_id" => $product_id_3_2,
-                "name" => "Pošip vino",
-                "description" => "Vrhunsko bijelo vino Pošip",
-                "category" => "Pića",
+                "_id" => $sale_id_4_1,
+                "userId" => $user_id_3,
+                "productId" => $product_id_3_2,
+                "name" => "Posip vino",
+                "description" => "Vrhunsko bijelo vino Posip",
+                "category" => "Pice",
                 "price" => "14.99",
                 "comment" => "Super.",
                 "rating" => 5,
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_4_2,
-                "user_id" => $user_id_5,
-                "product_id" => $product_id_5_1,
+                "_id" => $sale_id_4_2,
+                "userId" => $user_id_5,
+                "productId" => $product_id_5_1,
                 "name" => "Jack Daniels",
                 "description" => "Jack Daniels 0,7L",
                 "category" => "Pića",
@@ -521,40 +537,40 @@ $documents = [
     [
         "_id" => $user_id_5,
         "username" => "pero",
-        "password_hash" => password_hash("perinasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("perinasifra", PASSWORD_DEFAULT),
         "email" => "pero@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Pero",
-        "lastname" => "Perić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Peric",
+        "favoriteCategory" => [
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_5_1,
+                "_id" => $product_id_5_1,
                 "name" => "Jack Daniels",
                 "description" => "Jack Daniels 0,7L",
                 "category" => "Pića",
                 "price" => "156.99"
             ],
             [
-                "product_id" => $product_id_5_2,
-                "name" => "Šparoga 500g",
-                "description" => "Šparoga 500g vezica. Proizvod s hrvatskih polja.",
+                "_id" => $product_id_5_2,
+                "name" => "Sparoga 500g",
+                "description" => "Sparoga 500g vezica. Proizvod s hrvatskih polja.",
                 "category" => "Hrana",
                 "price" => "14.99"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_5_1,
-                "user_id" => $user_id_3,
-                "product_id" => $product_id_3_1,
-                "name" => "Istarski pršut",
-                "description" => "Istarski sušeni pršut u komadu",
+                "_id" => $sale_id_5_1,
+                "userId" => $user_id_3,
+                "productId" => $product_id_3_1,
+                "name" => "Istarski prsut",
+                "description" => "Istarski suseni prsut u komadu",
                 "category" => "Hrana",
                 "price" => "170",
                 "comment" => "Najbolji pršut koji sam ikad probao!!",
@@ -562,11 +578,11 @@ $documents = [
                 "quantity" => 5
             ],
             [
-                "sale_id" => $sale_id_5_2,
-                "user_id" => $user_id_8,
-                "product_id" => $product_id_8_1,
-                "name" => "Paški sir",
-                "description" => "Paški sir okrugli 1kg od 100% ovčijeg mlijeka.",
+                "_id" => $sale_id_5_2,
+                "userId" => $user_id_8,
+                "productId" => $product_id_8_1,
+                "name" => "Paski sir",
+                "description" => "Paski sir okrugli 1kg od 100% ovcijeg mlijeka.",
                 "category" => "Hrana",
                 "price" => "240",
                 "comment" => "Izvrstan sir.",
@@ -579,45 +595,45 @@ $documents = [
     [
         "_id" => $user_id_6,
         "username" => "alex22",
-        "password_hash" => password_hash("alex22sifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("alex22sifra", PASSWORD_DEFAULT),
         "email" => "alex22@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Alexandara",
-        "lastname" => "Aleksić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Aleksic",
+        "favoriteCategory" => [
+            "_id" => $category_id_3,
             "category" => "Automobili"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_6_1,
+                "_id" => $product_id_6_1,
                 "name" => "Apple Adapter",
                 "description" => "Apple USB-C to USB Adapter",
                 "category" => "Elektronika",
                 "price" => "259"
             ],
             [
-                "product_id" => $product_id_6_2,
+                "_id" => $product_id_6_2,
                 "name" => "Audi A3 1,6",
                 "description" => "Audi A3 1,6 TDI LIMUZINA , AUDI SERVISNA , 59TKM, JAMSTVO 2 GOD",
                 "category" => "Automobili",
                 "price" => "128600"
             ],
             [
-                "product_id" => $product_id_6_3,
+                "_id" => $product_id_6_3,
                 "name" => "Dunlop gume",
                 "description" => "Ljetne gume Dunlop/ Zimske s čeličnim felgama",
                 "category" => "Automobili",
                 "price" => "600"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_6_1,
-                "user_id" => $user_id_3,
-                "product_id" => $product_id_3_2,
+                "_id" => $sale_id_6_1,
+                "userId" => $user_id_3,
+                "productId" => $product_id_3_2,
                 "name" => "BMW 4 Gran Coupe",
                 "description" => "BMW serija 4 Gran Coupe 418d Sport automatik,FULL,JAMSTVO 12MJESECI..",
                 "category" => "Automobili",
@@ -627,9 +643,9 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_6_2,
-                "user_id" => $user_id_1,
-                "product_id" => $product_id_1_2,
+                "_id" => $sale_id_6_2,
+                "userId" => $user_id_1,
+                "productId" => $product_id_1_2,
                 "name" => "Apple Watch 6",
                 "description" => "Apple Watch Series 6 Nikey",
                 "category" => "Elektronika",
@@ -644,23 +660,23 @@ $documents = [
     [
         "_id" => $user_id_7,
         "username" => "ivona",
-        "password_hash" => password_hash("ivoninasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("ivoninasifra", PASSWORD_DEFAULT),
         "email" => "ivona@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Ivona",
-        "lastname" => "Ivošević",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Ivosevic",
+        "favoriteCategory" => [
+            "_id" => $category_id_1,
             "category" => "Elektronika"
         ],
-        "products" => [[]],
-        "sales" => [
+        "productArray" => [[]],
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_7_1,
-                "user_id" => $user_id_6,
-                "product_id" => $product_id_6_1,
+                "_id" => $sale_id_7_1,
+                "userId" => $user_id_6,
+                "productId" => $product_id_6_1,
                 "name" => "Apple Adapter",
                 "description" => "Apple USB-C to USB Adapter",
                 "category" => "Elektronika",
@@ -670,9 +686,9 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_7_2,
-                "user_id" => $user_id_1,
-                "product_id" => $product_id_1_2,
+                "_id" => $sale_id_7_2,
+                "userId" => $user_id_1,
+                "productId" => $product_id_1_2,
                 "name" => "Apple Watch 6",
                 "description" => "Apple Watch Series 6 Nikey",
                 "category" => "Elektronika",
@@ -686,79 +702,79 @@ $documents = [
     // USER 8
     [
         "_id" => $user_id_8,
-        "username" => "mićo",
-        "password_hash" => password_hash("micinasifra", PASSWORD_DEFAULT),
+        "username" => "mico",
+        "passwordHash" => password_hash("micinasifra", PASSWORD_DEFAULT),
         "email" => "mico23zg@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Miljenko",
-        "lastname" => "Milić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Milic",
+        "favoriteCategory" => [
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_8_1,
-                "name" => "Paški sir",
-                "description" => "Paški sir okrugli 1kg od 100% ovčijeg mlijeka.",
+                "_id" => $product_id_8_1,
+                "name" => "Paski sir",
+                "description" => "Paski sir okrugli 1kg od 100% ovcijeg mlijeka.",
                 "category" => "Hrana",
                 "price" => "240"
             ],
             [
-                "product_id" => $product_id_8_2,
-                "name" => "Kukuruzno brašno",
-                "description" => "Grubo mljeveno kukuruzno brašno bez dodataka 1kg",
+                "_id" => $product_id_8_2,
+                "name" => "Kukuruzno brasno",
+                "description" => "Grubo mljeveno kukuruzno brasno bez dodataka 1kg",
                 "category" => "Hrana",
                 "price" => "34.90"
             ],
             [
-                "product_id" => $product_id_8_3,
+                "_id" => $product_id_8_3,
                 "name" => "Krumpiri mladi",
                 "description" => "Mladi krumpir vreća 10kg - Varaždin",
                 "category" => "Hrana",
                 "price" => "31.80"
             ]
         ],
-        "sales" => [[]]
+        "saleArray" => [[]]
     ],
     // USER 9
     [
         "_id" => $user_id_9,
         "username" => "timon",
-        "password_hash" => password_hash("timonsifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("timonsifra", PASSWORD_DEFAULT),
         "email" => "timon@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Tihomir",
-        "lastname" => "Monković",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Monkovic",
+        "favoriteCategory" => [
+            "_id" => $category_id_3,
             "category" => "Automobili"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_9_1,
+                "_id" => $product_id_9_1,
                 "name" => "Michelin Primacy 4 XL",
                 "description" => "Gume Michelin Primacy 4 XL, 2020 NOVO 205/55/17",
                 "category" => "Automobili",
                 "price" => "660"
             ],
             [
-                "product_id" => $product_id_9_2,
+                "_id" => $product_id_9_2,
                 "name" => "Beko perilica",
                 "description" => "Perilica posuđa. Kapacitet: 14 kompleta 6 programa pranja 5 temperatura pranja (35°/40°/50°/65°/70°)",
                 "category" => "Elektronika",
                 "price" => "2999"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_9_1,
-                "user_id" => $user_id_6,
-                "product_id" => $product_id_6_3,
+                "_id" => $sale_id_9_1,
+                "userId" => $user_id_6,
+                "productId" => $product_id_6_3,
                 "name" => "Dunlop gume",
                 "description" => "Ljetne gume Dunlop/ Zimske s čeličnim felgama",
                 "category" => "Automobili",
@@ -768,9 +784,9 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_9_2,
-                "user_id" => $user_id_4,
-                "product_id" => $product_id_4_2,
+                "_id" => $sale_id_9_2,
+                "userId" => $user_id_4,
+                "productId" => $product_id_4_2,
                 "name" => "Ford Mondeo",
                 "description" => "Ford Mondeo 1.5 TDCi Econetic Trend 2015",
                 "category" => "Automobili",
@@ -785,40 +801,40 @@ $documents = [
     [
         "_id" => $user_id_10,
         "username" => "marta05",
-        "password_hash" => password_hash("marta05sifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("marta05sifra", PASSWORD_DEFAULT),
         "email" => "marta05@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Marta",
-        "lastname" => "Martić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Martic",
+        "favoriteCategory" => [
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_10_1,
+                "_id" => $product_id_10_1,
                 "name" => "Batat",
                 "description" => "Ekozona batat ljubičasti 500g",
                 "category" => "Hrana",
                 "price" => "16.99"
             ],
             [
-                "product_id" => $product_id_10_2,
+                "_id" => $product_id_10_2,
                 "name" => "Krumpiri mladi",
                 "description" => "Mladi krumpir vreća 10kg - Varaždin",
                 "category" => "Hrana",
                 "price" => "28.50"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_10_1,
-                "user_id" => $user_id_8,
-                "product_id" => $product_id_8_2,
-                "name" => "Kukuruzno brašno",
-                "description" => "Grubo mljeveno kukuruzno brašno bez dodataka 1kg",
+                "_id" => $sale_id_10_1,
+                "userId" => $user_id_8,
+                "productId" => $product_id_8_2,
+                "name" => "Kukuruzno brasno",
+                "description" => "Grubo mljeveno kukuruzno brasno bez dodataka 1kg",
                 "category" => "Hrana",
                 "price" => "34.90",
                 "comment" => "Super. Odličan je kruh od ovog brašna.",
@@ -826,9 +842,9 @@ $documents = [
                 "quantity" => 7
             ],
             [
-                "sale_id" => $sale_id_10_2,
-                "user_id" => $user_id_2,
-                "product_id" => $product_id_2_1,
+                "_id" => $sale_id_10_2,
+                "userId" => $user_id_2,
+                "productId" => $product_id_2_1,
                 "name" => "Svinjski vrat",
                 "description" => "PIK Svinjski vrat s kostima odrezak 640 g",
                 "category" => "Hrana",
@@ -843,38 +859,38 @@ $documents = [
     [
         "_id" => $user_id_11,
         "username" => "vinko",
-        "password_hash" => password_hash("vinkovasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("vinkovasifra", PASSWORD_DEFAULT),
         "email" => "vinko@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Vinko",
-        "lastname" => "Vinković",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Vinkovic",
+        "favoriteCategory" => [
+            "_id" => $category_id_1,
             "category" => "Elektronika"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_11_1,
+                "_id" => $product_id_11_1,
                 "name" => "Laptop HP 430",
                 "description" => "HP Probook 430 G3",
                 "category" => "Elektronika",
                 "price" => "4116.99"
             ],
             [
-                "product_id" => $product_id_11_2,
+                "_id" => $product_id_11_2,
                 "name" => "Mobitel Sony Xperia",
                 "description" => "Sony Xperia 3GB New",
                 "category" => "Elektronika",
                 "price" => "4500"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_11_1,
-                "user_id" => $user_id_14,
-                "product_id" => $product_id_14_2,
+                "_id" => $sale_id_11_1,
+                "userId" => $user_id_14,
+                "productId" => $product_id_14_2,
                 "name" => "USB Kabel",
                 "description" => "USB kabel 2m crni",
                 "category" => "Elektronika",
@@ -884,9 +900,9 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_11_2,
-                "user_id" => $user_id_1,
-                "product_id" => $product_id_1_2,
+                "_id" => $sale_id_11_2,
+                "userId" => $user_id_1,
+                "productId" => $product_id_1_2,
                 "name" => "Apple Watch 6",
                 "description" => "Apple Watch Series 6 Nikey",
                 "category" => "Elektronika",
@@ -901,45 +917,45 @@ $documents = [
     [
         "_id" => $user_id_12,
         "username" => "john",
-        "password_hash" => password_hash("johnsifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("johnsifra", PASSWORD_DEFAULT),
         "email" => "john@net.us",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "John",
         "lastname" => "McDonald",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "_id" => $category_id_3,
             "category" => "Automobili"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_12_1,
+                "_id" => $product_id_12_1,
                 "name" => "Ford Mustang Shellby",
                 "description" => "Ford Mustan Shellby 500KS",
                 "category" => "Automobili",
                 "price" => "250000"
             ],
             [
-                "product_id" => $product_id_12_2,
+                "_id" => $product_id_12_2,
                 "name" => "Gume Michellin R19",
                 "description" => "Gume Michellin 245/35/19 Novo - Ljetne gume.",
                 "category" => "Automobili",
                 "price" => "5500"
             ],
             [
-                "product_id" => $product_id_12_3,
+                "_id" => $product_id_12_3,
                 "name" => "Dell Laptop e7240",
                 "description" => "Dell Laptop e7240 SSD 512GB 16GB RAM",
                 "category" => "Elektronika",
                 "price" => "8700"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_12_1,
-                "user_id" => $user_id_6,
-                "product_id" => $product_id_6_3,
+                "_id" => $sale_id_12_1,
+                "userId" => $user_id_6,
+                "productId" => $product_id_6_3,
                 "name" => "Dunlop gume",
                 "description" => "Ljetne gume Dunlop/ Zimske s čeličnim felgama",
                 "category" => "Automobili",
@@ -954,38 +970,38 @@ $documents = [
     [
         "_id" => $user_id_13,
         "username" => "maria",
-        "password_hash" => password_hash("mariasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("mariasifra", PASSWORD_DEFAULT),
         "email" => "maria@net.es",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Maria",
         "lastname" => "Perez",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_13_1,
+                "_id" => $product_id_13_1,
                 "name" => "Rotkvice",
                 "description" => "Rotkvice mlade, vezica 500g",
                 "category" => "Hrana",
                 "price" => "21.99"
             ],
             [
-                "product_id" => $product_id_13_2,
+                "_id" => $product_id_13_2,
                 "name" => "Zobene pahuljice",
                 "description" => "Miješane zobene pahuljice.",
                 "category" => "Hrana",
                 "price" => "27.50"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_13_1,
-                "user_id" => $user_id_14,
-                "product_id" => $product_id_14_1,
+                "_id" => $sale_id_13_1,
+                "userId" => $user_id_14,
+                "productId" => $product_id_14_1,
                 "name" => "Mobitel Samsung A52",
                 "description" => "Samsung A52 Galaxy mobitel - crni 2021",
                 "category" => "Elektronika",
@@ -995,9 +1011,9 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_13_2,
-                "user_id" => $user_id_10,
-                "product_id" => $product_id_10_1,
+                "_id" => $sale_id_13_2,
+                "userId" => $user_id_10,
+                "productId" => $product_id_10_1,
                 "name" => "Batat",
                 "description" => "Ekozona batat ljubičasti 500g",
                 "category" => "Hrana",
@@ -1012,38 +1028,38 @@ $documents = [
     [
         "_id" => $user_id_14,
         "username" => "ivan99",
-        "password_hash" => password_hash("ivanovasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("ivanovasifra", PASSWORD_DEFAULT),
         "email" => "ivan@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Ivan",
-        "lastname" => "Ivanković",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Ivankovic",
+        "favoriteCategory" => [
+            "_id" => $category_id_1,
             "category" => "Elektronika"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_14_1,
+                "_id" => $product_id_14_1,
                 "name" => "Mobitel Samsung A52",
                 "description" => "Samsung A52 Galaxy mobitel - crni 2021",
                 "category" => "Elektronika",
                 "price" => "4350"
             ],
             [
-                "product_id" => $product_id_14_2,
+                "_id" => $product_id_14_2,
                 "name" => "USB Kabel",
                 "description" => "USB kabel 2m crni",
                 "category" => "Elektronika",
                 "price" => "30.90"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_14_1,
-                "user_id" => $user_id_9,
-                "product_id" => $product_id_9_2,
+                "_id" => $sale_id_14_1,
+                "userId" => $user_id_9,
+                "productId" => $product_id_9_2,
                 "name" => "Beko perilica",
                 "description" => "Perilica posuđa. Kapacitet: 14 kompleta 6 programa pranja 5 temperatura pranja (35°/40°/50°/65°/70°)",
                 "category" => "Elektronika",
@@ -1058,31 +1074,31 @@ $documents = [
     [
         "_id" => $user_id_15,
         "username" => "mirta",
-        "password_hash" => password_hash("mirtinasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("mirtinasifra", PASSWORD_DEFAULT),
         "email" => "mirta@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Mirta",
         "lastname" => "Comman",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "_id" => $category_id_2,
             "category" => "Hrana"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_15_1,
+                "_id" => $product_id_15_1,
                 "name" => "Avokado",
                 "description" => "Avokado vreća - 2kg",
                 "category" => "Hrana",
                 "price" => "99.90"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_15_1,
-                "user_id" => $user_id_13,
-                "product_id" => $product_id_13_1,
+                "_id" => $sale_id_15_1,
+                "userId" => $user_id_13,
+                "productId" => $product_id_13_1,
                 "name" => "Rotkvice",
                 "description" => "Rotkvice mlade, vezica 500g",
                 "category" => "Hrana",
@@ -1097,38 +1113,38 @@ $documents = [
     [
         "_id" => $user_id_16,
         "username" => "martin",
-        "password_hash" => password_hash("martinovasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("martinovasifra", PASSWORD_DEFAULT),
         "email" => "martin@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Martin",
-        "lastname" => "Martinović",
-        "favorite_categories" => [
-            "category_id" => 1,
-            "category" => "Pića"
+        "lastname" => "Martinovic",
+        "favoriteCategory" => [
+            "_id" => $category_id_4,
+            "category" => "Pica"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_16_1,
-                "name" => "Domaća medica",
-                "description" => "Domaća medica 35%vol 1L",
-                "category" => "Pića",
+                "_id" => $product_id_16_1,
+                "name" => "Domaca medica",
+                "description" => "Domaca medica 35%vol 1L",
+                "category" => "Pica",
                 "price" => "69.90"
             ],
             [
-                "product_id" => $product_id_16_2,
-                "name" => "Domaća travarica",
-                "description" => "Domaća travarica 42%vol 1L",
-                "category" => "Pića",
+                "_id" => $product_id_16_2,
+                "name" => "Domaca travarica",
+                "description" => "Domaca travarica 42%vol 1L",
+                "category" => "Pica",
                 "price" => "89.90"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_16_1,
-                "user_id" => $user_id_4,
-                "product_id" => $product_id_4_1,
+                "_id" => $sale_id_16_1,
+                "userId" => $user_id_4,
+                "productId" => $product_id_4_1,
                 "name" => "ABSINTHE BOHEME",
                 "description" => "ABSINTHE BOHEME BLUE RODNIK`S 0,7L -6/1- 70% ",
                 "category" => "Pića",
@@ -1138,9 +1154,9 @@ $documents = [
                 "quantity" => 2
             ],
             [
-                "sale_id" => $sale_id_16_2,
-                "user_id" => $user_id_11,
-                "product_id" => $product_id_11_1,
+                "_id" => $sale_id_16_2,
+                "userId" => $user_id_11,
+                "productId" => $product_id_11_1,
                 "name" => "Laptop HP 430",
                 "description" => "HP Probook 430 G3",
                 "category" => "Elektronika",
@@ -1155,25 +1171,25 @@ $documents = [
     [
         "_id" => $user_id_17,
         "username" => "mia_97",
-        "password_hash" => password_hash("miasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("miasifra", PASSWORD_DEFAULT),
         "email" => "mia_97@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Mia",
-        "lastname" => "Mijić",
-        "favorite_categories" => [
-            "category_id" => 1,
-            "category" => "Pića"
+        "lastname" => "Mijic",
+        "favoriteCategory" => [
+            "_id" => $category_id_4,
+            "category" => "Pica"
         ],
-        "products" => [
+        "productArray" => [
             []
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_17_1,
-                "user_id" => $user_id_4,
-                "product_id" => $product_id_4_1,
+                "_id" => $sale_id_17_1,
+                "userId" => $user_id_4,
+                "productId" => $product_id_4_1,
                 "name" => "ABSINTHE BOHEME",
                 "description" => "ABSINTHE BOHEME BLUE RODNIK`S 0,7L -6/1- 70% ",
                 "category" => "Pića",
@@ -1183,9 +1199,9 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_17_2,
-                "user_id" => $user_id_15,
-                "product_id" => $product_id_15_1,
+                "_id" => $sale_id_17_2,
+                "userId" => $user_id_15,
+                "productId" => $product_id_15_1,
                 "name" => "Avokado",
                 "description" => "Avokado vreća - 2kg",
                 "category" => "Hrana",
@@ -1200,31 +1216,31 @@ $documents = [
     [
         "_id" => $user_id_18,
         "username" => "marko",
-        "password_hash" => password_hash("markovasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("markovasifra", PASSWORD_DEFAULT),
         "email" => "marko@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Marko",
-        "lastname" => "Marković",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "lastname" => "Markovic",
+        "favoriteCategory" => [
+            "_id" => $category_id_3,
             "category" => "Automobili"
         ],
-        "products" => [
+        "productArray" => [
             [
-                "product_id" => $product_id_18_1,
+                "_id" => $product_id_18_1,
                 "name" => "VW Golf 7",
                 "description" => "Volkswagen Golf MK 7 2.0 TDI",
                 "category" => "Automobili",
                 "price" => "115000"
             ]
         ],
-        "sales" => [
+        "saleArray" => [
             [
-                "sale_id" => $sale_id_18_1,
-                "user_id" => $user_id_12,
-                "product_id" => $product_id_12_1,
+                "_id" => $sale_id_18_1,
+                "userId" => $user_id_12,
+                "productId" => $product_id_12_1,
                 "name" => "Ford Mustang Shellby",
                 "description" => "Ford Mustan Shellby 500KS",
                 "category" => "Automobili",
@@ -1234,9 +1250,9 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_18_2,
-                "user_id" => $user_id_12,
-                "product_id" => $product_id_12_3,
+                "_id" => $sale_id_18_2,
+                "userId" => $user_id_12,
+                "productId" => $product_id_12_3,
                 "name" => "Dell Laptop e7240",
                 "description" => "Dell Laptop e7240 SSD 512GB 16GB RAM",
                 "category" => "Elektronika",
@@ -1251,15 +1267,15 @@ $documents = [
     [
         "_id" => $user_id_19,
         "username" => "lana",
-        "password_hash" => password_hash("laninasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("laninasifra", PASSWORD_DEFAULT),
         "email" => "lana@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Lana",
         "lastname" => "Šimunović",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_1,
             "category" => "Elektronika"
         ],
         "products" => [
@@ -1280,8 +1296,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_19_1,
-                "user_id" => $user_id_12,
+                "_id" => $sale_id_19_1,
+                "userId" => $user_id_12,
                 "product_id" => $product_id_12_3,
                 "name" => "Dell Laptop e7240",
                 "description" => "Dell Laptop e7240 SSD 512GB 16GB RAM",
@@ -1292,8 +1308,8 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_19_2,
-                "user_id" => $user_id_16,
+                "_id" => $sale_id_19_2,
+                "userId" => $user_id_16,
                 "product_id" => $product_id_16_1,
                 "name" => "Domaća medica",
                 "description" => "Domaća medica 35%vol 1L",
@@ -1309,15 +1325,15 @@ $documents = [
     [
         "_id" => $user_id_20,
         "username" => "karolina",
-        "password_hash" => password_hash("karolininasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("karolininasifra", PASSWORD_DEFAULT),
         "email" => "karolina@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Karolina",
         "lastname" => "Karlović",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_2,
             "category" => "Hrana"
         ],
         "products" => [
@@ -1345,8 +1361,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_20_1,
-                "user_id" => $user_id_10,
+                "_id" => $sale_id_20_1,
+                "userId" => $user_id_10,
                 "product_id" => $product_id_10_1,
                 "name" => "Batat",
                 "description" => "Ekozona batat ljubičasti 500g",
@@ -1357,8 +1373,8 @@ $documents = [
                 "quantity" => 4
             ],
             [
-                "sale_id" => $sale_id_20_2,
-                "user_id" => $user_id_16,
+                "_id" => $sale_id_20_2,
+                "userId" => $user_id_16,
                 "product_id" => $product_id_16_1,
                 "name" => "Domaća medica",
                 "description" => "Domaća medica 35%vol 1L",
@@ -1374,15 +1390,15 @@ $documents = [
     [
         "_id" => $user_id_21,
         "username" => "mišo",
-        "password_hash" => password_hash("misinasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("misinasifra", PASSWORD_DEFAULT),
         "email" => "miso@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Mišo",
         "lastname" => "Mišković",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_2,
             "category" => "Hrana"
         ],
         "products" => [
@@ -1403,8 +1419,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_21_1,
-                "user_id" => $user_id_20,
+                "_id" => $sale_id_21_1,
+                "userId" => $user_id_20,
                 "product_id" => $product_id_20_1,
                 "name" => "Dulcinea Vita Rezanci",
                 "description" => "Dulcinea Vita Rezanci uski s narančastim batatom 200 g",
@@ -1420,15 +1436,15 @@ $documents = [
     [
         "_id" => $user_id_22,
         "username" => "denis",
-        "password_hash" => password_hash("denisovasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("denisovasifra", PASSWORD_DEFAULT),
         "email" => "denis@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Denis",
         "lastname" => "Desinec",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_3,
             "category" => "Automobili"
         ],
         "products" => [
@@ -1449,8 +1465,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_22_1,
-                "user_id" => $user_id_2,
+                "_id" => $sale_id_22_1,
+                "userId" => $user_id_2,
                 "product_id" => $product_id_2_3,
                 "name" => "Smart fortwo cdi",
                 "description" => "SMART FOR TWO, DIESEL, PASSION OPREMA, SERVISNA KNJIGA",
@@ -1461,8 +1477,8 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_22_2,
-                "user_id" => $user_id_28,
+                "_id" => $sale_id_22_2,
+                "userId" => $user_id_28,
                 "product_id" => $product_id_28_1,
                 "name" => "Miris za auto",
                 "description" => "Miris za auto - vanillia",
@@ -1478,15 +1494,15 @@ $documents = [
     [
         "_id" => $user_id_23,
         "username" => "miro",
-        "password_hash" => password_hash("mirosifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("mirosifra", PASSWORD_DEFAULT),
         "email" => "miro@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Miroslav",
         "lastname" => "Miroslavić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_4,
             "category" => "Pića"
         ],
         "products" => [
@@ -1514,8 +1530,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_23_1,
-                "user_id" => $user_id_25,
+                "_id" => $sale_id_23_1,
+                "userId" => $user_id_25,
                 "product_id" => $product_id_25_3,
                 "name" => "Domaći sok od jabuke",
                 "description" => "Domaći sok od hladno prešane jabuke 1L",
@@ -1526,8 +1542,8 @@ $documents = [
                 "quantity" => 3
             ],
             [
-                "sale_id" => $sale_id_23_1,
-                "user_id" => $user_id_30,
+                "_id" => $sale_id_23_1,
+                "userId" => $user_id_30,
                 "product_id" => $product_id_30_1,
                 "name" => "Sok od kadulje",
                 "description" => "Domaći sok od cvijeta kadulje 1L.",
@@ -1543,15 +1559,15 @@ $documents = [
     [
         "_id" => $user_id_24,
         "username" => "ozana",
-        "password_hash" => password_hash("ozaninasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("ozaninasifra", PASSWORD_DEFAULT),
         "email" => "ozana@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Ozana",
         "lastname" => "Ozanić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_1,
             "category" => "Elektronika"
         ],
         "products" => [
@@ -1572,8 +1588,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_24_1,
-                "user_id" => $user_id_26,
+                "_id" => $sale_id_24_1,
+                "userId" => $user_id_26,
                 "product_id" => $product_id_26_1,
                 "name" => "Laserworld CS-2000RGB",
                 "description" => "Laserworld CS-2000RGB RGB laserski sistem sa potpunom izlaznom snagom do 2,000mW",
@@ -1584,8 +1600,8 @@ $documents = [
                 "quantity" => 2
             ],
             [
-                "sale_id" => $sale_id_24_2,
-                "user_id" => $user_id_14,
+                "_id" => $sale_id_24_2,
+                "userId" => $user_id_14,
                 "product_id" => $product_id_14_2,
                 "name" => "USB Kabel",
                 "description" => "USB kabel 2m crni",
@@ -1601,15 +1617,15 @@ $documents = [
     [
         "_id" => $user_id_25,
         "username" => "ante",
-        "password_hash" => password_hash("antinasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("antinasifra", PASSWORD_DEFAULT),
         "email" => "ante@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Ante",
         "lastname" => "Antić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_4,
             "category" => "Pića"
         ],
         "products" => [
@@ -1637,8 +1653,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_25_1,
-                "user_id" => $user_id_13,
+                "_id" => $sale_id_25_1,
+                "userId" => $user_id_13,
                 "product_id" => $product_id_13_2,
                 "name" => "Zobene pahuljice",
                 "description" => "Miješane zobene pahuljice.",
@@ -1649,8 +1665,8 @@ $documents = [
                 "quantity" => 2
             ],
             [
-                "sale_id" => $sale_id_25_2,
-                "user_id" => $user_id_23,
+                "_id" => $sale_id_25_2,
+                "userId" => $user_id_23,
                 "product_id" => $product_id_23_3,
                 "name" => "Domaće crno vino",
                 "description" => "Domaći crni Merlot 1L - Baranja",
@@ -1661,8 +1677,8 @@ $documents = [
                 "quantity" => 3
             ],
             [
-                "sale_id" => $sale_id_25_3,
-                "user_id" => $user_id_1,
+                "_id" => $sale_id_25_3,
+                "userId" => $user_id_1,
                 "product_id" => $product_id_1_1,
                 "name" => "iPhone 11 Pro",
                 "description" => "iPhone 11 Pro 64GB Space Grey",
@@ -1678,15 +1694,15 @@ $documents = [
     [
         "_id" => $user_id_26,
         "username" => "matko_dj",
-        "password_hash" => password_hash("matkosifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("matkosifra", PASSWORD_DEFAULT),
         "email" => "matko_dj@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 1,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 1,
         "name" => "Matko",
         "lastname" => "Matković",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_1,
             "category" => "Elektronika"
         ],
         "products" => [
@@ -1707,8 +1723,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_26_1,
-                "user_id" => $user_id_24,
+                "_id" => $sale_id_26_1,
+                "userId" => $user_id_24,
                 "product_id" => $product_id_24_1,
                 "name" => "Kurzweil PC3K8 Synthesizer",
                 "description" => "Kurzweil PC3K8 sa 88 klavirskih tipki.  Revolucionarni novi PC3K, Kompatibilan s legendarnom K serijom",
@@ -1719,8 +1735,8 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_25_2,
-                "user_id" => $user_id_1,
+                "_id" => $sale_id_25_2,
+                "userId" => $user_id_1,
                 "product_id" => $product_id_1_2,
                 "name" => "Apple Watch 6",
                 "description" => "Apple Watch Series 6 Nikey",
@@ -1736,15 +1752,15 @@ $documents = [
     [
         "_id" => $user_id_27,
         "username" => "ivica",
-        "password_hash" => password_hash("ivicasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("ivicasifra", PASSWORD_DEFAULT),
         "email" => "ivica_vic@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Ivica",
         "lastname" => "Vicković",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_2,
             "category" => "Hrana"
         ],
         "products" => [
@@ -1765,8 +1781,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_26_1,
-                "user_id" => $user_id_21,
+                "_id" => $sale_id_26_1,
+                "userId" => $user_id_21,
                 "product_id" => $product_id_21_1,
                 "name" => "Pršut narezak",
                 "description" => "Voštane Dalmatiko Pršut narezak 80 g",
@@ -1777,8 +1793,8 @@ $documents = [
                 "quantity" => 4
             ],
             [
-                "sale_id" => $sale_id_26_2,
-                "user_id" => $user_id_21,
+                "_id" => $sale_id_26_2,
+                "userId" => $user_id_21,
                 "product_id" => $product_id_21_2,
                 "name" => "Tilzit sir",
                 "description" => "Tilzit polutvrdi sir narezani 1kg",
@@ -1789,8 +1805,8 @@ $documents = [
                 "quantity" => 2
             ],
             [
-                "sale_id" => $sale_id_26_3,
-                "user_id" => $user_id_30,
+                "_id" => $sale_id_26_3,
+                "userId" => $user_id_30,
                 "product_id" => $product_id_30_3,
                 "name" => "Bagremov med",
                 "description" => "Bagremov med 900g",
@@ -1806,15 +1822,15 @@ $documents = [
     [
         "_id" => $user_id_28,
         "username" => "lara",
-        "password_hash" => password_hash("larasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("larasifra", PASSWORD_DEFAULT),
         "email" => "lara@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Lara",
         "lastname" => "Kokot",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_3,
             "category" => "Automobili"
         ],
         "products" => [
@@ -1828,8 +1844,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_28_1,
-                "user_id" => $user_id_18,
+                "_id" => $sale_id_28_1,
+                "userId" => $user_id_18,
                 "product_id" => $product_id_18_1,
                 "name" => "VW Golf 7",
                 "description" => "Volkswagen Golf MK 7 2.0 TDI",
@@ -1845,15 +1861,15 @@ $documents = [
     [
         "_id" => $user_id_29,
         "username" => "max",
-        "password_hash" => password_hash("maxsifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("maxsifra", PASSWORD_DEFAULT),
         "email" => "max@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Maksimilijan",
         "lastname" => "Maksimović",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_3,
             "category" => "Automobili"
         ],
         "products" => [
@@ -1861,8 +1877,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_29_1,
-                "user_id" => $user_id_9,
+                "_id" => $sale_id_29_1,
+                "userId" => $user_id_9,
                 "product_id" => $product_id_9_1,
                 "name" => "Michelin Primacy 4 XL",
                 "description" => "Gume Michelin Primacy 4 XL, 2020 NOVO 205/55/17",
@@ -1873,8 +1889,8 @@ $documents = [
                 "quantity" => 1
             ],
             [
-                "sale_id" => $sale_id_29_2,
-                "user_id" => $user_id_22,
+                "_id" => $sale_id_29_2,
+                "userId" => $user_id_22,
                 "product_id" => $product_id_22_1,
                 "name" => "Citroën C5",
                 "description" => "Citroën C5 Aircross FEEL 1.5BlueHDI 130KS EAT8",
@@ -1890,15 +1906,15 @@ $documents = [
     [
         "_id" => $user_id_30,
         "username" => "erina",
-        "password_hash" => password_hash("erininasifra", PASSWORD_DEFAULT),
+        "passwordHash" => password_hash("erininasifra", PASSWORD_DEFAULT),
         "email" => "erina@net.hr",
-        "registration_sequence" => generateRandomString(10),
-        "has_registered" => 1,
-        "is_admin" => 0,
+        "registrationSequence" => generateRandomString(10),
+        "hasRegistered" => 1,
+        "isAdmin" => 0,
         "name" => "Erina",
         "lastname" => "Ernić",
-        "favorite_categories" => [
-            "category_id" => 1,
+        "favoriteCategory" => [
+            "category_id" => $category_id_4,
             "category" => "Pića"
         ],
         "products" => [
@@ -1926,8 +1942,8 @@ $documents = [
         ],
         "sales" => [
             [
-                "sale_id" => $sale_id_30_1,
-                "user_id" => $user_id_20,
+                "_id" => $sale_id_30_1,
+                "userId" => $user_id_20,
                 "product_id" => $product_id_20_2,
                 "name" => "Pirovo integralno brašno",
                 "description" => "Farina Pirovo integralno brašno 1000 g",
@@ -1938,8 +1954,8 @@ $documents = [
                 "quantity" => 2
             ],
             [
-                "sale_id" => $sale_id_30_2,
-                "user_id" => $user_id_25,
+                "_id" => $sale_id_30_2,
+                "userId" => $user_id_25,
                 "product_id" => $product_id_25_3,
                 "name" => "Domaći sok od jabuke",
                 "description" => "Domaći sok od hladno prešane jabuke 1L",

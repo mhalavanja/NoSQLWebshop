@@ -17,13 +17,13 @@ function seed_table_users()
     // Ubaci neke korisnike unutra
     try
     {
-        $st = $db->prepare( 'INSERT INTO dz2_users(username, password_hash, email, registration_sequence, has_registered) VALUES (:username, :password, \'a@b.com\', \'abc\', \'1\')' );
+        $st = $db->prepare( 'INSERT INTO dz2_users(username, passwordHash, email, registrationSequence, hasRegistered) VALUES (:username, :password, \'a@b.com\', \'abc\', \'1\')' );
 
-        $st->execute( array( 'username' => 'mirko', 'password' => password_hash( 'mirkovasifra', PASSWORD_DEFAULT ) ) );
-        $st->execute( array( 'username' => 'slavko', 'password' => password_hash( 'slavkovasifra', PASSWORD_DEFAULT ) ) );
-        $st->execute( array( 'username' => 'ana', 'password' => password_hash( 'aninasifra', PASSWORD_DEFAULT ) ) );
-        $st->execute( array( 'username' => 'maja', 'password' => password_hash( 'majinasifra', PASSWORD_DEFAULT ) ) );
-        $st->execute( array( 'username' => 'pero', 'password' => password_hash( 'perinasifra', PASSWORD_DEFAULT ) ) );
+        $st->execute( array( 'username' => 'mirko', 'password' => passwordHash( 'mirkovasifra', PASSWORD_DEFAULT ) ) );
+        $st->execute( array( 'username' => 'slavko', 'password' => passwordHash( 'slavkovasifra', PASSWORD_DEFAULT ) ) );
+        $st->execute( array( 'username' => 'ana', 'password' => passwordHash( 'aninasifra', PASSWORD_DEFAULT ) ) );
+        $st->execute( array( 'username' => 'maja', 'password' => passwordHash( 'majinasifra', PASSWORD_DEFAULT ) ) );
+        $st->execute( array( 'username' => 'pero', 'password' => passwordHash( 'perinasifra', PASSWORD_DEFAULT ) ) );
     }
     catch( PDOException $e ) { exit( "PDO error [insert dz2_users]: " . $e->getMessage() ); }
 

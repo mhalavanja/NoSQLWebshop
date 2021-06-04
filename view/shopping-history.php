@@ -23,7 +23,7 @@ else { ?>
                 '<td>' . $product->getDescription() . '</td>' .
                 '<td>' . $product->getPrice() . '</td>' .
                 '<td>' . getStars($starProduct->getAvgRating(), true) . '</td>' .
-                '<td><button class="btn btn-outline-primary" type="submit" name="product_id" value="product_' . $product->getId() . '">Review</button></td>' .
+                '<td><button class="btn btn-outline-primary" type="submit" name="productId" value="product_' . $product->getId() . '">Review</button></td>' .
                 '</tr>';
         }
         echo '</tbody></table></form>';

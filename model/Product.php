@@ -1,23 +1,16 @@
 <?php
 
 
-class Product extends Model
+class Product implements IteratorAggregate
 {
     private $id;
-    private $id_user;
+    private $userId;
     private $name;
     private $description;
     private $category;
     private $price;
-    protected static $table = "dz2_products";
-    protected static $columns = [];
 
     public function __construct(){}
-
-    public static function staticInit()
-    {
-        Product::setColumns();
-    }
 
     public function getId()
     {
@@ -29,14 +22,14 @@ class Product extends Model
         $this->id = $id;
     }
 
-    public function getId_user()
+    public function get_userId()
     {
-        return $this->id_user;
+        return $this->userId;
     }
 
-    public function setId_user($id_user)
+    public function set_userId($userId)
     {
-        $this->id_user = $id_user;
+        $this->userId = $userId;
     }
 
     public function getName()
@@ -78,6 +71,16 @@ class Product extends Model
     {
         $this->price = $price;
     }
-}
 
-Product::staticInit();
+    public function getIterator()
+    {
+        return new ArrayIterator(array(
+            'id' => $this->id,
+            'id_user' => $this->userId,
+            'name' => $this->name,
+            'description' => $this->description,
+            'category' => $this->category,
+            'price' => $this->price,
+        ));
+    }
+}

@@ -34,9 +34,3 @@ function getSaleIdForUserIfTheyCanReview($userId, $sales)
     }
     return null;
 }
-
-function alreadyBought($userId, $sales)
-{
-    foreach ($sales as $sale) if ($sale->getId_user() === $userId) return true;
-    return false;
-}

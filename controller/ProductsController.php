@@ -1,6 +1,7 @@
 <?php
 require_once __SITE_PATH . '/util/starProductUtil.php';
 require_once __SITE_PATH . '/util/reviewUtil.php';
+require_once __SITE_PATH . '/service/ProductService.php';
 
 
 class productsController extends BaseController
@@ -8,7 +9,11 @@ class productsController extends BaseController
     function index()
     {
         $user = $_SESSION["user"];
-        $products = Product::where("id_user", $user->getId());
+//        echo '<pre>';
+//        print_r($user);
+//        echo '</pre>';
+//        echo '<br>';
+        $products = $user->getProductArray();
         $this->registry->template->user = $user;
         $this->registry->template->starProducts = getStarProducts($products);
         $this->registry->template->show("my-products");
@@ -17,18 +22,18 @@ class productsController extends BaseController
     function product()
     {
         $userId = $_SESSION["user"]->getId();
-        $product_id = null;
-        if (isset($_POST['product_id'])) $product_id = $_POST['product_id'];
-        elseif (isset($_SESSION['product_id'])) {
-            $product_id = $_SESSION['product_id'];
-            $_SESSION['product_id'] = null;
+        $productId = null;
+        if (isset($_POST['productId'])) $productId = $_POST['productId'];
+        elseif (isset($_SESSION['productId'])) {
+            $productId = $_SESSION['productId'];
+            $_SESSION['productId'] = null;
         }
 
-        if (!$product_id || !preg_match('/^product_[0-9]+$/', $product_id)) {
+        if (!$productId || !preg_match('/^product_[0-9]+$/', $productId)) {
             exit();
         }
 
-        $productId = substr($product_id, 8);
+        $productId = substr($productId, 8);
         $product = Product::find($productId);
         $sales = Sale::where("id_product", $productId);
         $saleId = getSaleIdForUserIfTheyCanReview($userId, $sales);
@@ -54,12 +59,13 @@ class productsController extends BaseController
             $this->registry->template->show("new-product");
             return;
         }
+        $userId = $_SESSION["user"]->getId();
         $product = new Product();
         $product->setName($_POST['name']);
         $product->setDescription($_POST['description']);
         $product->setPrice($_POST['price']);
-        $product->setId_user($_SESSION["user"]->getId());
-        Product::save($product);
+        $product->set_userId($userId);
+        ProductService::saveProduct($userId ,$product);
         header('Location: ' . __SITE_URL . '/index.php?rt=products/index');
     }
 
@@ -80,12 +86,12 @@ class productsController extends BaseController
         $rating = $_POST["rating"] ?? null;
         $comment = $_POST["comment"] ?? null;
         $sale = new Sale();
-        $sale->setId_user($_SESSION["user"]->getId());
+        $sale->set_userId($_SESSION["user"]->getId());
         $sale->setId($_POST["saleId"]);
-        $sale->setId_product($_POST["product_id"]);
+        $sale->set_productId($_POST["productId"]);
         $sale->setRating($rating);
         $sale->setComment($comment);
-        $_SESSION["product_id"] = "product_" . $_POST["product_id"];
+        $_SESSION["productId"] = "product_" . $_POST["productId"];
         Sale::save($sale);
         header('Location: ' . __SITE_URL . '/index.php?rt=products/product');
     }
@@ -97,8 +103,8 @@ class productsController extends BaseController
         if (!$userId) header('Location: ' . __SITE_URL . '/index.php');
         if (!$productId) exit();
         $sale = new Sale();
-        $sale->setId_product($productId);
-        $sale->setId_user($userId);
+        $sale->set_productId($productId);
+        $sale->set_userId($userId);
         Sale::save($sale);
         header('Location: ' . __SITE_URL . '/index.php?rt=search');
     }

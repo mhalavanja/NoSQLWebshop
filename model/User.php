@@ -1,28 +1,23 @@
 <?php
 
 
-class User extends Model
+class User
 {
     private $id;
     private $username;
-    private $password_hash;
+    private $passwordHash;
     private $email;
-    private $registration_sequence;
-    private $has_registered;
+    private $registrationSequence;
+    private $hasRegistered;
     private $isAdmin;
     private $name;
     private $lastname;
     private $recommendations;
-    private $favoriteCategories;
-    protected static $table = "dz2_users";
-    protected static $columns = [];
+    private $favoriteCategory;
+    private $productArray;
+    private $saleArray;
 
     public function __construct(){}
-
-    public static function staticInit()
-    {
-        User::setColumns();
-    }
 
     public function getId()
     {
@@ -44,14 +39,14 @@ class User extends Model
         $this->username = $username;
     }
 
-    public function getPassword_hash()
+    public function getpasswordHash()
     {
-        return $this->password_hash;
+        return $this->passwordHash;
     }
 
-    public function setPassword_hash($password_hash)
+    public function setpasswordHash($passwordHash)
     {
-        $this->password_hash = $password_hash;
+        $this->passwordHash = $passwordHash;
     }
 
     public function getEmail()
@@ -64,32 +59,32 @@ class User extends Model
         $this->email = $email;
     }
 
-    public function getRegistration_sequence()
+    public function getregistrationSequence()
     {
-        return $this->registration_sequence;
+        return $this->registrationSequence;
     }
 
-    public function setRegistration_sequence($registration_sequence)
+    public function setregistrationSequence($registrationSequence)
     {
-        $this->registration_sequence = $registration_sequence;
+        $this->registrationSequence = $registrationSequence;
     }
 
-    public function getHas_registered()
+    public function gethasRegistered()
     {
-        return $this->has_registered;
+        return $this->hasRegistered;
     }
 
-    public function setHas_registered($has_registered)
+    public function sethasRegistered($hasRegistered)
     {
-        $this->has_registered = $has_registered;
+        $this->hasRegistered = $hasRegistered;
     }
 
-    public function getIsAdmin()
+    public function getisAdmin()
     {
         return $this->isAdmin;
     }
 
-    public function setIsAdmin($isAdmin)
+    public function setisAdmin($isAdmin): void
     {
         $this->isAdmin = $isAdmin;
     }
@@ -124,15 +119,33 @@ class User extends Model
         $this->recommendations = $recommendations;
     }
 
-    public function getFavoriteCategories()
+    public function getFavoriteCategory()
     {
-        return $this->favoriteCategories;
+        return $this->favoriteCategory;
     }
 
-    public function setFavoriteCategories($favoriteCategories)
+    public function setFavoriteCategory($favoriteCategory): void
     {
-        $this->favoriteCategories = $favoriteCategories;
+        $this->favoriteCategory = $favoriteCategory;
+    }
+
+    public function getProductArray()
+    {
+        return $this->productArray;
+    }
+
+    public function setProductArray($productArray): void
+    {
+        $this->productArray = $productArray;
+    }
+
+    public function getSaleArray()
+    {
+        return $this->saleArray;
+    }
+
+    public function setSaleArray($saleArray): void
+    {
+        $this->saleArray = $saleArray;
     }
 }
-
-User::staticInit();

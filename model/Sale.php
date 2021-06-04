@@ -1,22 +1,21 @@
 <?php
 
 
-class Sale extends Model
+class Sale
 {
     private $id;
-    private $id_product;
-    private $id_user;
+    private $productId;
+    private $userId;
     private $rating;
     private $comment;
-    protected static $table = "dz2_sales";
-    protected static $columns = [];
+    private $category;
+    private $quantity;
+    private $price;
+    private $description;
+    private $name;
+    private $username;
 
     public function __construct(){}
-
-    public static function staticInit()
-    {
-        Sale::setColumns();
-    }
 
     public function getId()
     {
@@ -28,24 +27,24 @@ class Sale extends Model
         $this->id = $id;
     }
 
-    public function getId_product()
+    public function getProductId()
     {
-        return $this->id_product;
+        return $this->productId;
     }
 
-    public function setId_product($id_product)
+    public function setProductId($productId): void
     {
-        $this->id_product = $id_product;
+        $this->productId = $productId;
     }
 
-    public function getId_user()
+    public function getUserId()
     {
-        return $this->id_user;
+        return $this->userId;
     }
 
-    public function setId_user($id_user)
+    public function setUserId($userId): void
     {
-        $this->id_user = $id_user;
+        $this->userId = $userId;
     }
 
     public function getRating()
@@ -67,6 +66,64 @@ class Sale extends Model
     {
         $this->comment = $comment;
     }
-}
 
-Sale::staticInit();
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category): void
+    {
+        $this->category = $category;
+    }
+
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity($quantity): void
+    {
+        $this->quantity = $quantity;
+    }
+
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function setPrice($price): void
+    {
+        $this->price = $price;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function setDescription($description): void
+    {
+        $this->description = $description;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name): void
+    {
+        $this->name = $name;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function setUsername($username): void
+    {
+        $this->username = $username;
+    }
+}

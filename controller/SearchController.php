@@ -24,14 +24,14 @@ class searchController extends BaseController
 
     function searchDetails()
     {
-        $product_id = $_POST['product_id'] ?? null;
+        $productId = $_POST['productId'] ?? null;
 
-        if (!$product_id || !preg_match('/^product_[0-9]+$/', $product_id)) {
+        if (!$productId || !preg_match('/^product_[0-9]+$/', $productId)) {
             exit();
         }
 
         $userId = $_SESSION["user"]->getId();
-        $productId = substr($product_id, 8);
+        $productId = substr($productId, 8);
         $product = Product::find($productId);
         $sales = Sale::where("id_product", $productId);
 
