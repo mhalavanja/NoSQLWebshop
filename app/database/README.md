@@ -38,6 +38,7 @@ $ sudo pecl install mongodb
 Dodaj ekstenziju u php.ini:
 
 > > You should add "extension=mongodb.so" to php.ini
+> > In bellow path write your php version instead 7.2
 
 ```
 $ sudo gedit /etc/php/7.2/apache2/php.ini
@@ -108,6 +109,7 @@ Ažurirajte sve postojeće pakete
 $ sudo apt update
 
 Instalacija Neo4j:
+```
 $sudo apt install apt-transport-https ca-certificates curl software-properties-common
 
 $curl -fsSL https://debian.neo4j.com/neotechnology.gpg.key | sudo apt-key add -
@@ -117,10 +119,11 @@ $sudo add-apt-repository "deb https://debian.neo4j.com stable 4.1"
 $sudo apt install neo4j
 
 $sudo systemctl enable neo4j.service
-
+```
 Provjeri instalaciju:
-
+```
 $ sudo systemctl status neo4j.service
+```
  Trebalo bi ispis bit sličan ovome, ključno je da se pojave VELIKE riječi:
 
   neo4j.service - Neo4j Graph Database
@@ -132,7 +135,7 @@ $ sudo systemctl status neo4j.service
      CGroup: /system.slice/neo4j.service
 
 Pokretanje u Neo4j u terminalu:
-
+```
 $ cypher-shell
-
+```
 Username i password su "neo4j" (bez navodnika) i pri prvom pokretanju mora se promijeniti password.
