@@ -25,11 +25,7 @@ class loginController extends BaseController
     {
         $username = $_POST["username"];
         $password = $_POST["password"];
-        $user = UserService::getUserByUsername($username);
-//        echo '<pre>';
-//        var_dump($user);
-//        echo '</pre>';
-//        echo '<br>';
+        $user = UserService::getUserByProperty("username", $username);
         if (!$user) {
             $this->registry->template->loginError = true;
             $this->registry->template->show("login");
@@ -73,7 +69,7 @@ class loginController extends BaseController
             for ($i = 0; $i < random_int(10, 20); $i++) $sequence .= chr(random_int(97, 122));
             $link .= $sequence . '">link</a>';
             $user->setregistrationSequence($sequence);
-            User::save($user);
+            UserService::saveUser($user);
             $subject = "Registration for ebuy";
             $body = "Click on the followinng" . $link . " to finish your registration for ebuy!";
             $header = "Reply-To: " . $email . "\r\n";
@@ -88,10 +84,10 @@ class loginController extends BaseController
     {
         $sequence = $_GET["sequence"] ?? null;
         echo $sequence;
-        $user = User::where("registrationSequence", $sequence);
+        $user = UserS("registrationSequence", $sequence);
         if ($user) $user = $user[0];
         $user->sethasRegistered(true);
-        User::save($user);
+        UserService::saveUser($user);
         $_SESSION["user"] = $user;
         header('Location: ' . __SITE_URL . '/index.php');
     }

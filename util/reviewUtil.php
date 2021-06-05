@@ -1,12 +1,14 @@
 <?php
+require_once __SITE_PATH . '/service/UserService.php';
 
 function getReviewsForProduct($sales)
 {
     $reviews = [];
     foreach ($sales as $sale) {
         $review = [];
-        $id = $sale->getId_user();
-        $reviewer = User::find($id);
+        $id = $sale->getBuyerId();
+//        echo $id;
+        $reviewer = UserService::getUserByProperty("_id", new MongoDB\BSON\ObjectId($id));
         $rating = $sale->getRating();
         $comment = $sale->getComment();
 
@@ -23,7 +25,7 @@ function getReviewsForProduct($sales)
 function getSaleIdForUserIfTheyCanReview($userId, $sales)
 {
     foreach ($sales as $sale) {
-        $id = $sale->getId_user();
+        $id = $sale->getUserId();
         $rating = $sale->getRating();
         $comment = $sale->getComment();
 

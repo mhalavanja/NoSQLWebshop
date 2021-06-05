@@ -1,7 +1,8 @@
 <?php
 require_once __SITE_PATH . '/util/starProductUtil.php';
 require_once __SITE_PATH . '/util/reviewUtil.php';
-
+require_once __SITE_PATH . '/service/ProductService.php';
+require_once __SITE_PATH . '/service/SalesService.php';
 
 class searchController extends BaseController
 {
@@ -16,7 +17,7 @@ class searchController extends BaseController
     {
         $searchTerm = $_POST["search"] ?? null;
         $searchTerm = "%" . $searchTerm . "%";
-        $products = Product::like("name", $searchTerm);
+        $products = ProductService::getProductsLike($searchTerm);
         $starProducts = getStarProducts($products);
         $_SESSION["starProducts"] = $starProducts;
         header('Location: ' . __SITE_URL . '/index.php?rt=search');
@@ -32,8 +33,8 @@ class searchController extends BaseController
 
         $userId = $_SESSION["user"]->getId();
         $productId = substr($productId, 8);
-        $product = Product::find($productId);
-        $sales = Sale::where("id_product", $productId);
+        $product = ProductService::getProductById($productId);
+        $sales = SalesService::getSalesForProduct($productId);
 
         $this->registry->template->reviews = getReviewsForProduct($sales);
         $this->registry->template->canBuy = !($product->getId_user() === $userId);

@@ -1,11 +1,6 @@
 <?php
 function mongoToClass($document, $obj, $skip=false)
 {
-//    echo '<pre>';
-//    print_r($document);
-//    echo '</pre>';
-//    echo '<br>';
-//    return;
     foreach ($document as $key => $val) {
         $setProperty = "set" . ucfirst($key);
 

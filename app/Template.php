@@ -39,9 +39,6 @@ class Template
         foreach ($this->vars as $key => $value) {
             $$key = $value;
         }
-
-        // Ovdje ne koristimo require_once, zato da bi controller i više puta mogao prikazati jedan te isti view.
-        // (Na primjer, za svakog usera pozove jedan (uvijek isti) view koji prikaže podatke o tom useru.)
         require($path);
     }
 }

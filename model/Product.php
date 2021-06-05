@@ -22,12 +22,12 @@ class Product implements IteratorAggregate
         $this->id = $id;
     }
 
-    public function get_userId()
+    public function getUserId()
     {
         return $this->userId;
     }
 
-    public function set_userId($userId)
+    public function setUserId($userId): void
     {
         $this->userId = $userId;
     }

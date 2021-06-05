@@ -6,6 +6,7 @@ class Sale
     private $id;
     private $productId;
     private $userId;
+    private $buyerId;
     private $rating;
     private $comment;
     private $category;
@@ -45,6 +46,16 @@ class Sale
     public function setUserId($userId): void
     {
         $this->userId = $userId;
+    }
+
+    public function getBuyerId()
+    {
+        return $this->buyerId;
+    }
+
+    public function setBuyerId($buyerId): void
+    {
+        $this->buyerId = $buyerId;
     }
 
     public function getRating()
