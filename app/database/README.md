@@ -65,8 +65,8 @@ $ sudo systemctl restart apache2
 
 ## Upute za inicijalno punjenje lokalne mongoDB baze
 
-Pokrenite skriptu `load_mongodb.php`. Skripta ce napuniti bazu sa hardcodiranim vrijednostima iz `documents.php`.
-Ukpuno je 18 usera.
+Pokrenite skriptu `load_database.php`. Skripta ce napuniti bazu sa hardcodiranim vrijednostima iz `documents.php`.
+Ukpuno je 30 usera.
 Sifre u plain textu za usere se mogu vidjeti u `documents.php` fileu.
 
 ### Kako provjeriti je li skripta napravila posao?
@@ -105,9 +105,9 @@ Ponovo inicijalno napunite bazu prema gornjim uputama.
 ## Upute za instalaciju Neo4j na Ubuntu 20.04 (Neo4j verzija 4.1)
 
 Ažurirajte sve postojeće pakete
-
+```
 $ sudo apt update
-
+```
 Instalacija Neo4j:
 ```
 $sudo apt install apt-transport-https ca-certificates curl software-properties-common
@@ -139,3 +139,17 @@ Pokretanje u Neo4j u terminalu:
 $ cypher-shell
 ```
 Username i password su "neo4j" (bez navodnika) i pri prvom pokretanju mora se promijeniti password.
+
+## Punjenje baze za Neo4j
+Baza sa korisnicima i preporukama se puni zajedno sa MongoDB bazom
+
+### Kako obrisati Neo4j bazu?
+Moguće je u naredbom
+```
+$ cypher-shel
+```
+u terminalu pokrenuti Neo4j bazu ili na lokalnom browseru.
+Tada je samo potrebno pokrenuti naredbu
+```
+$ MATCH (n) DETACH DELETE n;
+```
