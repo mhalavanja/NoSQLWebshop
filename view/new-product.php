@@ -13,13 +13,18 @@ if(isset($error) && $error === true) echo "<p>All the fields are required!</p>" 
     </div>
     <br>
     <div class="form-group">
-        <label for="category">Category: </label>
-        <input class="form-control" type="text" id="category" name="category">
+        <label for="category">Select product category:</label><br>
+        <select class="form-control" id="category" name="category">
+            <option value="Automobili">Automobili</option>
+            <option value="Elektronika">Elektronika</option>
+            <option value="Hrana">Hrana</option>
+            <option value="Pića">Pića</option>
+        </select>
     </div>
     <br>
     <div class="form-group">
         <label for="name">Price: </label>
-        <input class="form-control" type="number" id="price" name="price">
+        <input class="form-control" type="number" id="price" name="price" step=".01">
     </div>
     <br>
     <button class="btn btn-primary" type="submit">Submit!</button>

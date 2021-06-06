@@ -60,8 +60,8 @@ class productsController extends BaseController
 
     function processNewProduct()
     {
-        if (!isset($_POST['name']) || !isset($_POST['description']) || !isset($_POST['price']) ||
-            empty($_POST['name']) || empty($_POST['description']) || empty($_POST['price'])) {
+        if (!isset($_POST['name']) || !isset($_POST['description']) || !isset($_POST['category']) || !isset($_POST['price']) ||
+            empty($_POST['name']) || empty($_POST['description']) || empty($_POST['category']) || empty($_POST['price'])) {
             $this->registry->template->error = true;
             $this->registry->template->show("new-product");
             return;
@@ -71,6 +71,7 @@ class productsController extends BaseController
         $product->setName($_POST['name']);
         $product->setDescription($_POST['description']);
         $product->setPrice($_POST['price']);
+        $product->setCategory($_POST['category']);
         ProductService::saveProduct($userId, $product);
         $_SESSION["user"]->setProductArray(ProductService::getProductsForUser($userId));
         header('Location: ' . __SITE_URL . '/index.php?rt=products/index');
