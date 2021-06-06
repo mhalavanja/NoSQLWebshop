@@ -4,6 +4,7 @@
 class Product
 {
     private $id;
+    private $userId; //nije dio Product objekta u bazi, nego je _id usera kojem pripada ovaj product
     private $name;
     private $description;
     private $category;
@@ -21,6 +22,16 @@ class Product
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
     }
 
     public function getName()

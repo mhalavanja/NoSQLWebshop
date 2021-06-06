@@ -138,6 +138,22 @@ class Sale implements IteratorAggregate
         $this->username = $username;
     }
 
+    public function getFieldsForSave()
+    {
+        return array(
+            '_id' => $this->id,
+            'userId' => $this->userId,
+            'productId' => $this->productId,
+            'name' => $this->name,
+            'description' => $this->description,
+            'category' => $this->category,
+            'price' => $this->price,
+            'comment' => $this->comment,
+            'rating' => $this->rating,
+            'quantity' => $this->quantity
+        );
+    }
+
     public function getIterator()
     {
         return new ArrayIterator(array(

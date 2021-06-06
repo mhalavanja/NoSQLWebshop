@@ -86,24 +86,38 @@ class SalesService
         $id = new MongoDB\BSON\ObjectId("$userId");
 
         $filter = [
-            '_id' => $userId
+            '_id' => $id
         ];
         $options = [
             'projection' => [
-                'saleArray' => true
+                'saleArray' => true,
+                '_id' => false
             ]
         ];
         $query = new Query($filter, $options);
         $rows = $manager->executeQuery('projekt.users', $query);
         $sales = [];
-        foreach ($rows as $document) {
-            $document = json_decode(json_encode($document), true);
-//            echo "<pre>";
-//            print_r($document);
-//            echo "</pre>";
-            $sale = mongoToClass($document, new Sale(), true);
-            $sales[] = $sale;
+        foreach ($rows as $row) {
+            $row = json_decode(json_encode($row), true);
+           foreach ($row["saleArray"] as $document) $sales[] = mongoToClass($document, new Sale(), false);
         }
         return $sales;
+    }
+
+    static function saveSale($userId, $sale)
+    {
+        $bulk = new MongoDB\Driver\BulkWrite;
+        $sale->setId(new MongoDB\BSON\ObjectId);
+        $sale->setUserId(new MongoDB\BSON\ObjectId($userId));
+        $sale->setProductId(new MongoDB\BSON\ObjectId($sale->getProductId()));
+
+        $filter = ["_id" => new MongoDB\BSON\ObjectId($userId)];
+        $newObj = ['$addToSet' => ['saleArray' => $sale->getFieldsForSave()]];
+        $bulk->update($filter, $newObj);
+
+        $mongo = mongoDB::getConnection();
+
+        $result = $mongo->executeBulkWrite('projekt.users', $bulk);
+        return $result;
     }
 }

@@ -108,10 +108,17 @@ class productsController extends BaseController
         $userId = $_SESSION["user"]->getId();
         if (!$userId) header('Location: ' . __SITE_URL . '/index.php');
         if (!$productId) exit();
+        $product = ProductService::getProductById($productId);
         $sale = new Sale();
         $sale->setProductId($productId);
         $sale->setUserId($userId);
-        Sale::save($sale);
+        $sale->setName($product->getName());
+        $sale->setDescription($product->getDescription());
+        $sale->setCategory($product->getCategory());
+        $sale->setPrice($product->getPrice());
+        $sale->setQuantity(1);
+        SalesService::saveSale($userId, $sale);
+        $_SESSION["user"]->setSaleArray(SalesService::getSalesForUser($userId));
         header('Location: ' . __SITE_URL . '/index.php?rt=search');
     }
 }
