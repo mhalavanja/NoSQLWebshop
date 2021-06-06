@@ -16,7 +16,6 @@ class searchController extends BaseController
     function processSearch()
     {
         $searchTerm = $_POST["search"] ?? null;
-        $searchTerm = "%" . $searchTerm . "%";
         $products = ProductService::getProductsLike($searchTerm);
         $starProducts = getStarProducts($products);
         $_SESSION["starProducts"] = $starProducts;
@@ -27,7 +26,7 @@ class searchController extends BaseController
     {
         $productId = $_POST['productId'] ?? null;
 
-        if (!$productId || !preg_match('/^product_[0-9]+$/', $productId)) {
+        if (!$productId || !preg_match('/^product_[a-zA-Z0-9]+$/', $productId)) {
             exit();
         }
 
@@ -37,7 +36,7 @@ class searchController extends BaseController
         $sales = SalesService::getSalesForProduct($productId);
 
         $this->registry->template->reviews = getReviewsForProduct($sales);
-        $this->registry->template->canBuy = !($product->getId_user() === $userId);
+        $this->registry->template->canBuy = !($product->getUserId() === $userId);
         $this->registry->template->starProduct = getStarProduct($product);
         $this->registry->template->numOfSoldProducts = sizeof($sales);
         $this->registry->template->show("product");

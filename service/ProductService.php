@@ -27,7 +27,41 @@ class ProductService
 
     static function getProductsLike($likeTerm)
     {
+        $manager = mongoDB::getConnection();
+        $filter = [
+            'productArray.name' => ['$regex' => '(?i)' . $likeTerm]
+        ];
+        $options = [
+            'projection' => [
+                'productArray' => [
+                    '$elemMatch' => [
+                        'name' => [
+                            '$regex' => '(?i)' . $likeTerm
+                        ]
+                    ]
+                ]
+            ]
+        ];
+        $query = new Query($filter, $options);
+        $rows = $manager->executeQuery('projekt.users', $query);
+        $products = [];
+        foreach ($rows as $document) {
+            $document = json_decode(json_encode($document), true);
+            $product = mongoToClass($document, new Product(), true);
 
+            // Ovaj dio je dodan kako bi se dodatno spremio userId za svaki produkt, jer mongoToClass ne zna hendlati taj slucaj
+            foreach ($document as $key => $val) {
+                if ($key === "_id") {
+                    $product->setUserId($val["\$oid"]);
+                    break;
+                }
+            }
+            ///////////////////////////////////////////////
+
+            $products[] = $product;
+
+        }
+        return $products;
     }
 
     static function getProductById($productId)
