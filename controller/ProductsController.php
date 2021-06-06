@@ -98,7 +98,8 @@ class productsController extends BaseController
         $sale->setRating($rating);
         $sale->setComment($comment);
         $_SESSION["productId"] = "product_" . $_POST["productId"];
-        Sale::save($sale);
+        SalesService::setFeedback($sale);
+        $_SESSION["user"]->setSaleArray(SalesService::getSalesForUser($_SESSION["user"]->getId()));
         header('Location: ' . __SITE_URL . '/index.php?rt=products/product');
     }
 
@@ -117,7 +118,7 @@ class productsController extends BaseController
         $sale->setCategory($product->getCategory());
         $sale->setPrice($product->getPrice());
         $sale->setQuantity(1);
-        SalesService::saveSale($userId, $sale);
+        SalesService::saveSale($sale);
         $_SESSION["user"]->setSaleArray(SalesService::getSalesForUser($userId));
         header('Location: ' . __SITE_URL . '/index.php?rt=search');
     }

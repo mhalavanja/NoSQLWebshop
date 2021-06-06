@@ -154,6 +154,14 @@ class Sale implements IteratorAggregate
         );
     }
 
+    public function getFieldsForFeedbackSave()
+    {
+        return array(
+            'saleArray.$.comment' => $this->comment,
+            'saleArray.$.rating' => $this->rating
+        );
+    }
+
     public function getIterator()
     {
         return new ArrayIterator(array(

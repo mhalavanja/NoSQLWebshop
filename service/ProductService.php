@@ -76,16 +76,7 @@ class ProductService
         foreach ($rows as $document) {
             $document = json_decode(json_encode($document), true);
             $product = mongoToClass($document, new Product(), true);
-
-            // Ovaj dio je dodan kako bi se dodatno spremio userId za svaki produkt, jer mongoToClass ne zna hendlati taj slucaj
-            foreach ($document as $key => $val) {
-                if ($key === "_id") {
-                    $product->setUserId($val["\$oid"]);
-                    break;
-                }
-            }
-            ///////////////////////////////////////////////
-
+            $product->setUserId($document["_id"]["\$oid"]);
             $products[] = $product;
 
         }
