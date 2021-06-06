@@ -102,6 +102,7 @@ class ProductService
         ];
         $options = [
             'projection' => [
+                '_id' => true,
                 'productArray' => [
                     '$elemMatch' => [
                         '_id' => $id
@@ -120,7 +121,8 @@ class ProductService
 //            echo "<pre>";
 //            print_r($document);
 //            echo "</pre>";
-            $product = mongoToClass($document, new Sale(), true);
+            $product = mongoToClass($document, new Product(), true);
+            $product->setUserId($document["_id"]["\$oid"]);
         }
         return $product;
     }
