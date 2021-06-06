@@ -14,12 +14,12 @@ class usersController extends BaseController
 
     function processProfile()
     {
-        $user = UserService::getUserByProperty("_id", $_SESSION["user"]->getId());
+        $user = $_SESSION["user"];
         $user->setName($_POST["name"]);
         $user->setLastname($_POST["lastname"]);
         $user->setUsername($_POST["username"]);
         $user->setEmail($_POST["email"]);
-        UserService::saveUser($user);
+        UserService::updateUser($user);
         header('Location: ' . __SITE_URL . '/index.php?rt=users');
     }
 

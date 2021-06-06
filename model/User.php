@@ -17,7 +17,11 @@ class User
     private $productArray;
     private $saleArray;
 
-    public function __construct(){}
+    public function __construct(){
+        $this->setProductArray([]);
+        $this->setSaleArray([]);
+        return $this;
+    }
 
     public function getId()
     {
@@ -147,5 +151,23 @@ class User
     public function setSaleArray($saleArray): void
     {
         $this->saleArray = $saleArray;
+    }
+
+    public function getFieldsForSave()
+    {
+        return array(
+            '_id' => $this->id,
+            'username' => $this->username,
+            'passwordHash' => $this->passwordHash,
+            'email' => $this->email,
+            'registrationSequence' => $this->registrationSequence,
+            'hasRegistered' => $this->hasRegistered,
+            'isAdmin' => $this->isAdmin,
+            'name' => $this->name,
+            'lastname' => $this->lastname,
+            'favoriteCategory' => $this->favoriteCategory,
+            'productArray' => $this->productArray,
+            'saleArray' => $this->saleArray,
+        );
     }
 }

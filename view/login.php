@@ -1,9 +1,7 @@
 <?php require_once __SITE_PATH . '/view/_header.php'; ?>
 
-    <p <?php if (!isset($loginError) || !$loginError) echo "hidden" ?>> Wrong username or password!</p>
-    <p <?php if (!isset($registrationError) || !$registrationError) echo "hidden" ?>> Enter all the fields!</p>
-    <p <?php if (!isset($hasRegistered) || $hasRegistered) echo "hidden" ?>> You have to finish the registration
-        first!</p>
+    <?php if (isset($error) && isset($errorMessage) && $error) echo "<p>" . $errorMessage . "</p>"; ?>
+
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=login/processLoginForm' ?>">
         <div class="form-group">
             <label for="username">Username:</label>

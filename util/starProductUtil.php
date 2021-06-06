@@ -3,6 +3,7 @@ require_once(__SITE_PATH . "/service/SalesService.php");
 
 function getStarProducts($products)
 {
+    if (!$products) return null;
     $starProducts = [];
     foreach ($products as $product) $starProducts[] = getStarProduct($product);
     return $starProducts;
@@ -13,9 +14,9 @@ function getStarProduct($product)
     $totalRating = 0;
     $numOfRatings = 0;
     $sales = SalesService::getSalesForProduct($product->getId());
-    foreach ($sales as $sale){
+    foreach ($sales as $sale) {
         $rating = $sale->getRating();
-        if ($rating !== null){
+        if ($rating !== null) {
             $numOfRatings++;
             $totalRating += $rating;
         }

@@ -45,8 +45,14 @@ class UserService
 
     static function saveUser($user)
     {
-        saveUserMongoDB($user);
-        saveUserNeo4J($user);
+        UserService::saveUserMongoDB($user);
+        UserService::saveUserNeo4J($user);
+    }
+
+    static function updateUser($user)
+    {
+        UserService::updateUserMongoDB($user);
+        UserService::updateUserNeo4J($user);
     }
 
     static function saveRecommendationForUser($recommendation, $userId)
@@ -54,7 +60,43 @@ class UserService
 
     }
 
-    private function saveUserMongoDB($user){
+    private static function saveUserMongoDB($user){
+        $bulk = new MongoDB\Driver\BulkWrite;
+        $user->setId(new MongoDB\BSON\ObjectId);
+
+        $bulk->insert($user->getFieldsForSave());
+        $mongo = mongoDB::getConnection();
+
+        $result = $mongo->executeBulkWrite('projekt.users', $bulk);
+        return $result;
+    }
+
+    private static function updateUserMongoDB($user){
+        $bulk = new MongoDB\Driver\BulkWrite;
+        $filter = ['_id' => new MongoDB\BSON\ObjectId($user->getId())];
+        $newObj = ['$set' => $user->getFieldsForSave()];
+        $bulk->update($filter, $newObj);
+//        echo "<pre>";
+//        print_r($product->getIterator());
+//        echo "</pre>";
+//        return;
+        $mongo = mongoDB::getConnection();
+
+        $result = $mongo->executeBulkWrite('projekt.users', $bulk);
+//        echo "<pre>";
+//        print_r($result);
+//        echo "</pre>";
+//        return;
+        return $result;
+    }
+
+    private static function saveUserNeo4J($user)
+    {
+
+    }
+
+    private static function updateUserNeo4J($user)
+    {
 
     }
 }

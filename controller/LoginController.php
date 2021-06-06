@@ -8,7 +8,7 @@ class loginController extends BaseController
     {
         if (!isset($_SESSION["user"])) {
             $this->registry->template->title = "Login";
-            $this->registry->template->loginError = false;
+            $this->registry->template->error = false;
             $this->registry->template->show("login");
         } else {
             header('Location: ' . __SITE_URL . '/index.php?rt=products/index');
@@ -27,15 +27,18 @@ class loginController extends BaseController
         $password = $_POST["password"];
         $user = UserService::getUserByProperty("username", $username);
         if (!$user) {
-            $this->registry->template->loginError = true;
+            $this->registry->template->error = true;
+            $this->registry->template->errorMessage = "Wrong username or password!";
             $this->registry->template->show("login");
             return;
         }
         if (!password_verify($password, $user->getpasswordHash())) {
-            $this->registry->template->loginError = true;
+            $this->registry->template->error = true;
+            $this->registry->template->errorMessage = "Wrong username or password!";
             $this->registry->template->show("login");
         } elseif (!$user->gethasRegistered()) {
-            $this->registry->template->hasRegistered = false;
+            $this->registry->template->error = true;
+            $this->registry->template->errorMessage = "You have to finish the registration first!";
             $this->registry->template->show("login");
         } else {
             $_SESSION["user"] = $user;
@@ -56,13 +59,18 @@ class loginController extends BaseController
         $username = $_POST["username"] ?? null;
         $password = $_POST["password"] ?? null;
         if (!$email || !$username || !$password) {
+            $this->registry->template->error = true;
+            $this->registry->template->errorMessage = "Enter all the fields!";
+            $this->registry->template->show("login");
+
+        } elseif (UserService::getUserByProperty("username", $username)) {
             $this->registry->template->registrationError = true;
             $this->registry->template->show("login");
         } else {
             $user = new User();
             $user->setUsername($username);
             $user->setEmail($email);
-            $user->setpasswordHash(passwordHash($password, PASSWORD_DEFAULT));
+            $user->setpasswordHash(password_hash($password, PASSWORD_DEFAULT));
             $link = '<a href = "' . $_SERVER["HTTP_HOST"] . __SITE_URL . "/index.php?rt=login/finishRegistration&sequence=";
             $sequence = "";
 
@@ -84,9 +92,12 @@ class loginController extends BaseController
     {
         $sequence = $_GET["sequence"] ?? null;
         echo $sequence;
-        $user = UserS("registrationSequence", $sequence);
-        if ($user) $user = $user[0];
-        $user->sethasRegistered(true);
+        $user = UserService::getUserByProperty("registrationSequence", $sequence);
+        if (!$user) {
+            "Something's wrong: " . var_dump(error_get_last());
+            return;
+        }
+        $user->setHasRegistered(true);
         UserService::saveUser($user);
         $_SESSION["user"] = $user;
         header('Location: ' . __SITE_URL . '/index.php');

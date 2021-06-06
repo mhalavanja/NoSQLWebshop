@@ -44,6 +44,7 @@ class productsController extends BaseController
 //        echo "<pre>";
 //        print_r($sales);
 //        echo "</pre>";
+//        echo $saleId;
         $this->registry->template->canReview = (bool)$saleId;
         $this->registry->template->reviews = getReviewsForProduct($sales);
         $this->registry->template->saleId = $saleId;
@@ -78,12 +79,14 @@ class productsController extends BaseController
     function shoppingHistory()
     {
         $sales = $_SESSION["user"]->getSaleArray();
-        $products = [];
-        foreach ($sales as $sale) {
-            $product = ProductService::getProductById($sale->getProductId());
-            $products[] = $product;
+        if($sales){
+            $products = [];
+            foreach ($sales as $sale) {
+                $product = ProductService::getProductById($sale->getProductId());
+                $products[] = $product;
+            }
+            $this->registry->template->starProducts = getStarProducts($products);
         }
-        $this->registry->template->starProducts = getStarProducts($products);
         $this->registry->template->show("shopping-history");
     }
 
