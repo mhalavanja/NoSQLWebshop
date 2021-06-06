@@ -1,6 +1,11 @@
 <?php
 function mongoToClass($document, $obj, $skip=false)
 {
+//    echo '<pre>';
+//    print_r($document);
+//    echo '</pre>';
+//    echo '<br>';
+//    return;
     foreach ($document as $key => $val) {
         $setProperty = "set" . ucfirst($key);
 
@@ -9,6 +14,12 @@ function mongoToClass($document, $obj, $skip=false)
             continue;
         }
         elseif (strpos($key, "Id")){
+//            echo '<pre>';
+//            print_r($key);
+//            print_r($val);
+//            echo '</pre>';
+//            echo '<br>';
+//            return;
             $obj->$setProperty($val["\$oid"]);
             continue;
         }
@@ -25,12 +36,7 @@ function mongoToClass($document, $obj, $skip=false)
                 else // Problem je kod upita za salesForProduct. Vraca se array sa jednim clanom, i onda se trazi Sales::setSaleArray metoda
                     return mongoToClass($inner, $innerObj);
             }
-//            echo '<pre>';
-//            print_r($val);
-//            print_r($innerObjectArray);
-//            echo '</pre>';
-//            echo '<br>';
-//            return;
+
             $obj->$setProperty($innerObjectArray);
         }
         else {

@@ -2,6 +2,7 @@
 require_once __SITE_PATH . '/util/starProductUtil.php';
 require_once __SITE_PATH . '/util/reviewUtil.php';
 require_once __SITE_PATH . '/service/ProductService.php';
+require_once __SITE_PATH . '/service/UserService.php';
 require_once __SITE_PATH . '/service/SalesService.php';
 
 
@@ -69,8 +70,8 @@ class productsController extends BaseController
         $product->setName($_POST['name']);
         $product->setDescription($_POST['description']);
         $product->setPrice($_POST['price']);
-        $product->setUserId($userId);
-        ProductService::saveProduct($userId ,$product);
+        ProductService::saveProduct($userId, $product);
+        $_SESSION["user"]->setProductArray(ProductService::getProductsForUser($userId));
         header('Location: ' . __SITE_URL . '/index.php?rt=products/index');
     }
 

@@ -1,12 +1,12 @@
 <?php
 
 
-class Sale
+class Sale implements IteratorAggregate
 {
     private $id;
     private $productId;
     private $userId;
-    private $buyerId;
+    private $buyerId; //nije dio Sale objekta u bazi, nego je _id usera kojem pripada ovaj sale
     private $rating;
     private $comment;
     private $category;
@@ -14,7 +14,7 @@ class Sale
     private $price;
     private $description;
     private $name;
-    private $username;
+    private $username; //nije dio Sale objekta u bazi, nego je username usera kojem pripada ovaj sale
 
     public function __construct(){}
 
@@ -136,5 +136,21 @@ class Sale
     public function setUsername($username): void
     {
         $this->username = $username;
+    }
+
+    public function getIterator()
+    {
+        return new ArrayIterator(array(
+            '_id' => $this->id,
+            'productId' => $this->productId,
+            'userId' => $this->userId,
+            'rating' => $this->rating,
+            'comment' => $this->comment,
+            'category' => $this->category,
+            'quantity' => $this->quantity,
+            'price' => $this->price,
+            'description' => $this->description,
+            'name' => $this->name
+        ));
     }
 }

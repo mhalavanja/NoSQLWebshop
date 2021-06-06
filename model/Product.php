@@ -1,16 +1,17 @@
 <?php
 
 
-class Product implements IteratorAggregate
+class Product
 {
     private $id;
-    private $userId;
     private $name;
     private $description;
     private $category;
     private $price;
 
-    public function __construct(){}
+    public function __construct()
+    {
+    }
 
     public function getId()
     {
@@ -20,16 +21,6 @@ class Product implements IteratorAggregate
     public function setId($id)
     {
         $this->id = $id;
-    }
-
-    public function getUserId()
-    {
-        return $this->userId;
-    }
-
-    public function setUserId($userId): void
-    {
-        $this->userId = $userId;
     }
 
     public function getName()
@@ -72,15 +63,14 @@ class Product implements IteratorAggregate
         $this->price = $price;
     }
 
-    public function getIterator()
+    public function getFieldsForSave()
     {
-        return new ArrayIterator(array(
-            'id' => $this->id,
-            'id_user' => $this->userId,
+        return array(
+            '_id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
             'category' => $this->category,
             'price' => $this->price,
-        ));
+        );
     }
 }

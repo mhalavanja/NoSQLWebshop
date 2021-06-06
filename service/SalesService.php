@@ -79,4 +79,31 @@ class SalesService
         }
         return $sales;
     }
+
+    static function getSalesForUser($userId)
+    {
+        $manager = mongoDB::getConnection();
+        $id = new MongoDB\BSON\ObjectId("$userId");
+
+        $filter = [
+            '_id' => $userId
+        ];
+        $options = [
+            'projection' => [
+                'saleArray' => true
+            ]
+        ];
+        $query = new Query($filter, $options);
+        $rows = $manager->executeQuery('projekt.users', $query);
+        $sales = [];
+        foreach ($rows as $document) {
+            $document = json_decode(json_encode($document), true);
+//            echo "<pre>";
+//            print_r($document);
+//            echo "</pre>";
+            $sale = mongoToClass($document, new Sale(), true);
+            $sales[] = $sale;
+        }
+        return $sales;
+    }
 }

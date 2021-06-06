@@ -32,7 +32,8 @@ class usersController extends BaseController
 
     function users()
     {
-        $this->registry->template->users = UserService::getAllUsers();
+        $users = isset($_GET["userId"]) ? UserService::getRecommendationsForUser($_GET["userId"]) : UserService::getAllUsers();
+        $this->registry->template->users = $users;
         $this->registry->template->show("users");
     }
 }
