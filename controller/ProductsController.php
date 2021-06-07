@@ -83,7 +83,8 @@ class productsController extends BaseController
         if($sales){
             $products = [];
             foreach ($sales as $sale) {
-                $products[] = $sale;
+                $product = ProductService::getProductById($sale->getProductId());
+                $products[] = $product;
             }
             $this->registry->template->starProducts = getStarProducts($products);
         }

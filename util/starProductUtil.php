@@ -15,15 +15,16 @@ function getStarProduct($product)
     $numOfRatings = 0;
     $id = method_exists($product, "getProductId") ? $product->getProductId() : $product->getId();
     $sales = SalesService::getSalesForProduct($id);
+    $starProduct = new StarProduct();
     foreach ($sales as $sale) {
         $rating = $sale->getRating();
         if ($rating !== null) {
             $numOfRatings++;
             $totalRating += $rating;
         }
+        $starProduct->setQuantity($sale->getQuantity());
     }
     $avgRating = $numOfRatings !== 0 ? round(($totalRating / $numOfRatings) * 2) / 2 : 0;
-    $starProduct = new StarProduct();
     $starProduct->setProduct($product);
     $starProduct->setAvgRating($avgRating);
     return $starProduct;
