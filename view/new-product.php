@@ -1,4 +1,5 @@
-<?php require_once __SITE_PATH . '/view/_header.php';
+<?php
+require_once __SITE_PATH . '/view/_header.php';
 if(isset($error) && $error === true) echo "<p>All the fields are required!</p>" ?>
 <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=products/processNewProduct' ?>">
     <br>

@@ -98,7 +98,7 @@ class loginController extends BaseController
             return;
         }
         $user->setHasRegistered(true);
-        UserService::saveUser($user);
+        UserService::updateUser($user, $user->getUsername());
         $_SESSION["user"] = $user;
         header('Location: ' . __SITE_URL . '/index.php');
     }

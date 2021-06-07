@@ -170,4 +170,21 @@ class User
             'saleArray' => $this->saleArray,
         );
     }
+
+    public function getFieldsForUpdate()
+    {
+        return array(
+            'username' => $this->username,
+            'passwordHash' => $this->passwordHash,
+            'email' => $this->email,
+            'registrationSequence' => $this->registrationSequence,
+            'hasRegistered' => $this->hasRegistered,
+            'isAdmin' => $this->isAdmin,
+            'name' => $this->name,
+            'lastname' => $this->lastname,
+            'favoriteCategory' => $this->favoriteCategory,
+            'productArray' => $this->productArray,
+            'saleArray' => $this->saleArray,
+        );
+    }
 }

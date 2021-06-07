@@ -57,10 +57,10 @@ class UserService
         UserService::saveUserNeo4J($user);
     }
 
-    static function updateUser($user, $oldusername)
+    static function updateUser($user, $oldUsername)
     {
         UserService::updateUserMongoDB($user);
-        UserService::updateUserNeo4J($user, $oldusername);
+        UserService::updateUserNeo4J($user, $oldUsername);
     }
 
     static function saveRecommendationForUser($recommendationUsername, $user)
@@ -87,7 +87,7 @@ class UserService
     private static function updateUserMongoDB($user){
         $bulk = new MongoDB\Driver\BulkWrite;
         $filter = ['_id' => new MongoDB\BSON\ObjectId($user->getId())];
-        $newObj = ['$set' => $user->getFieldsForSave()];
+        $newObj = ['$set' => $user->getFieldsForUpdate()];
         $bulk->update($filter, $newObj);
 //        echo "<pre>";
 //        print_r($product->getIterator());
@@ -112,12 +112,12 @@ class UserService
         return $result;
     }
 
-    private static function updateUserNeo4J($user, $oldusername)
+    private static function updateUserNeo4J($user, $oldUsername)
     {
         $client = ClientBuilder::create()
             ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
             ->build();
-            $result = $client->run('MATCH (u:User{username : $oldusername}) SET u.username = $username, u.name = $name, u.lastname = $lastname, u.email = $email',['oldusername'=>$oldusername  ,'username'=>$user->getUsername(), 'name' =>$user->getName(), 'lastname'=>$user->getLastname(), 'email'=>$user->getemail()]);
+            $result = $client->run('MATCH (u:User{username : $oldusername}) SET u.username = $username, u.name = $name, u.lastname = $lastname, u.email = $email',['oldusername'=>$oldUsername  ,'username'=>$user->getUsername(), 'name' =>$user->getName(), 'lastname'=>$user->getLastname(), 'email'=>$user->getemail()]);
         return $result;
     }
 }
