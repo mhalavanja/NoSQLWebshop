@@ -318,7 +318,7 @@ $documents = [
             [
                 "_id" => $sale_id_1_1,
                 "userId" => $user_id_3,                         // user 3 mora imati ovaj prduct
-                "productId" => $product_id_3_2,
+                "productId" => $product_id_3_3,
                 "name" => "Pošip vino",
                 "description" => "Vrhunsko bijelo vino Pošip",
                 "category" => "Pića",
@@ -480,7 +480,7 @@ $documents = [
             [
                 "_id" => $sale_id_4_1,
                 "userId" => $user_id_3,
-                "productId" => $product_id_3_2,
+                "productId" => $product_id_3_3,
                 "name" => "Pošip vino",
                 "description" => "Vrhunsko bijelo vino Pošip",
                 "category" => "Pića",
