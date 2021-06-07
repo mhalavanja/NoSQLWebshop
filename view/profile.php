@@ -37,8 +37,8 @@ $readOnly = $user->getId() !== $_SESSION["user"]->getId()
     </form>
     <br>
     Recommended users:
-<?php if ($readOnly) echo getUserList($user->getRecommendations(), false);
-else echo getUserList($user->getRecommendations(), true); ?>
+  <?php if ($readOnly) echo $user->getRecommendations();
+ else echo $user->getRecommendations(); ?>
     <br>
 <?php if (!$readOnly) { ?>
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=users/addRecommendation' ?>">

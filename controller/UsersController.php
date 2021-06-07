@@ -15,17 +15,18 @@ class usersController extends BaseController
     function processProfile()
     {
         $user = $_SESSION["user"];
+        $oldusername = $user->getUsername();
         $user->setName($_POST["name"]);
         $user->setLastname($_POST["lastname"]);
         $user->setUsername($_POST["username"]);
         $user->setEmail($_POST["email"]);
-        UserService::updateUser($user);
+        UserService::updateUser($user, $oldusername);
         header('Location: ' . __SITE_URL . '/index.php?rt=users');
     }
 
     function addRecommendation()
     {
-        UserService::saveRecommendationForUser($_POST["recommendation"], $_SESSION["user"]->getId());
+        UserService::saveRecommendationForUser($_POST["username"], $_SESSION["user"]);
         header('Location: ' . __SITE_URL . '/index.php?rt=users');
     }
 

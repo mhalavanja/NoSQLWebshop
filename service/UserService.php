@@ -4,6 +4,9 @@ use MongoDB\Driver\Query;
 
 require_once __SITE_PATH . '/app/database/mongodb.class.php';
 require_once __SITE_PATH . '/util/mongoToClassUtil.php';
+require_once __SITE_PATH . '/vendor/autoload.php';
+use GraphAware\Neo4j\Client\ClientBuilder;
+
 
 class UserService
 {
@@ -38,9 +41,14 @@ class UserService
         return $userArray;
     }
 
-    static function getRecommendationsForUser($userId)
+    static function getRecommendationsForUser($user)
     {
-
+        $client = ClientBuilder::create()
+            ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
+            ->build();
+        $result = $client->run('MATCH (u1:User {username : $username})-[:RECOMMEND]->(u2:User) RETURN u2.username AS username',['username' => $user->getUsername()]);
+        $records = $result->getRecords();
+        return $records;
     }
 
     static function saveUser($user)
@@ -49,15 +57,20 @@ class UserService
         UserService::saveUserNeo4J($user);
     }
 
-    static function updateUser($user)
+    static function updateUser($user, $oldusername)
     {
         UserService::updateUserMongoDB($user);
-        UserService::updateUserNeo4J($user);
+        UserService::updateUserNeo4J($user, $oldusername);
     }
 
-    static function saveRecommendationForUser($recommendation, $userId)
+    static function saveRecommendationForUser($recommendationUsername, $user)
     {
-
+        echo " ipsis";
+        $client = ClientBuilder::create()
+            ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
+            ->build();
+        $result = $client->run('MATCH (u1:User {username : $username1}), (u2:User {username : $username2}) CREATE (u1)-[:RECOMMEND]->(u2);', ['username1' => $user->getUsername(), 'username2' => $recommendationUsername]);
+        return $result;
     }
 
     private static function saveUserMongoDB($user){
@@ -92,11 +105,19 @@ class UserService
 
     private static function saveUserNeo4J($user)
     {
-
+        $client = ClientBuilder::create()
+            ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
+            ->build();
+        $result = $client->run('MERGE (u:User{username : $username, email : $email}) RETURN u',['username'=>$user->getUsername(), 'email'=>$user->getemail()]);
+        return $result;
     }
 
-    private static function updateUserNeo4J($user)
+    private static function updateUserNeo4J($user, $oldusername)
     {
-
+        $client = ClientBuilder::create()
+            ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
+            ->build();
+            $result = $client->run('MATCH (u:User{username : $oldusername}) SET u.username = $username, u.name = $name, u.lastname = $lastname, u.email = $email',['oldusername'=>$oldusername  ,'username'=>$user->getUsername(), 'name' =>$user->getName(), 'lastname'=>$user->getLastname(), 'email'=>$user->getemail()]);
+        return $result;
     }
 }

@@ -84,7 +84,7 @@ class loginController extends BaseController
             if (mail($email, $subject, $body, $header)) {
                 echo "Check your mail to finish a registration :)";
                 return;
-            } else "Something's wrong: " . var_dump(error_get_last());
+            } else echo "Something's wrong: "; //. var_dump(error_get_last());
         }
     }
 
@@ -94,7 +94,7 @@ class loginController extends BaseController
         echo $sequence;
         $user = UserService::getUserByProperty("registrationSequence", $sequence);
         if (!$user) {
-            "Something's wrong: " . var_dump(error_get_last());
+            echo "Something's wrong: " . var_dump(error_get_last());
             return;
         }
         $user->setHasRegistered(true);
