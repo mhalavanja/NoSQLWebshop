@@ -13,7 +13,8 @@ function getStarProduct($product)
 {
     $totalRating = 0;
     $numOfRatings = 0;
-    $sales = SalesService::getSalesForProduct($product->getId());
+    $id = method_exists($product, "getProductId") ? $product->getProductId() : $product->getId();
+    $sales = SalesService::getSalesForProduct($id);
     foreach ($sales as $sale) {
         $rating = $sale->getRating();
         if ($rating !== null) {

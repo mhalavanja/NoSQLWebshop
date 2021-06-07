@@ -1,7 +1,7 @@
 <?php
+require_once __SITE_PATH . "/model/Product.php";
 
-
-class Sale implements IteratorAggregate
+class Sale
 {
     private $id;
     private $productId;
@@ -160,21 +160,5 @@ class Sale implements IteratorAggregate
             'saleArray.$.comment' => $this->comment,
             'saleArray.$.rating' => $this->rating
         );
-    }
-
-    public function getIterator()
-    {
-        return new ArrayIterator(array(
-            '_id' => $this->id,
-            'productId' => $this->productId,
-            'userId' => $this->userId,
-            'rating' => $this->rating,
-            'comment' => $this->comment,
-            'category' => $this->category,
-            'quantity' => $this->quantity,
-            'price' => $this->price,
-            'description' => $this->description,
-            'name' => $this->name
-        ));
     }
 }

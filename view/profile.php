@@ -38,7 +38,7 @@ if (!isset($user)) return;
     <br>
     Recommended users:
     <br>
-<?php echo $user->getRecommendations(); ?>
+<?php echo getUserList($user->getRecommendations()); ?>
     <br>
 
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=users/addRecommendation' ?>">

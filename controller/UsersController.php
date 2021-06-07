@@ -9,6 +9,7 @@ class usersController extends BaseController
     {
         $user = $_SESSION["user"];
         $this->registry->template->user = $user;
+        $user->setRecommendations(UserService::getRecommendationsForUser($user->getUsername()));
         $this->registry->template->show("profile");
     }
 
@@ -21,20 +22,20 @@ class usersController extends BaseController
         $user->setUsername($_POST["username"]);
         $user->setEmail($_POST["email"]);
         UserService::updateUser($user, $oldusername);
-        header('Location: ' . __SITE_URL . '/index.php?rt=users');
+        header('Location: ' . __SITE_URL . '/index.php?rt=users/index');
     }
 
     function addRecommendation()
     {
         UserService::saveRecommendationForUser($_POST["username"], $_SESSION["user"]);
-        header('Location: ' . __SITE_URL . '/index.php?rt=users');
+        header('Location: ' . __SITE_URL . '/index.php?rt=users/index');
     }
 
 
     function users()
     {
-        $users = isset($_GET["userId"]) ? UserService::getRecommendationsForUser($_GET["userId"]) : UserService::getAllUsers();
-        $this->registry->template->users = $users;
+        $usernames = isset($_GET["username"]) ? UserService::getRecommendationsForUser($_GET["username"]) : UserService::getAllUsernames();
+        $this->registry->template->usernames = $usernames;
         $this->registry->template->show("users");
     }
 }

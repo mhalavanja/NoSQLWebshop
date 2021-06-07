@@ -5,6 +5,7 @@ use MongoDB\Driver\Query;
 require_once __SITE_PATH . '/app/database/mongodb.class.php';
 require_once __SITE_PATH . '/util/mongoToClassUtil.php';
 require_once __SITE_PATH . '/vendor/autoload.php';
+
 use GraphAware\Neo4j\Client\ClientBuilder;
 
 
@@ -28,28 +29,29 @@ class UserService
         return $user;
     }
 
-    static function getAllUsers()
-    {
-        $manager = mongoDB::getConnection();
-        $query = new Query([], []);
-        $rows = $manager->executeQuery('projekt.users', $query);
-        $userArray = [];
-        foreach ($rows as $row) {
-            $document = json_decode(json_encode($row), true);
-            $userArray[] = mongoToClass($document, new User());
-        }
-        return $userArray;
-    }
-
-    static function getRecommendationsForUser($user)
+    static function getAllUsernames()
     {
         $client = ClientBuilder::create()
             ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
             ->build();
-        $result = $client->run('MATCH (u1:User {username : $username})-[:RECOMMEND]->(u2:User) RETURN u2.username AS username',['username' => $user->getUsername()]);
+        $result = $client->run('MATCH (u:User) RETURN u.username AS username');
         $records = $result->getRecords();
-        $usernameList = Array();
-        foreach($records as $record) {
+        $usernameList = array();
+        foreach ($records as $record) {
+            array_push($usernameList, $record->value('username'));
+        }
+        return $usernameList;
+    }
+
+    static function getRecommendationsForUser($username)
+    {
+        $client = ClientBuilder::create()
+            ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
+            ->build();
+        $result = $client->run('MATCH (u1:User {username : $username})-[:RECOMMEND]->(u2:User) RETURN u2.username AS username', ['username' => $username]);
+        $records = $result->getRecords();
+        $usernameList = array();
+        foreach ($records as $record) {
             array_push($usernameList, $record->value('username'));
         }
         return $usernameList;
@@ -69,7 +71,7 @@ class UserService
 
     static function saveRecommendationForUser($recommendationUsername, $user)
     {
-        if($recommendationUsername === $user->getUsername()) return;
+        if ($recommendationUsername === $user->getUsername()) return null;
         $client = ClientBuilder::create()
             ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
             ->build();
@@ -77,7 +79,8 @@ class UserService
         return $result;
     }
 
-    private static function saveUserMongoDB($user){
+    private static function saveUserMongoDB($user)
+    {
         $bulk = new MongoDB\Driver\BulkWrite;
         $user->setId(new MongoDB\BSON\ObjectId);
 
@@ -88,7 +91,8 @@ class UserService
         return $result;
     }
 
-    private static function updateUserMongoDB($user){
+    private static function updateUserMongoDB($user)
+    {
         $bulk = new MongoDB\Driver\BulkWrite;
         $filter = ['_id' => new MongoDB\BSON\ObjectId($user->getId())];
         $newObj = ['$set' => $user->getFieldsForUpdate()];
@@ -112,7 +116,7 @@ class UserService
         $client = ClientBuilder::create()
             ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
             ->build();
-        $result = $client->run('MERGE (u:User{username : $username, email : $email}) RETURN u',['username'=>$user->getUsername(), 'email'=>$user->getemail()]);
+        $result = $client->run('MERGE (u:User{username : $username, email : $email}) RETURN u', ['username' => $user->getUsername(), 'email' => $user->getemail()]);
         return $result;
     }
 
@@ -121,7 +125,7 @@ class UserService
         $client = ClientBuilder::create()
             ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
             ->build();
-            $result = $client->run('MATCH (u:User{username : $oldusername}) SET u.username = $username, u.name = $name, u.lastname = $lastname, u.email = $email',['oldusername'=>$oldUsername  ,'username'=>$user->getUsername(), 'name' =>$user->getName(), 'lastname'=>$user->getLastname(), 'email'=>$user->getemail()]);
+        $result = $client->run('MATCH (u:User{username : $oldusername}) SET u.username = $username, u.name = $name, u.lastname = $lastname, u.email = $email', ['oldusername' => $oldUsername, 'username' => $user->getUsername(), 'name' => $user->getName(), 'lastname' => $user->getLastname(), 'email' => $user->getemail()]);
         return $result;
     }
 }

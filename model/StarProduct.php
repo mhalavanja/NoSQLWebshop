@@ -5,6 +5,7 @@ class StarProduct
 {
     private $product;
     private $avgRating;
+    private $quantity;
 
     public function __construct(){}
 
@@ -26,5 +27,15 @@ class StarProduct
     public function setAvgRating($avgRating)
     {
         $this->avgRating = $avgRating;
+    }
+
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity($quantity): void
+    {
+        $this->quantity = $quantity;
     }
 }

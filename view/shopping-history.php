@@ -11,6 +11,7 @@ else { ?>
             <th>Name</th>
             <th>Description</th>
             <th>Price</th>
+            <th>Quantity</th>
             <th>Stars</th>
             <th></th>
         </tr>
@@ -22,6 +23,7 @@ else { ?>
                 '<td>' . $product->getName() . '</td>' .
                 '<td>' . $product->getDescription() . '</td>' .
                 '<td>' . $product->getPrice() . '</td>' .
+                '<td>' . $product->getQuantity() . '</td>' .
                 '<td>' . getStars($starProduct->getAvgRating(), true) . '</td>' .
                 '<td><button class="btn btn-outline-primary" type="submit" name="productId" value="product_' . $product->getId() . '">Review</button></td>' .
                 '</tr>';

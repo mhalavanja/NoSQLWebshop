@@ -83,8 +83,7 @@ class productsController extends BaseController
         if($sales){
             $products = [];
             foreach ($sales as $sale) {
-                $product = ProductService::getProductById($sale->getProductId());
-                $products[] = $product;
+                $products[] = $sale;
             }
             $this->registry->template->starProducts = getStarProducts($products);
         }
@@ -121,7 +120,7 @@ class productsController extends BaseController
         $sale->setDescription($product->getDescription());
         $sale->setCategory($product->getCategory());
         $sale->setPrice($product->getPrice());
-        $sale->setQuantity(1);
+        $sale->setQuantity($_POST["quantity"]);
         SalesService::saveSale($sale);
         $_SESSION["user"]->setSaleArray(SalesService::getSalesForUser($userId));
         header('Location: ' . __SITE_URL . '/index.php?rt=search');

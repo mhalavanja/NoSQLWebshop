@@ -1,17 +1,17 @@
 <?php
 
-function getUserList($users, $links)
+function getUserList($users, $links=false)
 {
-    $html = "<ul>";
+    $html = "<ul >";
 
-    foreach ($users as $user) {
+    foreach ($users as $username) {
         if($links)
         {
-            $href = __SITE_URL . "/index.php?rt=users/users&userId=" . $user->getId();
-            $html .= "<li><a href=" . $href . ">" . $user->getUsername() . "</a></li>";
+            $href = __SITE_URL . "/index.php?rt=users/users&username=" . $username;
+            $html .= "<li><a href=" . $href . ">" . $username . "</a></li>";
         }
         else{
-            $html .= "<li>" . $user->getUsername() . "</li>";
+            $html .= "<li>" . $username . "</li>";
         }
     }
     $html .= "</ul>";
