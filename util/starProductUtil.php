@@ -22,7 +22,8 @@ function getStarProduct($product)
             $numOfRatings++;
             $totalRating += $rating;
         }
-        $starProduct->setQuantity($sale->getQuantity());
+        if ($_SESSION['user']->getId() === $sale->getBuyerId())
+            $starProduct->setQuantity($sale->getQuantity());
     }
     $avgRating = $numOfRatings !== 0 ? round(($totalRating / $numOfRatings) * 2) / 2 : 0;
     $starProduct->setProduct($product);
