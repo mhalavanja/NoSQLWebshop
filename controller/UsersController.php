@@ -21,6 +21,7 @@ class usersController extends BaseController
         $user->setLastname($_POST["lastname"]);
         $user->setUsername($_POST["username"]);
         $user->setEmail($_POST["email"]);
+        $user->setFavoriteCategory($_POST["category"]);
         UserService::updateUser($user, $oldusername);
         header('Location: ' . __SITE_URL . '/index.php?rt=users/index');
     }

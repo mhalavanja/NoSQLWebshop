@@ -278,14 +278,6 @@ $sale_id_30_1 = new MongoDB\BSON\ObjectId;
 $sale_id_30_2 = new MongoDB\BSON\ObjectId;
 $sale_id_30_3 = new MongoDB\BSON\ObjectId;
 
-
-$category_id_1 = new MongoDB\BSON\ObjectId;
-$category_id_2 = new MongoDB\BSON\ObjectId;
-$category_id_3 = new MongoDB\BSON\ObjectId;
-$category_id_4 = new MongoDB\BSON\ObjectId;
-
-
-
 $documents = [
     // USER 1
     [
@@ -716,10 +708,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Tihomir",
         "lastname" => "Monković",
-        "favoriteCategory" => [
-            "_id" => $category_id_3,
-            "category" => "Automobili"
-        ],
+        "favoriteCategory" => "Automobili",
         "productArray" => [
             [
                 "_id" => $product_id_9_1,
@@ -774,10 +763,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Marta",
         "lastname" => "Martić",
-        "favoriteCategory" => [
-            "_id" => $category_id_2,
-            "category" => "Hrana"
-        ],
+        "favoriteCategory" => "Hrana",
         "productArray" => [
             [
                 "_id" => $product_id_10_1,
@@ -832,10 +818,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Vinko",
         "lastname" => "Vinković",
-        "favoriteCategory" => [
-            "_id" => $category_id_1,
-            "category" => "Elektronika"
-        ],
+        "favoriteCategory" => "Elektronika",
         "productArray" => [
             [
                 "_id" => $product_id_11_1,
@@ -890,10 +873,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "John",
         "lastname" => "McDonald",
-        "favoriteCategory" => [
-            "_id" => $category_id_3,
-            "category" => "Automobili"
-        ],
+        "favoriteCategory" => "Automobili",
         "productArray" => [
             [
                 "_id" => $product_id_12_1,
@@ -943,10 +923,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Maria",
         "lastname" => "Perez",
-        "favoriteCategory" => [
-            "_id" => $category_id_2,
-            "category" => "Hrana"
-        ],
+        "favoriteCategory" => "Hrana",
         "productArray" => [
             [
                 "_id" => $product_id_13_1,
@@ -1001,10 +978,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Ivan",
         "lastname" => "Ivanković",
-        "favoriteCategory" => [
-            "_id" => $category_id_1,
-            "category" => "Elektronika"
-        ],
+        "favoriteCategory" => "Elektronika",
         "productArray" => [
             [
                 "_id" => $product_id_14_1,
@@ -1047,10 +1021,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Mirta",
         "lastname" => "Comman",
-        "favoriteCategory" => [
-            "_id" => $category_id_2,
-            "category" => "Hrana"
-        ],
+        "favoriteCategory" => "Hrana",
         "productArray" => [
             [
                 "_id" => $product_id_15_1,
@@ -1086,10 +1057,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Martin",
         "lastname" => "Martinović",
-        "favoriteCategory" => [
-            "_id" => $category_id_4,
-            "category" => "Pića"
-        ],
+        "favoriteCategory" => "Pića",
         "productArray" => [
             [
                 "_id" => $product_id_16_1,
@@ -1144,10 +1112,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Mia",
         "lastname" => "Mijić",
-        "favoriteCategory" => [
-            "_id" => $category_id_4,
-            "category" => "Pića"
-        ],
+        "favoriteCategory" => "Pića",
         "productArray" => [
             []
         ],
@@ -1189,10 +1154,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Marko",
         "lastname" => "Marković",
-        "favoriteCategory" => [
-            "_id" => $category_id_3,
-            "category" => "Automobili"
-        ],
+        "favoriteCategory" => "Automobili",
         "productArray" => [
             [
                 "_id" => $product_id_18_1,
@@ -1240,10 +1202,7 @@ $documents = [
         "isAdmin" => 0,
         "name" => "Lana",
         "lastname" => "Šimunović",
-        "favoriteCategory" => [
-            "_id" => $category_id_1,
-            "category" => "Elektronika"
-        ],
+        "favoriteCategory" => "Elektronika",
         "productArray" => [
             [
                 "_id" => $product_id_19_1,
@@ -1298,10 +1257,7 @@ $documents = [
         "isAdmin" => 0,
         "name" => "Karolina",
         "lastname" => "Karlović",
-        "favoriteCategory" => [
-            "_id" => $category_id_2,
-            "category" => "Hrana"
-        ],
+        "favoriteCategory" => "Hrana",
         "productArray" => [
             [
                 "_id" => $product_id_20_1,
@@ -1363,10 +1319,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Mišo",
         "lastname" => "Mišković",
-        "favoriteCategory" => [
-            "_id" => $category_id_2,
-            "category" => "Hrana"
-        ],
+        "favoriteCategory" => "Hrana",
         "productArray" => [
             [
                 "_id" => $product_id_21_1,
@@ -1409,10 +1362,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Denis",
         "lastname" => "Desinec",
-        "favoriteCategory" => [
-            "_id" => $category_id_3,
-            "category" => "Automobili"
-        ],
+        "favoriteCategory" => "Automobili",
         "productArray" => [
             [
                 "_id" => $product_id_22_1,
@@ -1467,10 +1417,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Miroslav",
         "lastname" => "Miroslavić",
-        "favoriteCategory" => [
-            "_id" => $category_id_4,
-            "category" => "Pića"
-        ],
+        "favoriteCategory" => "Pića",
         "productArray" => [
             [
                 "_id" => $product_id_23_1,
@@ -1532,10 +1479,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Ozana",
         "lastname" => "Ozanić",
-        "favoriteCategory" => [
-            "_id" => $category_id_1,
-            "category" => "Elektronika"
-        ],
+        "favoriteCategory" => "Elektronika",
         "productArray" => [
             [
                 "_id" => $product_id_24_1,
@@ -1590,10 +1534,7 @@ $documents = [
         "isAdmin" => 0,
         "name" => "Ante",
         "lastname" => "Antić",
-        "favoriteCategory" => [
-            "_id" => $category_id_4,
-            "category" => "Pića"
-        ],
+        "favoriteCategory" => "Pića",
         "productArray" => [
             [
                 "_id" => $product_id_25_1,
@@ -1667,10 +1608,7 @@ $documents = [
         "isAdmin" => 1,
         "name" => "Matko",
         "lastname" => "Matković",
-        "favoriteCategory" => [
-            "_id" => $category_id_1,
-            "category" => "Elektronika"
-        ],
+        "favoriteCategory" => "Elektronika",
         "productArray" => [
             [
                 "_id" => $product_id_26_1,
@@ -1725,10 +1663,7 @@ $documents = [
         "isAdmin" => 0,
         "name" => "Ivica",
         "lastname" => "Vicković",
-        "favoriteCategory" => [
-            "_id" => $category_id_2,
-            "category" => "Hrana"
-        ],
+        "favoriteCategory" => "Hrana",
         "productArray" => [
             [
                 "_id" => $product_id_27_1,
@@ -1795,10 +1730,7 @@ $documents = [
         "isAdmin" => 0,
         "name" => "Lara",
         "lastname" => "Kokot",
-        "favoriteCategory" => [
-            "_id" => $category_id_3,
-            "category" => "Automobili"
-        ],
+        "favoriteCategory" => "Automobili",
         "productArray" => [
             [
                 "_id" => $product_id_28_1,
@@ -1834,10 +1766,7 @@ $documents = [
         "isAdmin" => 0,
         "name" => "Maksimilijan",
         "lastname" => "Maksimović",
-        "favoriteCategory" => [
-            "_id" => $category_id_3,
-            "category" => "Automobili"
-        ],
+        "favoriteCategory" => "Automobili",
         "productArray" => [
             []
         ],
@@ -1879,10 +1808,7 @@ $documents = [
         "isAdmin" => 0,
         "name" => "Erina",
         "lastname" => "Ernić",
-        "favoriteCategory" => [
-            "_id" => $category_id_4,
-            "category" => "Pića"
-        ],
+        "favoriteCategory" => "Pića",
         "productArray" => [
             [
                 "_id" => $product_id_30_1,

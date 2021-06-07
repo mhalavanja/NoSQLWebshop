@@ -182,9 +182,7 @@ class User
             'isAdmin' => $this->isAdmin,
             'name' => $this->name,
             'lastname' => $this->lastname,
-            'favoriteCategory' => $this->favoriteCategory,
-            'productArray' => $this->productArray,
-            'saleArray' => $this->saleArray,
+            'favoriteCategory' => $this->favoriteCategory
         );
     }
 }

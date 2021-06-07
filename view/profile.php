@@ -31,6 +31,16 @@ if (!isset($user)) return;
                    value="<?php echo $user->getEmail() ?>">
         </div>
         <br>
+        <div class="form-group">
+            <label for="category">Favorite category:</label>
+            <select class="form-select" id="category" name="category">
+                <option value="Automobili">Automobili</option>
+                <option value="Elektronika">Elektronika</option>
+                <option value="Hrana">Hrana</option>
+                <option value="Pića">Pića</option>
+            </select>
+        </div>
+        <br>
         <button class="btn btn-primary" type="submit">
             Submit
         </button>

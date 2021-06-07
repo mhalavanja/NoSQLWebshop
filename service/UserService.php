@@ -93,6 +93,10 @@ class UserService
 
     private static function updateUserMongoDB($user)
     {
+//        echo "<pre>";
+//        print_r($user);
+//        echo "</pre>";
+//        return;
         $bulk = new MongoDB\Driver\BulkWrite;
         $filter = ['_id' => new MongoDB\BSON\ObjectId($user->getId())];
         $newObj = ['$set' => $user->getFieldsForUpdate()];

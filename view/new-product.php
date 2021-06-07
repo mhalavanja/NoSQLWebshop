@@ -15,7 +15,7 @@ if(isset($error) && $error === true) echo "<p>All the fields are required!</p>" 
     <br>
     <div class="form-group">
         <label for="category">Select product category:</label><br>
-        <select class="form-control" id="category" name="category">
+        <select class="form-select" id="category" name="category">
             <option value="Automobili">Automobili</option>
             <option value="Elektronika">Elektronika</option>
             <option value="Hrana">Hrana</option>
