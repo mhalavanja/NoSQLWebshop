@@ -19,13 +19,14 @@ else { ?>
         <tbody>
         <?php foreach ($starProducts as $starProduct) {
             $product = $starProduct->getProduct();
+            $id = method_exists($product, "getProductId") ? $product->getProductId() : $product->getId();
             echo '<tr>' .
                 '<td>' . $product->getName() . '</td>' .
                 '<td>' . $product->getDescription() . '</td>' .
                 '<td>' . $product->getPrice() . '</td>' .
                 '<td>' . $product->getQuantity() . '</td>' .
                 '<td>' . getStars($starProduct->getAvgRating(), true) . '</td>' .
-                '<td><button class="btn btn-outline-primary" type="submit" name="productId" value="product_' . $product->getId() . '">Review</button></td>' .
+                '<td><button class="btn btn-outline-primary" type="submit" name="productId" value="product_' . $id . '">Review</button></td>' .
                 '</tr>';
         }
         echo '</tbody></table></form>';
