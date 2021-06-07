@@ -48,7 +48,11 @@ class UserService
             ->build();
         $result = $client->run('MATCH (u1:User {username : $username})-[:RECOMMEND]->(u2:User) RETURN u2.username AS username',['username' => $user->getUsername()]);
         $records = $result->getRecords();
-        return $records;
+        $usernameList = Array();
+        foreach($records as $record) {
+            array_push($usernameList, $record->value('username'));
+        }
+        return $usernameList;
     }
 
     static function saveUser($user)
@@ -65,11 +69,11 @@ class UserService
 
     static function saveRecommendationForUser($recommendationUsername, $user)
     {
-        echo " ipsis";
+        if($recommendationUsername === $user->getUsername()) return;
         $client = ClientBuilder::create()
             ->addConnection('default', 'http://neo4j:lozinka@localhost:7474')
             ->build();
-        $result = $client->run('MATCH (u1:User {username : $username1}), (u2:User {username : $username2}) CREATE (u1)-[:RECOMMEND]->(u2);', ['username1' => $user->getUsername(), 'username2' => $recommendationUsername]);
+        $result = $client->run('MATCH (u1:User {username : $username1}), (u2:User {username : $username2}) MERGE (u1)-[:RECOMMEND]->(u2);', ['username1' => $user->getUsername(), 'username2' => $recommendationUsername]);
         return $result;
     }
 
