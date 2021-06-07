@@ -18,7 +18,7 @@ else { ?>
             echo '<tr>' .
                 '<td>' . $product->getName() . '</td>' .
                 '<td>' . $product->getDescription() . '</td>' .
-                '<td>' . $product->getPrice() . '</td>' .
+                '<td>' . $product->getPrice() . ' HRK </td>' .
                 '<td>' . getStars($starProduct->getAvgRating(), true) . '</td>' .
                 '<td><button class="btn btn-outline-primary" type="submit" name="productId" value="product_' . $product->getId() . '">Details</button></td>' .
                 '</tr>';

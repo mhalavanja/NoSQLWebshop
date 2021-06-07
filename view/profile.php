@@ -4,6 +4,23 @@ require_once __SITE_PATH . '/util/userList.php';
 if (!isset($user)) return;
 ?>
     <br>
+     <div class="col-md-6">
+         <div class="card-group">
+             <div class="card mb-4">
+                 <div class="card-body">
+                     <h5 class="card-title">Income:</h5>
+                         <p class="card-text text-success"></span><span class="ml-2" style="font-size: 30px;">+ <?php echo $user->getIncome() ?></span> HRK</p>
+                 </div>
+             </div>
+             <div class="card mb-4">
+                 <div class="card-body">
+                     <h5 class="card-title">Outcome: </h5>
+                         <p class="card-text text-danger"><span class="ml-2" style="font-size: 30px;">- <?php echo $user->getOutcome() ?></span>  HRK</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+    <br>
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=users/processProfile' ?>">
         <div class="form-group">
             <label for="name">Name:</label>

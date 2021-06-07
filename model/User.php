@@ -16,6 +16,8 @@ class User
     private $favoriteCategory;
     private $productArray;
     private $saleArray;
+    private $income;
+    private $outcome;
 
     public function __construct(){
         $this->setProductArray([]);
@@ -151,6 +153,26 @@ class User
     public function setSaleArray($saleArray): void
     {
         $this->saleArray = $saleArray;
+    }
+
+    public function getIncome()
+    {
+        return $this->income;
+    }
+
+    public function setIncome($income): void
+    {
+        $this->income = $income;
+    }
+
+    public function getOutcome()
+    {
+        return $this->outcome;
+    }
+
+    public function setOutcome($outcome): void
+    {
+        $this->outcome = $outcome;
     }
 
     public function getFieldsForSave()

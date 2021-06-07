@@ -1,6 +1,7 @@
 <?php
 
 require __SITE_PATH . "/service/UserService.php";
+require __SITE_PATH . "/util/userProfitUtil.php";
 
 class usersController extends BaseController
 {
@@ -10,6 +11,8 @@ class usersController extends BaseController
         $user = $_SESSION["user"];
         $this->registry->template->user = $user;
         $user->setRecommendations(UserService::getRecommendationsForUser($user->getUsername()));
+        $user->setIncome(getUserIncome());
+        $user->setOutcome(getUserOutcome());
         $this->registry->template->show("profile");
     }
 
