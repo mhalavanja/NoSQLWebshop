@@ -34,10 +34,10 @@ if (!isset($user)) return;
         <div class="form-group">
             <label for="category">Favorite category:</label>
             <select class="form-select" id="category" name="category">
-                <option value="Automobili">Automobili</option>
-                <option value="Elektronika">Elektronika</option>
-                <option value="Hrana">Hrana</option>
-                <option value="Pića">Pića</option>
+                <option id="Automobili" value="Automobili">Automobili</option>
+                <option id="Elektronika" value="Elektronika">Elektronika</option>
+                <option id="Hrana" value="Hrana">Hrana</option>
+                <option id="Pića" value="Pića">Pića</option>
             </select>
         </div>
         <br>
@@ -63,3 +63,10 @@ if (!isset($user)) return;
     <br>
 <?php
 require_once __SITE_PATH . '/view/_footer.php'; ?>
+
+<script>
+    const favCatId = "<?php echo $user->getFavoriteCategory()?>";
+    $(document).ready(function () {
+        $("#" + favCatId).attr("selected", "selected");
+    });
+</script>

@@ -13,7 +13,8 @@
 </nav>
 <script>
     $(document).ready(function () {
-        params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
+        params={};
+        location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
         $("a").filter(function(){
             return $(this).attr('href').includes(params["rt"]);
         }).addClass("active");

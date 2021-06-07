@@ -5,6 +5,7 @@
             <label for="quantity">Quantity:</label>
             <input id="quantity" type="number" name="quantity" min="1" value="1">
         </div>
+        <br>
         <button class="btn btn-primary" type="submit">Buy!</button>
     </form>
 <?php } ?>
