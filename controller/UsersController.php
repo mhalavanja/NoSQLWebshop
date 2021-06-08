@@ -19,13 +19,20 @@ class usersController extends BaseController
     function processProfile()
     {
         $user = $_SESSION["user"];
-        $oldusername = $user->getUsername();
+        $oldUsername = $user->getUsername();
+        $newUsername = $_POST["username"];
+        if (UserService::getUserByProperty("username", $newUsername)) {
+            $this->registry->template->error = true;
+            $this->registry->template->errorMessage = "Username already exists!";
+            $this->registry->template->show("profile");
+            return;
+        }
         $user->setName($_POST["name"]);
         $user->setLastname($_POST["lastname"]);
-        $user->setUsername($_POST["username"]);
+        $user->setUsername($newUsername);
         $user->setEmail($_POST["email"]);
         $user->setFavoriteCategory($_POST["category"]);
-        UserService::updateUser($user, $oldusername);
+        UserService::updateUser($user, $oldUsername);
         header('Location: ' . __SITE_URL . '/index.php?rt=users/index');
     }
 

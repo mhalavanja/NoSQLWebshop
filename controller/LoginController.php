@@ -64,7 +64,8 @@ class loginController extends BaseController
             $this->registry->template->show("login");
 
         } elseif (UserService::getUserByProperty("username", $username)) {
-            $this->registry->template->registrationError = true;
+            $this->registry->template->error = true;
+            $this->registry->template->errorMessage = "Username already exists!";
             $this->registry->template->show("login");
         } else {
             $user = new User();

@@ -1,6 +1,6 @@
 <?php require_once __SITE_PATH . '/view/_header.php'; ?>
 
-    <?php if (isset($error) && isset($errorMessage) && $error) echo "<p>" . $errorMessage . "</p>"; ?>
+    <?php if (isset($error) && isset($errorMessage) && $error) echo '<p class="alert alert-danger">' . $errorMessage . "</p>"; ?>
 
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=login/processLoginForm' ?>">
         <div class="form-group">

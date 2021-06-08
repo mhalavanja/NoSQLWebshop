@@ -1,7 +1,8 @@
 <?php
 require_once __SITE_PATH . '/view/_header.php';
 require_once __SITE_PATH . '/util/userList.php';
-if (!isset($user)) return;
+if (!isset($_SESSION["user"])) return;
+else $user = $_SESSION["user"];
 ?>
     <br>
      <div class="col-md-6">
@@ -21,6 +22,8 @@ if (!isset($user)) return;
          </div>
      </div>
     <br>
+
+    <?php if (isset($error) && isset($errorMessage) && $error) echo '<p class="alert alert-danger">' . $errorMessage . "</p>"; ?>
     <form method="post" action="<?php echo __SITE_URL . '/index.php?rt=users/processProfile' ?>">
         <div class="form-group">
             <label for="name">Name:</label>
