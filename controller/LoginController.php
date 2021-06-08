@@ -80,7 +80,7 @@ class loginController extends BaseController
             $user->setregistrationSequence($sequence);
             UserService::saveUser($user);
             $subject = "Registration for ebuy";
-            $body = "Click on the followinng " . $link . " to finish your registration for ebuy!";
+            $body = "Click on the followinng " . $link . " to finish your registration for webshop!";
             $headers = "Content-type: text/html\r\n";
             $headers .= "To: " . $email . "\r\n";
             $headers .= 'From: Webshop <web@shop.com>' . "\r\n";
