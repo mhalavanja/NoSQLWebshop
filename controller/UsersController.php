@@ -21,7 +21,7 @@ class usersController extends BaseController
         $user = $_SESSION["user"];
         $oldUsername = $user->getUsername();
         $newUsername = $_POST["username"];
-        if (UserService::getUserByProperty("username", $newUsername)) {
+        if ($newUsername !== $oldUsername && UserService::getUserByProperty("username", $newUsername)) {
             $this->registry->template->error = true;
             $this->registry->template->errorMessage = "Username already exists!";
             $this->registry->template->show("profile");
