@@ -17,7 +17,6 @@ class mongoDB
     {
         if (mongoDB::$manager === null) {
             try {
-                // Trenutno se spajamo na lokalnu mongo bazu
                 mongoDB::$manager = new MongoDB\Driver\Manager("mongodb://localhost");
             } catch (PDOException $e) {
                 exit('PDO Error: ' . $e->getMessage());

@@ -28,19 +28,9 @@ class SalesService
         $query = new Query($filter, $options);
         $rows = $manager->executeQuery('projekt.users', $query);
         $sales = [];
-//        echo "<pre>";
-//        print_r($rows);
-//        echo "</pre>";
-//        return;
+
         foreach ($rows as $document) {
             $document = json_decode(json_encode($document), true);
-//            echo "<pre>";
-//            print_r($document);
-//            print_r($document["_id"]["\$oid"]);
-//            echo "</pre>";
-//            echo $document["username"];
-//            return;
-
             $sale = mongoToClass($document, new Sale(), true);
             $sale->setUsername($document["username"]);
             $sale->setBuyerId($document["_id"]["\$oid"]);
@@ -71,9 +61,6 @@ class SalesService
         $sales = [];
         foreach ($rows as $document) {
             $document = json_decode(json_encode($document), true);
-//            echo "<pre>";
-//            print_r($document);
-//            echo "</pre>";
             $sale = mongoToClass($document, new Sale(), true);
             $sales[] = $sale;
         }

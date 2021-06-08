@@ -11,11 +11,8 @@ class productsController extends BaseController
     function index()
     {
         $user = $_SESSION["user"];
-//        echo '<pre>';
-//        print_r($user);
-//        echo '</pre>';
-//        echo '<br>';
         $products = $user->getProductArray();
+
         $this->registry->template->user = $user;
         $this->registry->template->starProducts = getStarProducts($products);
         $this->registry->template->show("my-products");
@@ -36,15 +33,10 @@ class productsController extends BaseController
         }
 
         $productId = substr($productId, 8);
-//        echo $productId . "<br>";
         $product = ProductService::getProductById($productId);
-//        echo $product === null;
         $sales = SalesService::getSalesForProduct($productId);
         $saleId = getSaleIdForUserIfTheyCanReview($userId, $sales);
-//        echo "<pre>";
-//        print_r($sales);
-//        echo "</pre>";
-//        echo $saleId;
+
         $this->registry->template->canReview = (bool)$saleId;
         $this->registry->template->reviews = getReviewsForProduct($sales);
         $this->registry->template->saleId = $saleId;

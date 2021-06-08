@@ -10,23 +10,14 @@ class ProductService
 {
     static function saveProduct($userId, $product)
     {
+        $mongo = mongoDB::getConnection();
         $bulk = new MongoDB\Driver\BulkWrite;
         $product->setId(new MongoDB\BSON\ObjectId);
-
         $filter = ["_id" => new MongoDB\BSON\ObjectId($userId)];
         $newObj = ['$addToSet' => ['productArray' => $product->getFieldsForSave()]];
-        $bulk->update($filter, $newObj);
-//        echo "<pre>";
-//        print_r($product->getIterator());
-//        echo "</pre>";
-//        return;
-        $mongo = mongoDB::getConnection();
 
+        $bulk->update($filter, $newObj);
         $result = $mongo->executeBulkWrite('projekt.users', $bulk);
-//        echo "<pre>";
-//        print_r($result);
-//        echo "</pre>";
-//        return;
         return $result;
     }
 
@@ -103,23 +94,12 @@ class ProductService
         ];
         $query = new Query($filter, $options);
         $rows = $manager->executeQuery('projekt.users', $query);
-//            echo "<pre>";
-//            print_r($rows);
-//            echo "</pre>";
         $product = null;
         foreach ($rows as $document) {
             $document = json_decode(json_encode($document), true);
-//            echo "<pre>";
-//            print_r($document);
-//            echo "</pre>";
             $product = mongoToClass($document, new Product(), true);
             $product->setUserId($document["_id"]["\$oid"]);
         }
         return $product;
     }
-
-//    static function getShoppingHistoryForUser($userId)
-//    {
-//
-//    }
 }

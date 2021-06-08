@@ -36,10 +36,6 @@ class searchController extends BaseController
         $sales = SalesService::getSalesForProduct($productId);
 
         $this->registry->template->reviews = getReviewsForProduct($sales);
-//        echo "<pre>";
-//        print_r($_SESSION["user"]);
-//        echo "</pre>";
-//        echo "Product: " . $product->getUserId() . " User: " . $userId;
         $this->registry->template->canBuy = !($product->getUserId() === $userId);
         $this->registry->template->starProduct = getStarProduct($product);
         $this->registry->template->numOfSoldProducts = sizeof($sales);

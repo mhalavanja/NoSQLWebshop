@@ -20,10 +20,6 @@ class UserService
         $user = null;
         foreach ($rows as $row) {
             $document = json_decode(json_encode($row), true);
-//            echo "<pre>";
-//            print_r($document);
-//            echo "</pre>";
-//            return;
             $user = mongoToClass($document, new User());
         }
         return $user;
@@ -93,25 +89,13 @@ class UserService
 
     private static function updateUserMongoDB($user)
     {
-//        echo "<pre>";
-//        print_r($user);
-//        echo "</pre>";
-//        return;
+        $mongo = mongoDB::getConnection();
         $bulk = new MongoDB\Driver\BulkWrite;
         $filter = ['_id' => new MongoDB\BSON\ObjectId($user->getId())];
         $newObj = ['$set' => $user->getFieldsForUpdate()];
-        $bulk->update($filter, $newObj);
-//        echo "<pre>";
-//        print_r($product->getIterator());
-//        echo "</pre>";
-//        return;
-        $mongo = mongoDB::getConnection();
 
+        $bulk->update($filter, $newObj);
         $result = $mongo->executeBulkWrite('projekt.users', $bulk);
-//        echo "<pre>";
-//        print_r($result);
-//        echo "</pre>";
-//        return;
         return $result;
     }
 
