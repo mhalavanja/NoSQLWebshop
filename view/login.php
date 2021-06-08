@@ -19,7 +19,7 @@
         <br>
         <br>
         <div class="form-group">
-            <h3>First time using ebuy?</h3>
+            <h3>First time here?</h3>
             <br>
             <label for="email">Email adress:</label>
             <input class="form-control" id="email" name="email" type="email">
