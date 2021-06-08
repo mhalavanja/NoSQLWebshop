@@ -72,7 +72,7 @@ class loginController extends BaseController
             $user->setUsername($username);
             $user->setEmail($email);
             $user->setpasswordHash(password_hash($password, PASSWORD_DEFAULT));
-            $link = '<a href = "' . $_SERVER["HTTP_HOST"] . __SITE_URL . "/index.php?rt=login/finishRegistration&sequence=";
+            $link = '<a href = "http://' . $_SERVER["HTTP_HOST"] . __SITE_URL . "/index.php?rt=login/finishRegistration&sequence=";
             $sequence = "";
 
             for ($i = 0; $i < random_int(10, 20); $i++) $sequence .= chr(random_int(97, 122));
@@ -80,9 +80,11 @@ class loginController extends BaseController
             $user->setregistrationSequence($sequence);
             UserService::saveUser($user);
             $subject = "Registration for ebuy";
-            $body = "Click on the followinng" . $link . " to finish your registration for ebuy!";
-            $header = "Reply-To: " . $email . "\r\n";
-            if (mail($email, $subject, $body, $header)) {
+            $body = "Click on the followinng " . $link . " to finish your registration for ebuy!";
+            $headers = "Content-type: text/html\r\n";
+            $headers .= "To: " . $email . "\r\n";
+            $headers .= 'From: Webshop <web@shop.com>' . "\r\n";
+            if (mail($email, $subject, $body, $headers)) {
                 echo "Check your mail to finish a registration :)";
                 return;
             } else echo "Something's wrong: "; //. var_dump(error_get_last());
