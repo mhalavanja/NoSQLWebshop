@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf8">
-    <title><?php if (isset($title)) echo $title; else echo "ebuy"; ?></title>
+    <title><?php if (isset($title)) echo $title; else echo "Webshop"; ?></title>
     <link rel="stylesheet" href="<?php echo __SITE_URL; ?>/static/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo __SITE_URL; ?>/static/style.css">
     <script type="text/javascript" src="<?php echo __SITE_URL; ?>/static/jquery-min.js"></script>
