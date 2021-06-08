@@ -7,7 +7,6 @@ function getReviewsForProduct($sales)
     foreach ($sales as $sale) {
         $review = [];
         $id = $sale->getBuyerId();
-//        echo $id;
         $reviewer = UserService::getUserByProperty("_id", new MongoDB\BSON\ObjectId($id));
         $rating = $sale->getRating();
         $comment = $sale->getComment();

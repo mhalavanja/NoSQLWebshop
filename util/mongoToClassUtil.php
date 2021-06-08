@@ -1,11 +1,6 @@
 <?php
 function mongoToClass($document, $obj, $skip=false)
 {
-//    echo '<pre>';
-//    print_r($document);
-//    echo '</pre>';
-//    echo '<br>';
-//    return;
     foreach ($document as $key => $val) {
         $setProperty = "set" . ucfirst($key);
 
@@ -14,16 +9,9 @@ function mongoToClass($document, $obj, $skip=false)
             continue;
         }
         elseif (strpos($key, "Id")){
-//            echo '<pre>';
-//            print_r($key);
-//            print_r($val);
-//            echo '</pre>';
-//            echo '<br>';
-//            return;
             $obj->$setProperty($val["\$oid"]);
             continue;
         }
-
         if (!is_array($val)) {
             $obj->$setProperty($val);
         } elseif (strpos($key, "Array")) {
